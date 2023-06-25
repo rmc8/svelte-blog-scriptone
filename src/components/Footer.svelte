@@ -47,7 +47,7 @@
 	</div>
 	<div class="container">
 		<div class="external_links">
-			<ul>
+			<ul style="padding-left:16px;padding-right:16px;">
 				<li>
 					<a
 						style="background:url('https://abs.twimg.com/favicons/twitter.ico')"
