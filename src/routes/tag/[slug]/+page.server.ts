@@ -11,7 +11,6 @@ export const load: PageServerLoad = async ({ request, params }) => {
 	const limit = ITEMS_PER_PAGE;
 	const slug = params.slug;
 	const filters = `tags[contains]${slug}`;
-	console.log(filters);
 
 	url.searchParams.delete('limit');
 	return await getList({ offset, limit, filters });
