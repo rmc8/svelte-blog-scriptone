@@ -34,8 +34,8 @@
 			<section>
 				<h3>Category</h3>
 				<ul>
-					{#each categories as category (category)}
-						<li><a href="http://localhost:5173/category/{category.id}">{category.name}</a></li>
+					{#each categories as category}
+						<li><a href="/category/{category.id}">{category.name}</a></li>
 					{/each}
 				</ul>
 			</section>
@@ -47,7 +47,7 @@
 	</div>
 	<div class="container">
 		<div class="external_links">
-			<ul>
+			<ul style="padding-left:24px;padding-right:24px;width:96%;">
 				<li>
 					<a
 						style="background:url('https://abs.twimg.com/favicons/twitter.ico')"

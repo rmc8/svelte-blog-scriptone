@@ -40,7 +40,7 @@
 						<dt><a href={content.id}>{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="http://localhost:5173/category/{content.category.id}"
+								<a class="category_link" href="/category/{content.category.id}"
 									>{content.category.name}</a
 								>
 							</div>
@@ -52,7 +52,7 @@
 										</div>
 										<div class="tag_link">
 											<a
-												href="http://localhost:5173/tag/{tag.id}"
+												href="/tag/{tag.id}"
 												on:click={() => {
 													location.reload();
 												}}
@@ -89,7 +89,7 @@
 				{#if p === +currentPageNum}
 					<span>{p}</span>
 				{:else}
-					<a href={`http://localhost:5173?page=${p}`} rel="external"> {p} </a>
+					<a href={`?page=${p}`} rel="external"> {p} </a>
 				{/if}
 			{/each}
 		</div>
@@ -106,12 +106,12 @@
 	}
 
 	.eyecatch_section {
-		height: 180px;
+		height: 162px;
 	}
 	.eyecatch_section img {
-		width: 400px;
+		width: 360px;
 		height: 100%;
-		max-height: 180px;
+		max-height: 162px;
 		object-fit: cover;
 		object-position: center;
 	}
@@ -132,7 +132,7 @@
 	}
 
 	main li {
-		width: 400px;
+		width: 360px;
 		margin-right: 24px;
 		margin-bottom: 48px;
 		list-style: none;
