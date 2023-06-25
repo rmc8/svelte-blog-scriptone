@@ -7,7 +7,8 @@
 
 <svelte:head>
 	<title>Scriptone - {data.title}</title>
-	<meta name="description" content="Detail Pages" />
+	<meta property="og:title" content="Scriptone - {data.title}" />
+	<meta property="og:type" content="article" />
 </svelte:head>
 
 <main>
