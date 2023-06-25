@@ -1,13 +1,13 @@
 <header>
 	<nav>
 		<ul>
-			<li><a href="https://blog.rmc-8.com/">Home</a></li>
-			<li><a href="https://blog.rmc-8.com/about">About</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
 		</ul>
 	</nav>
 	<div class="container">
 		<h1>
-			<a href="https://blog.rmc-8.com/" id="logo"> </a>
+			<a href="/" id="logo"> </a>
 		</h1>
 	</div>
 </header>

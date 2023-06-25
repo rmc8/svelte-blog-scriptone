@@ -37,14 +37,14 @@
 				<h3>Category</h3>
 				<ul>
 					{#each categories as category}
-						<li><a href="https://blog.rmc-8.com/category/{category.id}">{category.name}</a></li>
+						<li><a href="/category/{category.id}">{category.name}</a></li>
 					{/each}
 				</ul>
 			</section>
 			<section>
 				<h3>Link</h3>
 				<ul>
-					<li><a href="https://blog.rmc-8.com/privacy_policy">プライバシーポリシー・免責事項</a></li>
+					<li><a href="/privacy_policy">プライバシーポリシー・免責事項</a></li>
 				</ul>
 			</section>
 		</div>
