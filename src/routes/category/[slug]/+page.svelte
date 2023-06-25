@@ -32,15 +32,15 @@
 			{#each data.contents as content}
 				<li>
 					<div class="eyecatch_section">
-						<a href={content.id}
+						<a href=https://blog.rmc-8.com/{content.id}
 							><img src={content.eyecatch?.url} alt="eyecatch of {content.title}" />
 						</a>
 					</div>
 					<dl>
-						<dt><a href={content.id}>{content.title}</a></dt>
+						<dt><a href=https://blog.rmc-8.com/{content.id}>{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="/category/{content.category.id}"
+								<a class="category_link" href="https://blog.rmc-8.com/category/{content.category.id}"
 									>{content.category.name}</a
 								>
 							</div>
@@ -52,7 +52,7 @@
 										</div>
 										<div class="tag_link">
 											<a
-												href="/tag/{tag.id}"
+												href="https://blog.rmc-8.com/tag/{tag.id}"
 												on:click={() => {
 													location.reload();
 												}}
@@ -89,7 +89,7 @@
 				{#if p === +currentPageNum}
 					<span>{p}</span>
 				{:else}
-					<a href={`?page=${p}`} rel="external"> {p} </a>
+					<a href="?page={p}" rel="external"> {p} </a>
 				{/if}
 			{/each}
 		</div>
