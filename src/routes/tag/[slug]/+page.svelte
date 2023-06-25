@@ -89,7 +89,7 @@
 				{#if p === +currentPageNum}
 					<span>{p}</span>
 				{:else}
-					<a href="?page=${p}" rel="external"> {p} </a>
+					<a href="p/{p}" rel="external"> {p} </a>
 				{/if}
 			{/each}
 		</div>
