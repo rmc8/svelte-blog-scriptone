@@ -2,21 +2,22 @@
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 	import type { PageData } from './$types';
-	import { onMount } from 'svelte';
+	import { beforeUpdate } from 'svelte';
 
 	export let data: PageData;
-	let currentPageNum: number = 1;
-	onMount(() => {
-		const urlParams = new URLSearchParams(window.location.search);
-		currentPageNum = Number(urlParams.get('page')) || 1;
+
+	let pagination: number[] = [];
+	let currentPageNum: number;
+
+	beforeUpdate(() => {
+		const slugNumber = parseInt(window.location.pathname.split('/').pop() || '1', 10);
+		currentPageNum = isNaN(slugNumber) ? 1 : slugNumber;
 	});
 
 	$: {
 		const pages = Math.ceil(data.totalCount / 6);
 		pagination = Array.from({ length: pages }, (_, i) => i + 1);
 	}
-
-	let pagination: number[] = [];
 </script>
 
 <svelte:head>
