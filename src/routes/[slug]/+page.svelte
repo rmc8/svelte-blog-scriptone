@@ -25,7 +25,7 @@
 		<dl>
 			<div class="upper" style="display:flex">
 				<div class="category">
-					<a class="category_link" href="category/{data.category.id}"
+					<a class="category_link" href="/category/{data.category.id}"
 						>{data.category.name}</a
 					>
 				</div>
@@ -34,7 +34,7 @@
 						<div class="tag">
 							<div class="tag_link">
 								<a
-									href="tag/{tag.id}"
+									href="/tag/{tag.id}"
 									on:click={() => {
 										location.reload();
 									}}

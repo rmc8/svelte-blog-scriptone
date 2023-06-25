@@ -1,13 +1,13 @@
 <header>
 	<nav>
 		<ul>
-			<li><a href="http://localhost:5173">Home</a></li>
-			<li><a href="http://localhost:5173/about">About</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
 		</ul>
 	</nav>
 	<div class="container">
 		<h1>
-			<a href="http://localhost:5173" id="logo" />
+			<a href="/" id="logo"> </a>
 		</h1>
 	</div>
 </header>

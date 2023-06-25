@@ -40,7 +40,7 @@
 						<dt><a href="{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="category/{content.category.id}"
+								<a class="category_link" href="/category/{content.category.id}"
 									>{content.category.name}</a
 								>
 							</div>
@@ -52,7 +52,7 @@
 										</div>
 										<div class="tag_link">
 											<a
-												href="tag/{tag.id}"
+												href="/tag/{tag.id}"
 												on:click={() => {
 													location.reload();
 												}}
@@ -89,7 +89,7 @@
 				{#if p === +currentPageNum}
 					<span>{p}</span>
 				{:else}
-					<a href={`http://localhost:5173?page=${p}`} rel="external"> {p} </a>
+					<a href={`?page=${p}`} rel="external"> {p} </a>
 				{/if}
 			{/each}
 		</div>
