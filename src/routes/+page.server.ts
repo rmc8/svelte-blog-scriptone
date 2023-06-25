@@ -14,4 +14,4 @@ export const load: PageServerLoad = async ({ request }) => {
 	return await getList({ offset, limit });
 };
 
-export const prerender = false;
+export const prerender = true;
