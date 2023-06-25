@@ -106,12 +106,12 @@
 	}
 
 	.eyecatch_section {
-		height: 180px;
+		height: 162px;
 	}
 	.eyecatch_section img {
-		width: 400px;
+		width: 360px;
 		height: 100%;
-		max-height: 180px;
+		max-height: 162px;
 		object-fit: cover;
 		object-position: center;
 	}
