@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Header from '../components/Header.svelte';
-	import Footer from '../components/Footer.svelte';
+	import Header from '../../../components/Header.svelte';
+	import Footer from '../../../components/Footer.svelte';
 	import type { PageData } from './$types';
-	import { beforeUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
 
 	let pagination: number[] = [];
 	let currentPageNum: number;
 
-	beforeUpdate(() => {
+	onMount(() => {
 		const slugNumber = parseInt(window.location.pathname.split('/').pop() || '1', 10);
 		currentPageNum = isNaN(slugNumber) ? 1 : slugNumber;
 	});
@@ -49,7 +49,7 @@
 								{#each content.tags as tag}
 									<div class="tag">
 										<div class="tag_icon">
-											<img src="tag.svg" width="20" height="20" alt="tag_icon" />
+											<img src="../tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
 											<a
@@ -67,7 +67,7 @@
 						</div>
 						<dd>
 							<div class="clock">
-								<img src="clock.png" width="20" height="20" alt="clock_icon" />
+								<img src="../clock.png" width="20" height="20" alt="clock_icon" />
 							</div>
 							<time
 								>{new Date(content.createdAt)
@@ -87,11 +87,11 @@
 		</ul>
 		<div class="pagination">
 			{#each pagination as p}
-				{#if p === +currentPageNum}
+				<!-- {#if p === currentPageNum}
 					<span>{p}</span>
-				{:else}
-					<a href={`/p/${p}`}>{p}</a>
-				{/if}
+				{:else} -->
+				<a href={`/p/${p}`}>{p}</a>
+				<!-- {/if} -->
 			{/each}
 		</div>
 	</section>
@@ -201,8 +201,8 @@
 	.pagination {
 		text-align: center;
 	}
-	.pagination a,
-	.pagination span {
+	.pagination a {
+		/* ,.pagination span  */
 		padding: 4px 8px;
 		margin-right: 4px;
 		border: 1px solid var(--accent-color-light);
@@ -218,7 +218,7 @@
 		text-decoration: none;
 	}
 
-	.pagination span {
+	/* .pagination span {
 		color: var(--accent-color-light);
-	}
+	} */
 </style>
