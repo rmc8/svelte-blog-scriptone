@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href="%sveltekit.assets%/logo/scriptone_logo_icon.png" />
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
+		<style>
+			:root {
+				--accent-color_dark: #0c323c;
+				--accent-color-light: #009898;
+				--border-color-basic: #c6cccc;
+				--border-color-hr: #dee3e3;
+			}
+
+			body {
+				font-family: 'Noto Sans JP', sans-serif;
+				line-height: 1.6;
+				color: #2b2b2b;
+				background-color: #fbfbfb;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-weight: bold;
+			}
+			h1,
+			h2 {
+				border-bottom: 1px solid;
+				border-color: var(--border-color-basic);
+			}
+
+			hr {
+				border: 0px solid var(--border-color-hr) !important;
+			}
+			h1 {
+				font-size: 2.5em;
+				margin-top: 0.67em;
+				margin-bottom: 0.67em;
+			}
+			main h1 {
+				border: 0px;
+				padding-bottom: 12px;
+			}
+
+			h2 {
+				font-size: 2em;
+				margin-top: 0.83em;
+				margin-bottom: 0.83em;
+				padding-bottom: 12px;
+			}
+
+			h3 {
+				font-size: 1.75em;
+				margin-top: 1em;
+				margin-bottom: 1em;
+			}
+
+			h4 {
+				font-size: 1.5em;
+				margin-top: 1.33em;
+				margin-bottom: 1.33em;
+			}
+
+			h5 {
+				font-size: 1.25em;
+				margin-top: 1.67em;
+				margin-bottom: 1.67em;
+			}
+
+			h6 {
+				font-size: 1em;
+				margin-top: 2.33em;
+				margin-bottom: 2.33em;
+			}
+
+			a {
+				text-decoration: none;
+				color: var(--accent-color-light);
+			}
+			li {
+				display: list-item;
+				text-align: -webkit-match-parent;
+			}
+			.container,
+			#articles {
+				max-width: 1320px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+			#logo {
+				background-image: url('%sveltekit.assets%/logo/scriptone_header.png');
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 53%;
+			}
+
+			figure {
+				margin: 0;
+			}
+
+			main img {
+				border-radius: 8px;
+			}
+
+			.container img {
+				width: 480px;
+				max-width: 800px;
+				height: auto;
+			}
+		</style>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
