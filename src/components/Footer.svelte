@@ -29,7 +29,9 @@
 		<div id="sitemap">
 			<section>
 				<h3>Profile</h3>
-				<div />
+				<div>
+
+				</div>
 			</section>
 			<section>
 				<h3>Category</h3>
@@ -41,7 +43,9 @@
 			</section>
 			<section>
 				<h3>Link</h3>
-				<ul />
+				<ul>
+					<li><a href="/privacy_policy">プライバシーポリシー・免責事項</a></li>
+				</ul>
 			</section>
 		</div>
 	</div>
