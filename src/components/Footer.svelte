@@ -77,7 +77,7 @@
 				</li>
 			</ul>
 		</div>
-		<p>&copy;2023 - Scriptone</p>
+		<p class="copylight">&copy;2023 - Scriptone</p>
 	</div>
 </footer>
 
@@ -88,6 +88,8 @@
 		text-align: center;
 		padding-left: 16px;
 		padding-right: 16px;
+		padding-top: 32px;
+		padding-bottom: 32px;
 	}
 	footer div.external_links ul {
 		text-align: center;
@@ -102,9 +104,6 @@
 		color: #444;
 		width: 100%;
 		text-align: left;
-	}
-	footer section li {
-		list-style: none;
 	}
 	footer div.external_links ul li {
 		text-align: left;
@@ -131,13 +130,15 @@
 	}
 
 	footer section ul {
-		padding: 4px;
+		padding: 4px !important;
 	}
 
 	footer section ul li {
 		list-style: none;
 		padding: 10px;
 		transition: background 0.3s ease, color 0.3s ease;
+		margin-left: 0px;
+		margin-bottom: 0px;
 	}
 
 	.external_links ul li {
@@ -180,5 +181,12 @@
 			width: 31%;
 			margin-left: 20px;
 		}
+	}
+
+	#sitemap ul li {
+		margin-bottom: 0px;
+	}
+	.copylight {
+		text-align: center;
 	}
 </style>
