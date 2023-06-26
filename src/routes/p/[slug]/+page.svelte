@@ -161,7 +161,7 @@
 		display: flex;
 		align-items: flex-start;
 		margin-top: 8px;
-		width: 400px;
+		width: 360px;
 	}
 
 	div.tag {
