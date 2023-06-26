@@ -87,9 +87,7 @@
 				<!-- {#if p === +currentPageNum}
 				<span>{p}</span>
 			{:else} -->
-				{#if tagSlug !== ''}
-					<a href={`/tag/${tagSlug}/p/${p}`} rel="external">{p}</a>
-				{/if}
+				<a href={`/tag/${tagSlug}/p/${p}`} rel="external">{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>
