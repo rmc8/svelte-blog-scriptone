@@ -2,24 +2,22 @@
 	import Header from '../../../../../components/Header.svelte';
 	import Footer from '../../../../../components/Footer.svelte';
 	import type { PageData } from './$types';
-	import { beforeUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
 	let currentPageNum: number = 1;
-	let tagSlug: string = '';
+	let tagSlug: string;
 
-	beforeUpdate(() => {
+	onMount(() => {
 		const parts = window.location.pathname.split('/');
 		currentPageNum = Number(parts[parts.length - 1]) || 1;
-		tagSlug = parts[parts.length - 3];
+		tagSlug = parts[parts.length - 3] || undefined;
 	});
 
 	$: {
 		const pages = Math.ceil(data.totalCount / 6);
 		pagination = Array.from({ length: pages }, (_, i) => i + 1);
 	}
-	console.log(tagSlug);
-
 	let pagination: number[] = [];
 </script>
 
@@ -216,6 +214,6 @@
 	}
 
 	/* .pagination span {
-	  color: var(--accent-color-light);
+	color: var(--accent-color-light);
 	} */
 </style>
