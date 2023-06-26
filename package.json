@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@vercel/analytics": "^1.0.1",
 		"dayjs": "^1.11.8",
 		"microcms-js-sdk": "^2.5.0"
 	}
