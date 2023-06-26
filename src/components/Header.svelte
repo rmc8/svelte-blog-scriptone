@@ -31,12 +31,17 @@
 	}
 
 	#logo {
-		width: 87%;
+		width: 90%;
 		max-width: 1250px;
 		max-height: 233px;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
+	}
+	@media screen and (min-width: 600px) {
+		#logo {
+			width: 560px;
+		}
 	}
 	nav {
 		display: block;

@@ -18,6 +18,11 @@
 			content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg"
 		/>
 		%sveltekit.head%
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5016891070616278"
+			crossorigin="anonymous"
+		></script>
 		<style>
 			:root {
 				--accent-color_dark: #0c323c;
@@ -167,6 +172,16 @@
 			}
 		</style>
 	</head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMCBTNX7PX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-TMCBTNX7PX');
+	</script>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
