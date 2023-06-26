@@ -36,7 +36,7 @@
 			{#each data.contents as content}
 				<li>
 					<div class="eyecatch_section">
-						<a href="/{content.id}" rel="external"
+						<a href="/{content.id}"
 							><img src={content.eyecatch?.url} alt="eyecatch of {content.title}" />
 						</a>
 					</div>
@@ -44,7 +44,7 @@
 						<dt><a href="/{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="/category/{content.category.id}/p/1" rel="external"
+								<a class="category_link" href="/category/{content.category.id}/p/1"
 									>{content.category.name}</a
 								>
 							</div>
@@ -55,7 +55,7 @@
 											<img src="../../../tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
-											<a href="/tag/{tag.id}/p/1" rel="external">
+											<a href="/tag/{tag.id}/p/1">
 												{tag.name}
 											</a>
 										</div>
@@ -88,7 +88,7 @@
 				<!-- {#if p === +currentPageNum}
 				<span>{p}</span>
 			{:else} -->
-				<a href={`/category/${categorySlug}/p/${p}`} rel="external">{p}</a>
+				<a href={`/category/${categorySlug}/p/${p}`}>{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>

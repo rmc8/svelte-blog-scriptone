@@ -52,7 +52,7 @@
 											<img src="tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
-											<a href="/tag/{tag.id}/p/1" rel="external">
+											<a href="/tag/{tag.id}/p/1">
 												{tag.name}
 											</a>
 										</div>
@@ -85,7 +85,7 @@
 				<!-- {#if p === +currentPageNum}
 					<span>{p}</span>
 				{:else} -->
-				<a href={`/p/${p}`}  rel="external">{p}</a>
+				<a href={`/p/${p}`} >{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>
