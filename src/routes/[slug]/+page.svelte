@@ -68,6 +68,8 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		padding-left: 8px;
+		padding-right: 8px;
 	}
 
 	dl {
