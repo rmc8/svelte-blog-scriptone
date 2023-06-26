@@ -140,9 +140,16 @@
 		transition: background 0.3s ease, color 0.3s ease;
 	}
 
+	.external_links ul li {
+		margin-bottom: 8px;
+	}
+
 	footer section ul li a {
 		color: #444;
 		text-decoration: none;
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
 
 	footer section ul li:hover {

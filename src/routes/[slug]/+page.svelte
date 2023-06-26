@@ -69,11 +69,6 @@
 		justify-content: center;
 		align-items: center;
 	}
-	article,
-	#meta {
-		padding-left: 16px;
-		padding-right: 16px;
-	}
 
 	dl {
 		margin-top: 6px;

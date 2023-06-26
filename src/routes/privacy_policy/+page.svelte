@@ -97,14 +97,8 @@
 </main>
 
 <style>
-	article {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+	h2, h3 {
 		width: 100%;
-	}
-	.container {
-		width: 100%;
+		text-align: center;
 	}
 </style>
