@@ -68,8 +68,11 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding-left: 8px;
-		padding-right: 8px;
+	}
+	article,
+	#meta {
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 
 	dl {
