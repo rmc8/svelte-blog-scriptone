@@ -5,11 +5,9 @@
 			<li><a href="/about">About</a></li>
 		</ul>
 	</nav>
-	<div class="container">
-		<h1>
-			<a href="/" id="logo_link"><img id="logo" src="/logo/scriptone_header.png" /> </a>
-		</h1>
-	</div>
+	<h1>
+		<a href="/" id="logo_link"><img id="logo" src="/logo/scriptone_header.png" /> </a>
+	</h1>
 </header>
 
 <style>
