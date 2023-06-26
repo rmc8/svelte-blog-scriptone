@@ -5,28 +5,38 @@
 			<li><a href="/about">About</a></li>
 		</ul>
 	</nav>
-	<h1>
-		<a href="/" id="logo_link"><img id="logo" src="/logo/scriptone_header.png" /> </a>
-	</h1>
+	<div id="logo_container">
+		<h1>
+			<a href="/" id="logo_link"><img id="logo" src="/logo/scriptone_header.png" /></a>
+		</h1>
+	</div>
 </header>
 
 <style>
 	header h1 {
 		border: 0px;
+		text-align: center;
+		width: 100%;
+	}
+
+	#logo_container {
+		display: flex;
+		justify-content: center;
+		width: 100%;
 	}
 
 	#logo_link {
 		display: block;
 		margin-top: 96px;
-		text-align: center;
-		justify-content: center;
 	}
 
 	#logo {
-		width: 85%;
-		max-height: 148px;
-		text-align: center;
-		justify-content: center;
+		width: 87%;
+		max-width: 1250px;
+		max-height: 233px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	nav {
 		display: block;
