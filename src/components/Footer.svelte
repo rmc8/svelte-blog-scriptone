@@ -86,6 +86,8 @@
 		margin-top: 64px;
 		border-top: 1px solid #eff3f3;
 		text-align: center;
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 	footer div.external_links ul {
 		text-align: center;
@@ -107,6 +109,7 @@
 	footer div.external_links ul li {
 		text-align: left;
 		list-style: none;
+		max-width: 112px;
 	}
 
 	footer div.external_links ul li a {

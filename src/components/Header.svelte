@@ -56,7 +56,7 @@
 
 	nav ul {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: flex-start;
 		align-items: center;
 		height: 24px;
 	}
@@ -70,6 +70,7 @@
 	}
 
 	nav ul li {
+		width: 88px;
 		margin-left: 4px;
 		margin-right: 4px;
 		list-style: none;
