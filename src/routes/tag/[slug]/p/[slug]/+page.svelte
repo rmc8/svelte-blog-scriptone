@@ -56,7 +56,7 @@
 											<img src="../../../tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
-											<a href="https://blog.rmc-8.com/tag/{tag.id}/p/1">
+											<a href="https://blog.rmc-8.com/tag/{tag.id}/p/1" rel="external">
 												{tag.name}
 											</a>
 										</div>
@@ -89,7 +89,7 @@
 				<!-- {#if p === +currentPageNum}
 				<span>{p}</span>
 			{:else} -->
-				<a href={`https://blog.rmc-8.com/tag/${tagSlug}/p/${p}`}>{p}</a>
+				<a href={`https://blog.rmc-8.com/tag/${tagSlug}/p/${p}`} rel="external">{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>

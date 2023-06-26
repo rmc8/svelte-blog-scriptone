@@ -29,15 +29,13 @@
 		<div id="sitemap">
 			<section>
 				<h3>Profile</h3>
-				<div>
-
-				</div>
+				<div />
 			</section>
 			<section>
 				<h3>Category</h3>
 				<ul>
 					{#each categories as category}
-						<li><a href="/category/{category.id}/p/1">{category.name}</a></li>
+						<li><a href="/category/{category.id}/p/1" rel="external">{category.name}</a></li>
 					{/each}
 				</ul>
 			</section>
