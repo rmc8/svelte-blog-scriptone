@@ -56,7 +56,7 @@
 
 	nav ul {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: flex-start;
 		align-items: center;
 		height: 24px;
 	}
