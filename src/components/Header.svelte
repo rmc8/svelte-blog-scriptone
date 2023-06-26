@@ -70,6 +70,7 @@
 	}
 
 	nav ul li {
+		width: 88px;
 		margin-left: 4px;
 		margin-right: 4px;
 		list-style: none;
