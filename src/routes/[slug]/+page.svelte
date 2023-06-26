@@ -26,13 +26,13 @@
 		<dl>
 			<div class="upper" style="display:flex">
 				<div class="category">
-					<a class="category_link" href="/category/{data.category.id}/p/1">{data.category.name}</a>
+					<a class="category_link" href="https://blog.rmc-8.com/category/{data.category.id}/p/1">{data.category.name}</a>
 				</div>
 				<div class="tags">
 					{#each data.tags as tag}
 						<div class="tag">
 							<div class="tag_link">
-								<a href="/tag/{tag.id}/p/1">
+								<a href="https://blog.rmc-8.com/tag/{tag.id}/p/1">
 									{tag.name}
 								</a>
 							</div>
