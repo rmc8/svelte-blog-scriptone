@@ -7,7 +7,7 @@
 	</nav>
 	<div class="container">
 		<h1>
-			<a href="/" id="logo"> </a>
+			<a href="/" id="logo_link"><img id="logo" src="/logo/scriptone_header.png" /> </a>
 		</h1>
 	</div>
 </header>
@@ -17,12 +17,18 @@
 		border: 0px;
 	}
 
-	#logo {
-		width: auto;
-		max-height: 240px;
-		min-height: 132px;
+	#logo_link {
 		display: block;
-		margin-top: 80px;
+		margin-top: 96px;
+		text-align: center;
+		justify-content: center;
+	}
+
+	#logo {
+		width: 85%;
+		max-height: 148px;
+		text-align: center;
+		justify-content: center;
 	}
 	nav {
 		display: block;
