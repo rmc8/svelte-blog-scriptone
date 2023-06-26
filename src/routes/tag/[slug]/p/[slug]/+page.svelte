@@ -85,8 +85,8 @@
 		<div class="pagination">
 			{#each pagination as p}
 				<!-- {#if p === +currentPageNum}
-		  <span>{p}</span>
-		{:else} -->
+				<span>{p}</span>
+			{:else} -->
 				<a href={`/tag/${tagSlug}/p/${p}`}>{p}</a>
 				<!-- {/if} -->
 			{/each}

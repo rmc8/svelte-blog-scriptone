@@ -52,12 +52,7 @@
 											<img src="../tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
-											<a
-												href="/tag/{tag.id}/p/1"
-												on:click={() => {
-													location.reload();
-												}}
-											>
+											<a href="/tag/{tag.id}/p/1">
 												{tag.name}
 											</a>
 										</div>

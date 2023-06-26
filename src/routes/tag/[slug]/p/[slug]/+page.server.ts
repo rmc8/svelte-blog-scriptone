@@ -14,7 +14,6 @@ function extractCategorySlug(url: string) {
 
 export const load: PageServerLoad = async ({ params, request }) => {
 	const tagSlug = extractCategorySlug(request.url);
-	console.log(tagSlug);
 	const pageSlug = params.slug;
 
 	const page = Number(pageSlug) || 1;
