@@ -4,7 +4,6 @@
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
 
-
 	export let data: PageData;
 	let currentPageNum: number = 1;
 	let categorySlug: string;
@@ -26,7 +25,7 @@
 <svelte:head>
 	<title>Scriptone</title>
 	<meta name="description" content="Home of Scriptone" />
-	<meta name="robots" content="noindex">
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <main>
@@ -89,9 +88,7 @@
 				<!-- {#if p === +currentPageNum}
 				<span>{p}</span>
 			{:else} -->
-				{#if categorySlug !== ''}
-					<a href={`/category/${categorySlug}/p/${p}`}>{p}</a>
-				{/if}
+				<a href={`/category/${categorySlug}/p/${p}`}>{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>

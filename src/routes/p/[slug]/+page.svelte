@@ -133,7 +133,6 @@
 		margin-bottom: 48px;
 		list-style: none;
 		flex: 0 0 auto;
-		max-width: px;
 	}
 
 	dl {

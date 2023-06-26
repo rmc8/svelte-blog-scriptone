@@ -24,7 +24,7 @@
 <svelte:head>
 	<title>Scriptone</title>
 	<meta name="description" content="Home of Scriptone" />
-	<meta name="robots" content="noindex">
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <main>
@@ -87,9 +87,7 @@
 				<!-- {#if p === +currentPageNum}
 				<span>{p}</span>
 			{:else} -->
-				{#if tagSlug !== ''}
-					<a href={`/tag/${tagSlug}/p/${p}`}>{p}</a>
-				{/if}
+				<a href={`/tag/${tagSlug}/p/${p}`}>{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>

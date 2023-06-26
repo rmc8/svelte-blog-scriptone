@@ -42,7 +42,7 @@
 						<div class="upper" style="display:flex">
 							<div class="category">
 								<a class="category_link" href="/category/{content.category.id}/p/1"
-									>{content.category.name}</a
+								rel="external">{content.category.name}</a
 								>
 							</div>
 							<div class="tags">
@@ -85,7 +85,7 @@
 				<!-- {#if p === +currentPageNum}
 					<span>{p}</span>
 				{:else} -->
-				<a href={`/p/${p}`}>{p}</a>
+				<a href={`/p/${p}`} >{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>
