@@ -37,7 +37,7 @@
 				<h3>Category</h3>
 				<ul>
 					{#each categories as category}
-						<li><a href="/category/{category.id}">{category.name}/p/1</a></li>
+						<li><a href="/category/{category.id}/p/1">{category.name}</a></li>
 					{/each}
 				</ul>
 			</section>
