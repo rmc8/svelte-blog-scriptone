@@ -170,6 +170,132 @@
 			body::-webkit-scrollbar-thumb:hover {
 				background-color: #aaaaaa;
 			}
+
+			html,
+			body {
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			section {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.eyecatch_section {
+				height: 100%;
+				max-height: 162px;
+			}
+			.eyecatch_section img {
+				height: 100%;
+				max-height: 162px;
+				object-fit: cover;
+				object-position: center;
+			}
+
+			main li,
+			div.upper,
+			.eyecatch_section img {
+				width: 100%;
+				max-width: 360px;
+			}
+
+			dt a {
+				color: #222;
+				font-weight: bold;
+				font-size: 22px;
+				min-height: 72px;
+				display: block;
+			}
+			main ul {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				list-style: none;
+				padding-left: 16px;
+				padding-right: 16px;
+			}
+
+			main li {
+				margin: 0 8px 48px 8px;
+				list-style: none;
+				flex: 0 0 auto;
+				max-width: px;
+			}
+
+			dl {
+				margin-top: 6px;
+			}
+			dd {
+				margin-left: 0px;
+				margin-top: 2px;
+				height: 20px;
+			}
+			div.clock {
+				display: inline-block;
+				height: 20px;
+			}
+			div.clock img {
+				vertical-align: middle;
+			}
+			time {
+				display: inline-block;
+				font-size: 18.5px;
+				margin-left: 4px;
+				height: 20px;
+				vertical-align: top;
+			}
+			div.upper {
+				display: flex;
+				align-items: flex-start;
+				margin-top: 8px;
+			}
+
+			div.tag {
+				display: inline-flex;
+			}
+
+			div.upper a.category_link {
+				padding: 2px 8px;
+				border: 1px solid var(--accent-color-light);
+				color: var(--accent-color-light);
+				white-space: nowrap;
+				border-radius: 3px;
+				font-size: 14px;
+				margin: 0 0 2px;
+				vertical-align: top;
+			}
+			.tags {
+				padding-left: 16px;
+				flex-grow: 1;
+				width: 100%;
+				display: flexbox;
+			}
+			.tag_icon {
+				padding-top: 5px;
+				margin-right: 2px;
+			}
+			.tag_link {
+				margin-right: 12px;
+			}
+
+			.pagination {
+				text-align: center;
+			}
+			.pagination a {
+				padding: 4px 8px;
+				margin-right: 4px;
+				border: 1px solid var(--accent-color-light);
+				text-align: center;
+				border-radius: 4px;
+				font-size: 14px;
+				min-height: 24px;
+				min-width: 16px;
+				background-color: var(--accent-color-light);
+				color: white;
+				text-decoration: none;
+			}
 		</style>
 	</head>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMCBTNX7PX"></script>
