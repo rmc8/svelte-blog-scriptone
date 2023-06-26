@@ -31,12 +31,21 @@
 				--border-color-hr: #dee3e3;
 			}
 
+			* {
+				box-sizing: border-box;
+			}
+			html,
+			body,
+			main {
+				width: 100%;
+			}
+
 			body {
 				font-family: 'Noto Sans JP', sans-serif;
 				line-height: 1.6;
 				color: #2b2b2b;
 				background-color: #fbfbfb;
-				font-size: 18px;
+				font-size: 16px;
 			}
 
 			h1,
@@ -56,81 +65,75 @@
 			hr {
 				border: 0px solid var(--border-color-hr) !important;
 			}
-			h1 {
-				font-size: 2.5em;
-				margin-top: 0.67em;
-				margin-bottom: 0.67em;
-			}
-			* {
-				box-sizing: border-box;
-			}
-			html,
-			body,
-			main {
-				width: 100%;
-			}
-			main h1 {
-				border: 0px;
-				padding-bottom: 12px;
-			}
-
-			h2 {
-				font-size: 2em;
-				margin-top: 0.83em;
-				margin-bottom: 0.83em;
-				padding-bottom: 12px;
-			}
-
-			h3 {
-				font-size: 1.75em;
-				margin-top: 1em;
-				margin-bottom: 1em;
-			}
-
-			h4 {
-				font-size: 1.5em;
-				margin-top: 1.33em;
-				margin-bottom: 1.33em;
-			}
-
-			h5 {
-				font-size: 1.25em;
-				margin-top: 1.67em;
-				margin-bottom: 1.67em;
-			}
-
-			h6 {
-				font-size: 1em;
-				margin-top: 2.33em;
-				margin-bottom: 2.33em;
-			}
 
 			@media (max-width: 450px) {
 				h1 {
-					font-size: 2em;
+					font-size: 2.5em;
+					margin-top: 0.67em;
+					margin-bottom: 0.67em;
 				}
 
 				h2 {
-					font-size: 1.8em;
+					font-size: 2em;
+					margin-top: 0.83em;
+					margin-bottom: 0.83em;
+					padding-bottom: 12px;
 				}
 
 				h3 {
-					font-size: 1.6em;
+					font-size: 1.75em;
 					margin-top: 1em;
 					margin-bottom: 1em;
 				}
 
 				h4 {
-					font-size: 1.4em;
+					font-size: 1.5em;
 					margin-top: 1.33em;
 					margin-bottom: 1.33em;
 				}
 
 				h5 {
-					font-size: 1.2em;
+					font-size: 1.25em;
 					margin-top: 1.67em;
 					margin-bottom: 1.67em;
 				}
+
+				h6 {
+					font-size: 1em;
+					margin-top: 2.33em;
+					margin-bottom: 2.33em;
+				}
+			}
+
+			h1 {
+				font-size: 2em;
+			}
+
+			h2 {
+				font-size: 1.8em;
+			}
+
+			h3 {
+				font-size: 1.6em;
+				margin-top: 1em;
+				margin-bottom: 1em;
+			}
+
+			h4 {
+				font-size: 1.4em;
+				margin-top: 1.33em;
+				margin-bottom: 1.33em;
+			}
+
+			h5 {
+				font-size: 1.2em;
+				margin-top: 1.67em;
+				margin-bottom: 1.67em;
+			}
+
+			main h1 {
+				border: 0px;
+				padding-bottom: 12px;
 			}
 
 			a {
