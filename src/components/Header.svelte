@@ -1,13 +1,13 @@
 <header>
 	<nav>
 		<ul>
-			<li><a href="https://blog.rmc-8.com/">Home</a></li>
-			<li><a href="https://blog.rmc-8.com/about">About</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
 		</ul>
 	</nav>
 	<div id="logo_container">
 		<h1>
-			<a href="https://blog.rmc-8.com/" id="logo_link"><img id="logo" src="/logo/scriptone_header.png" /></a>
+			<a href="/" id="logo_link"><img id="logo" src="/logo/scriptone_header.png" /></a>
 		</h1>
 	</div>
 </header>
