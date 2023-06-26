@@ -18,6 +18,7 @@
 		const pages = Math.ceil(data.totalCount / 6);
 		pagination = Array.from({ length: pages }, (_, i) => i + 1);
 	}
+	console.log(tagSlug);
 
 	let pagination: number[] = [];
 </script>
@@ -43,9 +44,9 @@
 						<dt><a href="/{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<!-- <a class="category_link" href="/category/{content.category.id}/p/1"
+								<a class="category_link" href="/category/{content.category.id}/p/1"
 									>{content.category.name}</a
-								> -->
+								>
 							</div>
 							<div class="tags">
 								{#each content.tags as tag}
@@ -54,9 +55,9 @@
 											<img src="../../../tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
-											<!-- <a href="/tag/{tag.id}/p/1">
+											<a href="/tag/{tag.id}/p/1">
 												{tag.name}
-											</a> -->
+											</a>
 										</div>
 									</div>
 								{/each}
@@ -87,7 +88,9 @@
 				<!-- {#if p === +currentPageNum}
 				<span>{p}</span>
 			{:else} -->
-				<!-- <a href={`/tag/${tagSlug}/p/${p}`}>{p}</a> -->
+				{#if tagSlug !== ''}
+					<a href={`/tag/${tagSlug}/p/${p}`}>{p}</a>
+				{/if}
 				<!-- {/if} -->
 			{/each}
 		</div>
