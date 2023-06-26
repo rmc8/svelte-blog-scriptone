@@ -85,7 +85,7 @@
 				<!-- {#if p === currentPageNum}
 					<span>{p}</span>
 				{:else} -->
-				<a href={`/p/${p}`} rel="external">{p}</a>
+				<a href={`/p/${p}`}>{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>
@@ -133,7 +133,6 @@
 		margin-bottom: 48px;
 		list-style: none;
 		flex: 0 0 auto;
-		max-width: px;
 	}
 
 	dl {
