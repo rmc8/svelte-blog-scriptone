@@ -41,8 +41,8 @@
 						<dt><a href="/{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="/category/{content.category.id}/p/1"
-								rel="external">{content.category.name}</a
+								<a class="category_link" href="/category/{content.category.id}/p/1" rel="external"
+									>{content.category.name}</a
 								>
 							</div>
 							<div class="tags">
@@ -85,7 +85,7 @@
 				<!-- {#if p === +currentPageNum}
 					<span>{p}</span>
 				{:else} -->
-				<a href={`/p/${p}`} >{p}</a>
+				<a href={`/p/${p}`}>{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>
@@ -94,6 +94,14 @@
 </main>
 
 <style>
+	* {
+		box-sizing: border-box;
+	}
+	html,
+	body,
+	main {
+		width: 100%;
+	}
 	section {
 		display: flex;
 		flex-direction: column;

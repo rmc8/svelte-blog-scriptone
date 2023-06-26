@@ -43,7 +43,9 @@
 						<dt><a href="https://blog.rmc-8.com/{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="https://blog.rmc-8.com/category/{content.category.id}/p/1"
+								<a
+									class="category_link"
+									href="https://blog.rmc-8.com/category/{content.category.id}/p/1"
 									>{content.category.name}</a
 								>
 							</div>
@@ -96,6 +98,12 @@
 </main>
 
 <style>
+	* {
+		box-sizing: border-box;
+	}
+	main {
+		width: 100%;
+	}
 	section {
 		display: flex;
 		flex-direction: column;
