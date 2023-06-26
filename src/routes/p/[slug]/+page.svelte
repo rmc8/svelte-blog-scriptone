@@ -41,7 +41,7 @@
 						<dt><a href="/{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="/category/{content.category.id}"
+								<a class="category_link" href="/category/{content.category.id}/p/1"
 									>{content.category.name}</a
 								>
 							</div>
@@ -53,7 +53,7 @@
 										</div>
 										<div class="tag_link">
 											<a
-												href="/tag/{tag.id}"
+												href="/tag/{tag.id}/p/1"
 												on:click={() => {
 													location.reload();
 												}}
