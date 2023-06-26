@@ -97,6 +97,12 @@
 </main>
 
 <style>
+	* {
+		box-sizing: border-box;
+	}
+	main {
+		width: 100%;
+	}
 	section {
 		display: flex;
 		flex-direction: column;

@@ -22,6 +22,12 @@
 </main>
 
 <style>
+	* {
+		box-sizing: border-box;
+	}
+	main {
+		width: 100%;
+	}
 	article {
 		display: flex;
 		flex-direction: column;
