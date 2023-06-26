@@ -24,7 +24,7 @@
 <svelte:head>
 	<title>Scriptone</title>
 	<meta name="description" content="Home of Scriptone" />
-	<meta name="robots" content="noindex">
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <main>
@@ -43,7 +43,7 @@
 						<dt><a href="/{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="/category/{content.category.id}/p/1"
+								<a class="category_link" href="/category/{content.category.id}/p/1" rel="external"
 									>{content.category.name}</a
 								>
 							</div>
@@ -54,7 +54,7 @@
 											<img src="../../../tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
-											<a href="/tag/{tag.id}/p/1">
+											<a href="/tag/{tag.id}/p/1" rel="external">
 												{tag.name}
 											</a>
 										</div>
@@ -88,7 +88,7 @@
 				<span>{p}</span>
 			{:else} -->
 				{#if tagSlug !== ''}
-					<a href={`/tag/${tagSlug}/p/${p}`}>{p}</a>
+					<a href={`/tag/${tagSlug}/p/${p}`} rel="external">{p}</a>
 				{/if}
 				<!-- {/if} -->
 			{/each}
