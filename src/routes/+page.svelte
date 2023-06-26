@@ -41,7 +41,7 @@
 						<dt><a href="/{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="/category/{content.category.id}"
+								<a class="category_link" href="/category/{content.category.id}/p/1"
 									>{content.category.name}</a
 								>
 							</div>
@@ -52,12 +52,7 @@
 											<img src="tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
-											<a
-												href="/tag/{tag.id}"
-												on:click={() => {
-													location.reload();
-												}}
-											>
+											<a href="/tag/{tag.id}/p/1">
 												{tag.name}
 											</a>
 										</div>
@@ -87,11 +82,11 @@
 		</ul>
 		<div class="pagination">
 			{#each pagination as p}
-				{#if p === +currentPageNum}
+				<!-- {#if p === +currentPageNum}
 					<span>{p}</span>
-				{:else}
-					<a href={`/p/${p}`}>{p}</a>
-				{/if}
+				{:else} -->
+				<a href={`/p/${p}`}>{p}</a>
+				<!-- {/if} -->
 			{/each}
 		</div>
 	</section>
@@ -201,8 +196,9 @@
 	.pagination {
 		text-align: center;
 	}
-	.pagination a,
-	.pagination span {
+	.pagination a {
+		/* ,
+		.pagination span */
 		padding: 4px 8px;
 		margin-right: 4px;
 		border: 1px solid var(--accent-color-light);
@@ -218,7 +214,7 @@
 		text-decoration: none;
 	}
 
-	.pagination span {
+	/* .pagination span {
 		color: var(--accent-color-light);
-	}
+	} */
 </style>

@@ -1,14 +1,17 @@
 <script lang="ts">
-	import Header from '../../../components/Header.svelte';
-	import Footer from '../../../components/Footer.svelte';
+	import Header from '../../../../../components/Header.svelte';
+	import Footer from '../../../../../components/Footer.svelte';
 	import type { PageData } from './$types';
-	import { onMount } from 'svelte';
+	import { beforeUpdate } from 'svelte';
 
 	export let data: PageData;
 	let currentPageNum: number = 1;
-	onMount(() => {
-		const urlParams = new URLSearchParams(window.location.search);
-		currentPageNum = Number(urlParams.get('page')) || 1;
+	let categorySlug: string = '';
+
+	beforeUpdate(() => {
+		const parts = window.location.pathname.split('/');
+		currentPageNum = Number(parts[parts.length - 1]) || 1;
+		categorySlug = parts[parts.length - 3];
 	});
 
 	$: {
@@ -32,15 +35,15 @@
 			{#each data.contents as content}
 				<li>
 					<div class="eyecatch_section">
-						<a href=/{content.id}
+						<a href="/{content.id}"
 							><img src={content.eyecatch?.url} alt="eyecatch of {content.title}" />
 						</a>
 					</div>
 					<dl>
-						<dt><a href=/{content.id}>{content.title}</a></dt>
+						<dt><a href="/{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a class="category_link" href="/category/{content.category.id}"
+								<a class="category_link" href="/category/{content.category.id}/p/1"
 									>{content.category.name}</a
 								>
 							</div>
@@ -48,15 +51,10 @@
 								{#each content.tags as tag}
 									<div class="tag">
 										<div class="tag_icon">
-											<img src="../tag.svg" width="20" height="20" alt="tag_icon" />
+											<img src="../../../tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
-											<a
-												href="/tag/{tag.id}"
-												on:click={() => {
-													location.reload();
-												}}
-											>
+											<a href="/tag/{tag.id}/p/1">
 												{tag.name}
 											</a>
 										</div>
@@ -66,7 +64,7 @@
 						</div>
 						<dd>
 							<div class="clock">
-								<img src="../clock.png" width="20" height="20" alt="clock_icon" />
+								<img src="../../../clock.png" width="20" height="20" alt="clock_icon" />
 							</div>
 							<time
 								>{new Date(content.createdAt)
@@ -86,11 +84,11 @@
 		</ul>
 		<div class="pagination">
 			{#each pagination as p}
-				{#if p === +currentPageNum}
-					<span>{p}</span>
-				{:else}
-					<a href="p/{p}" rel="external"> {p} </a>
-				{/if}
+				<!-- {#if p === +currentPageNum}
+				<span>{p}</span>
+			{:else} -->
+				<a href={`/category/${categorySlug}/p/${p}`} rel="external">{p}</a>
+				<!-- {/if} -->
 			{/each}
 		</div>
 	</section>
@@ -132,7 +130,7 @@
 	}
 
 	main li {
-		width: 360px;
+		width: 400px;
 		margin-right: 24px;
 		margin-bottom: 48px;
 		list-style: none;
@@ -196,8 +194,9 @@
 		margin-right: 12px;
 	}
 
-	.pagination a,
-	.pagination span {
+	.pagination a {
+		/* ,
+		.pagination span */
 		padding: 4px 8px;
 		margin-right: 4px;
 		border: 1px solid var(--accent-color-light);
@@ -213,7 +212,7 @@
 		text-decoration: none;
 	}
 
-	.pagination span {
+	/* .pagination span {
 		color: var(--accent-color-light);
-	}
+	} */
 </style>
