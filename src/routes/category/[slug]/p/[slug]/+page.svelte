@@ -2,16 +2,17 @@
 	import Header from '../../../../../components/Header.svelte';
 	import Footer from '../../../../../components/Footer.svelte';
 	import type { PageData } from './$types';
-	import { beforeUpdate } from 'svelte';
+	import { onMount } from 'svelte';
+
 
 	export let data: PageData;
 	let currentPageNum: number = 1;
-	let categorySlug: string = '';
+	let categorySlug: string;
 
-	beforeUpdate(() => {
+	onMount(() => {
 		const parts = window.location.pathname.split('/');
 		currentPageNum = Number(parts[parts.length - 1]) || 1;
-		categorySlug = parts[parts.length - 3];
+		categorySlug = parts[parts.length - 3] || undefined;
 	});
 
 	$: {
