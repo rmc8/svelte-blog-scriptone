@@ -131,7 +131,7 @@
 	}
 
 	main li {
-		width: 400px;
+		width: 360px;
 		margin-right: 24px;
 		margin-bottom: 48px;
 		list-style: none;
