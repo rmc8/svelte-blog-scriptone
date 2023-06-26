@@ -87,7 +87,7 @@
 				<!-- {#if p === +currentPageNum}
 				<span>{p}</span>
 			{:else} -->
-				<a href={`/category/${categorySlug}/p/${p}`} rel="external">{p}</a>
+				<a href={`/category/${categorySlug}/p/${p}`}>{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>
