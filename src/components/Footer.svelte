@@ -129,6 +129,10 @@
 		align-items: flex-start;
 	}
 
+	footer #sitemap ul {
+		justify-content: flex-start;
+	}
+
 	footer section ul {
 		padding: 4px !important;
 	}
