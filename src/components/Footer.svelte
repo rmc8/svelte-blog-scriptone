@@ -1,25 +1,25 @@
 <script>
 	let categories = [
 		{
-			id: 'audio',
-			name: 'Audio'
-		},
-		{
-			id: 'coffee',
-			name: 'Coffee'
-		},
-		{
-			id: 'fragrance',
-			name: 'Fragrance'
+			id: 'programming',
+			name: 'Programming'
 		},
 		{
 			id: 'gadget',
 			name: 'Gadget'
 		},
 		{
-			id: 'programming',
-			name: 'Programming'
+			id: 'audio',
+			name: 'Audio'
 		}
+		// {
+		// 	id: 'coffee',
+		// 	name: 'Coffee'
+		// },
+		// {
+		// 	id: 'fragrance',
+		// 	name: 'Fragrance'
+		// },
 	];
 </script>
 
@@ -28,16 +28,38 @@
 	<div class="container">
 		<div id="sitemap">
 			<section>
-				<h3>Profile</h3>
-				<div />
-			</section>
-			<section>
 				<h3>Category</h3>
 				<ul>
 					{#each categories as category}
 						<li><a href="/category/{category.id}/p/1" rel="external">{category.name}</a></li>
 					{/each}
 				</ul>
+			</section>
+			<section id="profile">
+				<h3>Profile</h3>
+				<div id="profile_header">
+					<div class="profile-icon">
+						<img
+							src="https://rmc8.github.io/rmc_km/assets/icon/twi.webp"
+							alt="TwitterIcon"
+							class="twitter_icon"
+						/>
+					</div>
+					<h4 class="user_name">K</h4>
+					<p>
+						<img
+							src="https://rmc8.github.io/rmc_km/assets/icon/discord-mark-blue-icon.png"
+							alt="DiscordIcon"
+							class="discord_icon"
+						/>
+						うみつばめ(k8x)
+					</p>
+				</div>
+				<p style="padding:16px;">
+					プログラミング・書写・文房具・オーディオ・コーヒー・フレグランスなどいろいろと趣味があります。
+					プログラミングはPythonがメインで、Scriptone開設時にJavaScriptを学び本サイトを作りました。
+					本サイトや筆者の詳細は<a href="/about">About</a>をご覧ください。
+				</p>
 			</section>
 			<section>
 				<h3>Link</h3>
@@ -77,7 +99,7 @@
 				</li>
 			</ul>
 		</div>
-		<p class="copylight">&copy;2023 - Scriptone</p>
+		<p class="copyright">&copy;2023 - Scriptone</p>
 	</div>
 </footer>
 
@@ -88,8 +110,8 @@
 		text-align: center;
 		padding-left: 16px;
 		padding-right: 16px;
-		padding-top: 32px;
-		padding-bottom: 32px;
+		padding-top: 64px;
+		padding-bottom: 128px;
 	}
 	footer div.external_links ul {
 		text-align: center;
@@ -109,6 +131,7 @@
 		text-align: left;
 		list-style: none;
 		max-width: 112px;
+		width: auto;
 	}
 
 	footer div.external_links ul li a {
@@ -140,17 +163,18 @@
 	footer section ul li {
 		list-style: none;
 		padding: 10px;
-		transition: background 0.3s ease, color 0.3s ease;
+		transition: background 0.5s ease, color 0.5s ease;
+		border-radius: 5px;
 		margin-left: 0px;
 		margin-bottom: 0px;
 	}
 
 	.external_links ul li {
 		margin-bottom: 8px;
+		border-radius: 5px;
 	}
 
 	footer section ul li a {
-		color: #444;
 		text-decoration: none;
 		display: block;
 		width: 100%;
@@ -190,7 +214,41 @@
 	#sitemap ul li {
 		margin-bottom: 0px;
 	}
-	.copylight {
+	.copyright {
 		text-align: center;
+	}
+
+	#profile {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#profile_header,
+	#profile h4.user_name,
+	#profile_header p {
+		text-align: center;
+	}
+
+	#profile h4.user_name {
+		font-size: 24px;
+		font-weight: 500;
+		margin: 0;
+	}
+	#profile img.twitter_icon {
+		width: 120px;
+		height: 120px;
+		object-fit: cover;
+		border-radius: 50%;
+		margin-bottom: 10px;
+	}
+
+	.discord_icon {
+		width: 20px;
+		height: 20px;
+		margin-right: 2px;
+		margin-bottom: 2px;
+		object-fit: contain;
+		display: inline-block;
+		vertical-align: middle;
 	}
 </style>
