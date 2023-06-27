@@ -95,10 +95,3 @@
 	</article>
 	<Footer />
 </main>
-
-<style>
-	h2, h3 {
-		width: 100%;
-		text-align: center;
-	}
-</style>
