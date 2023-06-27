@@ -13,7 +13,6 @@
 					alt="Scriptone logo"
 					src="/logo/scriptone_header.webp"
 					width="560"
-					height="104"
 				/>
 			</a>
 		</h1>
