@@ -16,8 +16,8 @@
 			<section>
 				<h2>Scriptoneについて</h2>
 				<p>
-					『Scriptone』は筆者の趣味であるProgramming・文房具・オーディオ・コーヒー・香水・美容や購入したものを自由にまとめつつ情報を共有するサイトです。
-					加えて、Programmingにより作った成果物を配ったり、ナレッジシェアをしたり、Webアプリとして公開したりなどもひとまとめに行います。
+					『Scriptone』は筆者の趣味であるプログラミング・文房具・オーディオ・コーヒー・香水・美容や購入したものを自由にまとめつつ情報を共有するサイトです。
+					加えて、プログラミングにより作った成果物を配ったり、ナレッジシェアをしたり、Webアプリとして公開したりなどもひとまとめに行います。
 				</p>
 				<p>
 					『Scriptone』には`Script`や`tone`、あるいは`one`などの単語が含まれています。`Script`には手書きの文字やプログラムを書くことなどの意味が含まれています。
@@ -39,7 +39,6 @@
 					Kという名前で<a href="https://twitter.com/rmc_km">Twitter</a>などに14年ほど気づいたら居座っています(2023年時点)。
 					普段はお仕事や趣味でプログラミングをしており、メインの言語は<a href="https://www.python.org">Python</a>です。
 					このブログは<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript">JavaScript</a>（や<a href="https://kit.svelte.dev">SvelteKit</a>・<a href="https://microcms.io">MicroCMS</a>）などを初めて使ってつくりました。
-					そのほかの趣味としては文房具や書写、オーディオ、コーヒー、美容など多様に趣味や興味を持っています。
 				</p>
 				<p>
 					私の目標や、自身の経験や知識を通じて創造的な活動の楽しさや重要性を共有することです。
