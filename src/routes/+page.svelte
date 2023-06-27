@@ -33,8 +33,9 @@
 			{#each data.contents as content}
 				<li>
 					<div class="eyecatch_section">
-						<a href="/{content.id}"
-							><img src={content.eyecatch?.url} alt="eyecatch of {content.title}" />
+						<a href="/{content.id}">
+							<!-- <img src={content.eyecatch?.url} alt="eyecatch of {content.title}" /> -->
+							<img src={content.eyecatch} alt="eyecatch of {content.title}" />
 						</a>
 					</div>
 					<dl>
