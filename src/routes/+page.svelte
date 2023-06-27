@@ -62,7 +62,7 @@
 						</div>
 						<dd>
 							<div class="clock">
-								<img src="clock.png" width="20" height="20" alt="clock_icon" />
+								<img src="clock.webp" width="20" height="20" alt="clock_icon" />
 							</div>
 							<time
 								>{new Date(content.createdAt)

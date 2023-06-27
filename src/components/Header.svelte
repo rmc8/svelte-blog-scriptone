@@ -7,7 +7,7 @@
 	</nav>
 	<div id="logo_container">
 		<h1>
-			<a href="/" id="logo_link"><img id="logo" src="/logo/scriptone_header.png" /></a>
+			<a href="/" id="logo_link"><img id="logo" src="/logo/scriptone_header.webp" /></a>
 		</h1>
 	</div>
 </header>
