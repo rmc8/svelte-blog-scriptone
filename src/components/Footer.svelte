@@ -167,6 +167,7 @@
 		border-radius: 5px;
 		margin-left: 0px;
 		margin-bottom: 0px;
+		width: 100%;
 	}
 
 	.external_links ul li {

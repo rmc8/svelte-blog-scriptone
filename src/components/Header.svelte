@@ -7,7 +7,15 @@
 	</nav>
 	<div id="logo_container">
 		<h1>
-			<a href="/" id="logo_link"><img id="logo" src="/logo/scriptone_header.webp" /></a>
+			<a href="https://rmc-8.com/" id="logo_link">
+				<img
+					id="logo"
+					alt="Scriptone logo"
+					src="/logo/scriptone_header.webp"
+					width="560"
+					height="104"
+				/>
+			</a>
 		</h1>
 	</div>
 </header>
