@@ -191,19 +191,13 @@
 
 	pre {
 		overflow-x: auto;
-		scrollbar-color: var(--accent-color-light) #eeeeee;
 	}
-
-
-	pre::-webkit-scrollbar-track {
-		background: #eeeeee;
+	pre[class*='language-'] > code {
+		box-shadow: none !important;
+		border-left: 10px solid var(--accent-color-light);
 	}
-
-	pre::-webkit-scrollbar-thumb {
-		background-color: var(--accent-color-light);
-	}
-
-	pre::-webkit-scrollbar-thumb:hover {
-		background-color: #aaaaaa;
+	pre[class*='language-']:after,
+	pre[class*='language-']:before {
+		content: none !important;
 	}
 </style>
