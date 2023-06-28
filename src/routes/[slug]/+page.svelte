@@ -135,4 +135,7 @@
 		padding-top: 32px;
 		border-top: 1px solid #eeeeee;
 	}
+	.eyecatch_block, .eyecatch_block img {
+		width: 100%;
+	}
 </style>
