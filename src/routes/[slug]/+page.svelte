@@ -9,6 +9,55 @@
 	<title>Scriptone - {data.title}</title>
 	<meta property="og:title" content="Scriptone - {data.title}" />
 	<meta property="og:type" content="article" />
+	{#if data.description}
+		<meta name="”description”" content={data.description} />
+		<meta property="twitter:description" content={data.description} />
+		<meta property="og:description" content={data.description} />
+	{/if}
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-solarizedlight.min.css"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.css"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.css"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.css"
+		rel="stylesheet"
+	/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-diff.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.js"
+	></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			const codeElements = document.querySelectorAll('code');
+			codeElements.forEach((code) => {
+				code.classList.add('line-numbers');
+			});
+		});
+	</script>
 </svelte:head>
 
 <main>
@@ -134,5 +183,19 @@
 		margin-top: 64px;
 		padding-top: 32px;
 		border-top: 1px solid #eeeeee;
+	}
+	.eyecatch_block,
+	.eyecatch_block img {
+		width: 100%;
+	}
+	.eyecatch_block img {
+		max-width: 400px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	pre {
+		overflow-x: auto;
 	}
 </style>
