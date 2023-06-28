@@ -16,8 +16,10 @@
 	<article>
 		<div class="container">
 			<h1>{data.title}</h1>
-			<img src={data.eyecatch?.url} alt="eyecatch-{data.title}" />
 			<div class="contents">
+				<div class="eyecatch_block">
+					<img src={data.eyecatch} alt="eyecatch-{data.title}" />
+				</div>
 				{@html data.content}
 			</div>
 		</div>
