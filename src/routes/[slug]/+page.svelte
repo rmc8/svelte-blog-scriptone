@@ -15,7 +15,7 @@
 		<meta property="og:description" content={data.description} />
 	{/if}
 	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-coy.min.css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-solarizedlight.min.css"
 		rel="stylesheet"
 	/>
 	<link
@@ -188,16 +188,14 @@
 	.eyecatch_block img {
 		width: 100%;
 	}
+	.eyecatch_block img {
+		max-width: 400px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 	pre {
 		overflow-x: auto;
-	}
-	pre[class*='language-'] > code {
-		box-shadow: none !important;
-		border-left: 10px solid var(--accent-color-light);
-	}
-	pre[class*='language-']:after,
-	pre[class*='language-']:before {
-		content: none !important;
 	}
 </style>
