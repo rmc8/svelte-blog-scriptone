@@ -1,4 +1,4 @@
-import { createClient, type MicroCMSQueries, type MicroCMSImage } from 'microcms-js-sdk';
+import { createClient, type MicroCMSQueries } from 'microcms-js-sdk'; // , type MicroCMSImage
 import { MICROCMS_SERVICE_DOMAIN, MICROCMS_API_KEY } from '$env/static/private';
 const client = createClient({
 	serviceDomain: MICROCMS_SERVICE_DOMAIN,
@@ -16,7 +16,10 @@ export type Blog = {
 	content: string;
 	category: string;
 	tag: any;
-	eyecatch?: MicroCMSImage;
+	eyecatch: string;
+	description: string;
+	toc: boolean;
+	// eyecatch?: MicroCMSImage;
 };
 export type BlogResponse = {
 	totalCount: number;
