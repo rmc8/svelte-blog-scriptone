@@ -2,7 +2,22 @@
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import type { PageData } from './$types';
+	import { JSDOM } from 'jsdom';
+	import hljs from 'highlight.js';
+
 	export let data: PageData;
+
+	const dom = new JSDOM(data.content);
+	const document = dom.window.document;
+	const preCodes = document.querySelectorAll('pre code');
+	preCodes.forEach((code) => {
+		const result = hljs.highlightAuto(code.textContent);
+		code.innerHTML = result.value;
+		code.classList.add('hljs');
+	});
+
+	const highlightedContent = dom.serialize();
+	export { data, highlightedContent };
 </script>
 
 <svelte:head>
@@ -34,6 +49,30 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.css"
 		rel="stylesheet"
 	/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-diff.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.js"
+	></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			const codeElements = document.querySelectorAll('code');
+			codeElements.forEach((code) => {
+				code.classList.add('line-numbers');
+			});
+		});
+	</script>
 </svelte:head>
 
 <main>
