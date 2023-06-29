@@ -2,7 +2,19 @@
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import type { PageData } from './$types';
+	import cheerio from 'cheerio';
+	import hljs from 'highlight.js';
+
 	export let data: PageData;
+
+	const cheerio$ = cheerio.load(data.content);
+	cheerio$('pre code').each((_, elm) => {
+		const result = hljs.highlightAuto(cheerio$(elm).text());
+		cheerio$(elm).html(result.value);
+		cheerio$(elm).addClass('hljs');
+	});
+	const article = cheerio$.html();
+	export { article };
 </script>
 
 <svelte:head>
@@ -14,50 +26,6 @@
 		<meta property="twitter:description" content={data.description} />
 		<meta property="og:description" content={data.description} />
 	{/if}
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-solarizedlight.min.css"
-		rel="stylesheet"
-	/>
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css"
-		rel="stylesheet"
-	/>
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.css"
-		rel="stylesheet"
-	/>
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.css"
-		rel="stylesheet"
-	/>
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.css"
-		rel="stylesheet"
-	/>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-diff.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.js"
-	></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', (event) => {
-			const codeElements = document.querySelectorAll('code');
-			codeElements.forEach((code) => {
-				code.classList.add('line-numbers');
-			});
-		});
-	</script>
 </svelte:head>
 
 <main>
@@ -69,7 +37,7 @@
 				<div class="eyecatch_block">
 					<img src={data.eyecatch} alt="eyecatch-{data.title}" />
 				</div>
-				{@html data.content}
+				{@html article}
 			</div>
 		</div>
 	</article>
@@ -196,6 +164,8 @@
 	}
 
 	pre {
-		overflow-x: auto;
+		overflow-x: auto !important;
 	}
+
+
 </style>
