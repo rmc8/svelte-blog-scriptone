@@ -14,51 +14,50 @@
 		<meta property="twitter:description" content={data.description} />
 		<meta property="og:description" content={data.description} />
 	{/if}
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-solarizedlight.min.css"
-		rel="stylesheet"
-	/>
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css"
-		rel="stylesheet"
-	/>
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.css"
-		rel="stylesheet"
-	/>
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.css"
-		rel="stylesheet"
-	/>
-	<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.css"
-		rel="stylesheet"
-	/>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-diff.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.js"
-	></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', (event) => {
-			const codeElements = document.querySelectorAll('code');
-			codeElements.forEach((code) => {
-				code.classList.add('line-numbers');
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/css/css.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/htmlmixed/htmlmixed.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/javascript/javascript.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/json/json.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/markdown/markdown.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/python/python.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/rust/rust.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/svelte/svelte.min.js"></script>
+</svelte:head>
+
+<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+		const codeBlocks = document.querySelectorAll('code');
+		codeBlocks.forEach((block) => {
+			let mode;
+			if (block.classList.contains('language-css')) {
+				mode = 'css';
+			} else if (block.classList.contains('language-html')) {
+				mode = 'htmlmixed';
+			} else if (block.classList.contains('language-javascript')) {
+				mode = 'javascript';
+			} else if (block.classList.contains('language-json')) {
+				mode = 'json';
+			} else if (block.classList.contains('language-markdown')) {
+				mode = 'markdown';
+			} else if (block.classList.contains('language-python')) {
+				mode = 'python';
+			} else if (block.classList.contains('language-rust')) {
+				mode = 'rust';
+			} else if (block.classList.contains('language-svelte')) {
+				mode = 'svelte';
+			} else if (block.classList.contains('language-vue')) {
+				mode = 'htmlmixed';
+			}
+			CodeMirror.fromTextArea(block, {
+				mode: mode,
+				lineNumbers: true,
+				readonly: true
 			});
 		});
-	</script>
-</svelte:head>
+	});
+</script>
 
 <main>
 	<Header />
