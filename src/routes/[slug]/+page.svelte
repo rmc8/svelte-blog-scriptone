@@ -162,10 +162,4 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-
-	pre {
-		overflow-x: auto !important;
-	}
-
-
 </style>
