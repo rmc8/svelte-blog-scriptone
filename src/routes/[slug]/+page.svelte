@@ -5,7 +5,18 @@
 	import type { PageData } from './$types';
 	export let data: PageData;
 
-	onMount(() => {
+	let codeMirrorLoaded = false;
+
+	const waitForCodeMirror = new Promise(resolve => {
+		if (window.CodeMirror) {
+			resolve();
+		} else {
+			window.addEventListener('load', resolve);
+		}
+	});
+
+	onMount(async () => {
+		await waitForCodeMirror;
 		const codeBlocks = document.querySelectorAll('code');
 		codeBlocks.forEach((block) => {
 			let mode;
