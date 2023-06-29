@@ -1,33 +1,11 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import type { PageData } from './$types';
 	export let data: PageData;
-</script>
 
-<svelte:head>
-	<title>Scriptone - {data.title}</title>
-	<meta property="og:title" content="Scriptone - {data.title}" />
-	<meta property="og:type" content="article" />
-	{#if data.description}
-		<meta name="”description”" content={data.description} />
-		<meta property="twitter:description" content={data.description} />
-		<meta property="og:description" content={data.description} />
-	{/if}
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/css/css.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/htmlmixed/htmlmixed.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/javascript/javascript.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/json/json.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/markdown/markdown.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/python/python.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/rust/rust.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/svelte/svelte.min.js"></script>
-</svelte:head>
-
-<script>
-	document.addEventListener('DOMContentLoaded', (event) => {
+	onMount(() => {
 		const codeBlocks = document.querySelectorAll('code');
 		codeBlocks.forEach((block) => {
 			let mode;
@@ -58,6 +36,46 @@
 		});
 	});
 </script>
+
+<svelte:head>
+	<title>Scriptone - {data.title}</title>
+	<meta property="og:title" content="Scriptone - {data.title}" />
+	<meta property="og:type" content="article" />
+	{#if data.description}
+		<meta name="”description”" content={data.description} />
+		<meta property="twitter:description" content={data.description} />
+		<meta property="og:description" content={data.description} />
+	{/if}
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.css"
+	/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/css/css.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/htmlmixed/htmlmixed.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/javascript/javascript.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/json/json.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/markdown/markdown.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/python/python.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/rust/rust.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/svelte/svelte.min.js"
+	></script>
+</svelte:head>
 
 <main>
 	<Header />
