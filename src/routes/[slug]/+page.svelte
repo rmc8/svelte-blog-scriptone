@@ -1,50 +1,15 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import type { PageData } from './$types';
+	import { onMount } from 'svelte';
+	import hljs from 'highlight.js';
+	import 'highlight.js/styles/default.css';
 	export let data: PageData;
 
-	let codeMirrorLoaded = false;
-
-	const waitForCodeMirror = new Promise(resolve => {
-		if (window.CodeMirror) {
-			resolve();
-		} else {
-			window.addEventListener('load', resolve);
-		}
-	});
-
-	onMount(async () => {
-		await waitForCodeMirror;
-		const codeBlocks = document.querySelectorAll('code');
-		codeBlocks.forEach((block) => {
-			let mode;
-			if (block.classList.contains('language-css')) {
-				mode = 'css';
-			} else if (block.classList.contains('language-html')) {
-				mode = 'htmlmixed';
-			} else if (block.classList.contains('language-javascript')) {
-				mode = 'javascript';
-			} else if (block.classList.contains('language-json')) {
-				mode = 'json';
-			} else if (block.classList.contains('language-markdown')) {
-				mode = 'markdown';
-			} else if (block.classList.contains('language-python')) {
-				mode = 'python';
-			} else if (block.classList.contains('language-rust')) {
-				mode = 'rust';
-			} else if (block.classList.contains('language-svelte')) {
-				mode = 'svelte';
-			} else if (block.classList.contains('language-vue')) {
-				mode = 'htmlmixed';
-			}
-			CodeMirror.fromTextArea(block, {
-				mode: mode,
-				lineNumbers: true,
-				readonly: true
-			});
-		});
+	let codeBlock;
+	onMount(() => {
+		hljs.highlightBlock(codeBlock);
 	});
 </script>
 
@@ -57,35 +22,14 @@
 		<meta property="twitter:description" content={data.description} />
 		<meta property="og:description" content={data.description} />
 	{/if}
-	<link
-		rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.css"
-	/>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/css/css.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/htmlmixed/htmlmixed.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/javascript/javascript.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/json/json.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/markdown/markdown.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/python/python.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/rust/rust.min.js"
-	></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/svelte/svelte.min.js"
-	></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			const codeElements = document.querySelectorAll('code');
+			codeElements.forEach((code) => {
+				code.classList.add('line-numbers');
+			});
+		});
+	</script>
 </svelte:head>
 
 <main>
