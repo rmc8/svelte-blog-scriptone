@@ -2,7 +2,20 @@
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import type { PageData } from './$types';
+	import { afterUpdate } from 'svelte';
+	import Prism from 'prismjs';
+
 	export let data: PageData;
+
+	function applySyntaxHighlighting() {
+    const preCode = document.querySelector('.code');
+    const languageClass = preCode.className.match(/language-(\w+)/);
+    const language = languageClass ? languageClass[1] : 'python';
+	let code = preCode.textContent;
+    preCode.innerHTML = Prism.highlight(code, Prism.languages[language]);
+  }
+
+  afterUpdate(applySyntaxHighlighting);
 </script>
 
 <svelte:head>
@@ -34,7 +47,22 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.css"
 		rel="stylesheet"
 	/>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-diff.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.js"
+	></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', (event) => {
 			const codeElements = document.querySelectorAll('code');
@@ -91,22 +119,6 @@
 	</div>
 	<Footer />
 </main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-diff.min.js"
-></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.js"
-></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.js"
-></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"
-></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.js"
-></script>
 
 <style>
 	* {
