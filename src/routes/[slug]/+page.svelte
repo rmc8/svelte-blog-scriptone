@@ -22,6 +22,7 @@
 		<meta property="twitter:description" content={data.description} />
 		<meta property="og:description" content={data.description} />
 	{/if}
+	{/if}
 	<script>
 		document.addEventListener('DOMContentLoaded', (event) => {
 			const codeElements = document.querySelectorAll('code');
