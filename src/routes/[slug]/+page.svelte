@@ -17,7 +17,7 @@
 	});
 
 	const highlightedContent = dom.serialize();
-	export { data, highlightedContent };
+	export { highlightedContent };
 </script>
 
 <svelte:head>
@@ -84,7 +84,7 @@
 				<div class="eyecatch_block">
 					<img src={data.eyecatch} alt="eyecatch-{data.title}" />
 				</div>
-				{@html data.content}
+				{@html highlightedContent}
 			</div>
 		</div>
 	</article>
