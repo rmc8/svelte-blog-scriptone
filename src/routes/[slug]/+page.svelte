@@ -2,14 +2,27 @@
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import type { PageData } from './$types';
-	import { onMount } from 'svelte';
-	import hljs from 'highlight.js';
-	import 'highlight.js/styles/default.css';
+	import { onMount, afterUpdate } from 'svelte';
 	export let data: PageData;
 
-	let codeBlock;
+	let codeElements;
+
 	onMount(() => {
-		hljs.highlightBlock(codeBlock);
+		if (typeof window !== 'undefined') {
+			codeElements = document.querySelectorAll('pre code');
+			codeElements.forEach((code) => {
+				window.Prism.highlightElement(code);
+			});
+		}
+	});
+
+	afterUpdate(() => {
+		if (typeof window !== 'undefined') {
+			codeElements = document.querySelectorAll('pre code');
+			codeElements.forEach((code) => {
+				window.Prism.highlightElement(code);
+			});
+		}
 	});
 </script>
 
@@ -22,14 +35,42 @@
 		<meta property="twitter:description" content={data.description} />
 		<meta property="og:description" content={data.description} />
 	{/if}
-	<script>
-		document.addEventListener('DOMContentLoaded', (event) => {
-			const codeElements = document.querySelectorAll('code');
-			codeElements.forEach((code) => {
-				code.classList.add('line-numbers');
-			});
-		});
-	</script>
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-solarizedlight.min.css"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.css"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.css"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.css"
+		rel="stylesheet"
+	/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-diff.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autolinker/prism-autolinker.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/diff-highlight/prism-diff-highlight.min.js"
+	></script>
 </svelte:head>
 
 <main>

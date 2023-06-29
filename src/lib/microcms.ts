@@ -14,7 +14,7 @@ export type Blog = {
 	revisedAt: string;
 	title: string;
 	content: string;
-	category: string;
+	category: any;
 	tag: any;
 	eyecatch: string;
 	description: string;
