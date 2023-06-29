@@ -8,14 +8,14 @@
 	export let data: PageData;
 
 	function applySyntaxHighlighting() {
-    const preCode = document.querySelector('.code');
-    const languageClass = preCode.className.match(/language-(\w+)/);
-    const language = languageClass ? languageClass[1] : 'python';
-	let code = preCode.textContent;
-    preCode.innerHTML = Prism.highlight(code, Prism.languages[language]);
-  }
+		const preCode = document.querySelector('.code');
+		const languageClass = preCode.className.match(/language-(\w+)/);
+		const language = languageClass ? languageClass[1] : 'python';
+		let code = preCode.textContent;
+		preCode.innerHTML = Prism.highlight(code, Prism.languages[language]);
+	}
 
-  afterUpdate(applySyntaxHighlighting);
+	afterUpdate(applySyntaxHighlighting);
 </script>
 
 <svelte:head>
