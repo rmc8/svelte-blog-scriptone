@@ -27,9 +27,8 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
+<Header />
 <main>
-	<Header />
-
 	<section id="articles">
 		<ul>
 			{#each data.contents as content}
@@ -44,9 +43,7 @@
 						<dt><a href="/{content.id}">{content.title}</a></dt>
 						<div class="upper" style="display:flex">
 							<div class="category">
-								<a
-									class="category_link"
-									href="/category/{content.category.id}/p/1"
+								<a class="category_link" href="/category/{content.category.id}/p/1"
 									>{content.category.name}</a
 								>
 							</div>
@@ -95,5 +92,5 @@
 			{/each}
 		</div>
 	</section>
-	<Footer />
 </main>
+<Footer />

@@ -25,9 +25,8 @@
 	<meta name="description" content="Home of Scriptone" />
 </svelte:head>
 
+<Header />
 <main>
-	<Header />
-
 	<section id="articles">
 		<ul>
 			{#each data.contents as content}
@@ -91,5 +90,5 @@
 			{/each}
 		</div>
 	</section>
-	<Footer />
 </main>
+<Footer />
