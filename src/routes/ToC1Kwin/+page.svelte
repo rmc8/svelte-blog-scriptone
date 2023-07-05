@@ -10,14 +10,8 @@
 	<meta name="twitter:creator" content="@ToC1Kwin" />
 	<meta property="og:title" content="ToC1KWin@twitter.com Project Sekai Profile & Tools" />
 	<meta name="twitter:title" content="ToC1KWin@twitter.com Project Sekai Profile & Tools" />
-	<meta
-		property="og:description"
-		content="ToC1Kwin@twitter.comのプロセカのプロフィールです。"
-	/>
-	<meta
-		name="twitter:description"
-		content="ToC1Kwin@twitter.comのプロセカのプロフィールです。"
-	/>
+	<meta property="og:description" content="ToC1Kwin@twitter.comのプロセカのプロフィールです。" />
+	<meta name="twitter:description" content="ToC1Kwin@twitter.comのプロセカのプロフィールです。" />
 	<meta
 		name="twitter:image"
 		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
@@ -173,45 +167,23 @@
 				<h2>Tools</h2>
 				<ul class="decoration">
 					<li>
-						<a href="/ToC1Kwin/event_point_calculator" target="_blank" rel="noopener noreferrer"
-							>独りんぼエンヴィーポイント計算</a
-						>
+						<a href="/ToC1Kwin/event_point_calculator">独りんぼエンヴィーポイント計算</a>
 					</li>
 					<li>
-						<a
-							href="/ToC1Kwin/tag_search_query_collection"
-							target="_blank"
-							rel="noopener noreferrer">プロセカタグ検索クエリ集</a
-						>
+						<a href="/ToC1Kwin/tag_search_query_collection">プロセカタグ検索クエリ集</a>
 					</li>
 					<li>
-						<a href="/ToC1Kwin/cheerful_bingo/" target="_blank" rel="noopener noreferrer"
-							>Cheerful Bingo Card</a
-						>
+						<a href="/ToC1Kwin/cheerful_bingo/">Cheerful Bingo Card</a>
 					</li>
 					<li>
-						<a
-							href="/ToC1Kwin/cheerful_winning_streak_ranking/"
-							target="_blank"
-							rel="noopener noreferrer">チアフル連勝ランキング</a
-						>
+						<a href="/ToC1Kwin/cheerful_winning_streak_ranking/">チアフル連勝ランキング</a>
 					</li>
 					<li>
-						<a
-							href="/ToC1Kwin/simple_efficiency_table_for_prsk_music/"
-							target="_blank"
-							rel="noopener noreferrer">プロセカ楽曲効率表</a
-						>
+						<a href="/ToC1Kwin/simple_efficiency_table_for_prsk_music/">プロセカ楽曲効率表</a>
 					</li>
+					<!-- <li>						<a href="/ToC1Kwin/prsk_event_border_central/" target="_blank" rel="noopener noreferrer"							>プロセカイベントボーダー</a></li> -->
 					<li>
-						<a href="/ToC1Kwin/prsk_event_border_central/" target="_blank" rel="noopener noreferrer"
-							>プロセカイベントボーダー</a
-						>
-					</li>
-					<li>
-						<a href="/ToC1Kwin/prsk_active_user_count/" target="_blank" rel="noopener noreferrer"
-							>プロセカアクティブユーザー数推移</a
-						>
+						<a href="/ToC1Kwin/prsk_active_user_count/">プロセカアクティブユーザー数推移</a>
 					</li>
 				</ul>
 			</section>

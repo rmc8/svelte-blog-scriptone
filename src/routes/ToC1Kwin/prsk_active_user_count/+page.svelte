@@ -59,10 +59,19 @@
 <main>
 	<article>
 		<div class="container">
+			<h2>[プロセカ]アクティブユーザー数推移</h2>
+			<p>
+				プロセカのアクティブユーザー数と推移をまとめております。数値は正確でない箇所もあるため参考程度にお願いいたします。
+			</p>
+			<p />
+
 			{#if loading}
 				<p>Loading...</p>
 			{:else}
+				<h3>推移グラフ</h3>
 				<Chart />
+
+				<h3>推移表</h3>
 				<div class="table-container">
 					<table class="shj" style="font-size: 13.5px;">
 						<thead>
