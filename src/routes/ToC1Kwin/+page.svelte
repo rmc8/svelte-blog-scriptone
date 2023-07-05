@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Scriptone - Project Sekai Profile & Tools</title>
+	<title>Scriptone - @Toc1Kwin's Profile & Tools</title>
 	<meta name="description" content="ToC1Kwin@twitter.comのプロセカのプロフィールです。" />
 	<meta name="twitter:site" content="@ToC1Kwin" />
 	<meta name="twitter:creator" content="@ToC1Kwin" />

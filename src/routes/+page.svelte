@@ -21,7 +21,7 @@
 </script>
 
 <svelte:head>
-	<title>Scriptone - @Toc1Kwin's Profile & Tools</title>
+	<title>Scriptone - Home</title>
 	<meta name="description" content="Home of Scriptone" />
 </svelte:head>
 
