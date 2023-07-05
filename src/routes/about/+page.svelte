@@ -8,8 +8,8 @@
 	<meta name="description" content="Detail Pages" />
 </svelte:head>
 
+<Header />
 <main>
-	<Header />
 	<article>
 		<div class="container">
 			<h1>About</h1>
@@ -36,9 +36,15 @@
 			<section>
 				<h2>Profile</h2>
 				<p>
-					Kという名前で<a href="https://twitter.com/rmc_km">Twitter</a>などに14年ほど気づいたら居座っています(2023年時点)。
-					普段はお仕事や趣味でプログラミングをしており、メインの言語は<a href="https://www.python.org">Python</a>です。
-					このブログは<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript">JavaScript</a>（や<a href="https://kit.svelte.dev">SvelteKit</a>・<a href="https://microcms.io">MicroCMS</a>）などを初めて使ってつくりました。
+					Kという名前で<a href="https://twitter.com/rmc_km">Twitter</a
+					>などに14年ほど気づいたら居座っています(2023年時点)。
+					普段はお仕事や趣味でプログラミングをしており、メインの言語は<a
+						href="https://www.python.org">Python</a
+					>です。 このブログは<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript"
+						>JavaScript</a
+					>（や<a href="https://kit.svelte.dev">SvelteKit</a>・<a href="https://microcms.io"
+						>MicroCMS</a
+					>）などを初めて使ってつくりました。
 				</p>
 				<p>
 					私の目標や、自身の経験や知識を通じて創造的な活動の楽しさや重要性を共有することです。
@@ -55,5 +61,5 @@
 			</section>
 		</div>
 	</article>
-	<Footer />
 </main>
+<Footer />

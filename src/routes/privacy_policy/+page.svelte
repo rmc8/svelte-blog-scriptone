@@ -8,8 +8,8 @@
 	<meta name="description" content="Detail Pages" />
 </svelte:head>
 
+<Header />
 <main>
-	<Header />
 	<article>
 		<div class="container">
 			<h1>プライバシーポリシー・免責事項</h1>
@@ -93,5 +93,5 @@
 			</section>
 		</div>
 	</article>
-	<Footer />
 </main>
+<Footer />

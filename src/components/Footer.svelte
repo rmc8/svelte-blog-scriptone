@@ -35,6 +35,14 @@
 					{/each}
 				</ul>
 			</section>
+
+			<section>
+				<h3>Link</h3>
+				<ul>
+					<li><a href="/ToC1Kwin">プロセカ関連</a></li>
+					<li><a href="/privacy_policy">プライバシーポリシー・免責事項</a></li>
+				</ul>
+			</section>
 			<section id="profile">
 				<h3>Profile</h3>
 				<div id="profile_header">
@@ -61,34 +69,32 @@
 					本サイトや筆者の詳細は<a href="/about">About</a>をご覧ください。
 				</p>
 			</section>
-			<section>
-				<h3>Link</h3>
-				<ul>
-					<li><a href="/privacy_policy">プライバシーポリシー・免責事項</a></li>
-				</ul>
-			</section>
 		</div>
 	</div>
 	<div class="container">
 		<div class="external_links">
 			<ul style="padding-left:24px;padding-right:24px;width:96%;">
 				<li>
-					<a
-						style="background:url('https://abs.twimg.com/favicons/twitter.ico')"
-						href="https://twitter.com/rmc_km">@rmc_km</a
-					>
-				</li>
-
-				<li>
-					<a
-						style="background:url('https://zenn.dev/images/logo-transparent.png')"
-						href="https://zenn.dev/km">Zenn</a
+					<a style="background:url('/icon/misskey_icon.webp')" href="https://misskey.io/@rmc8"
+						>rmc8@misskey.io</a
 					>
 				</li>
 				<li>
 					<a
 						style="background:url('https://github.githubassets.com/favicon.ico')"
 						href="https://github.com/rmc8/">GitHub</a
+					>
+				</li>
+				<li>
+					<a
+						style="background:url('https://abs.twimg.com/favicons/twitter.ico')"
+						href="https://twitter.com/rmc_km">@rmc_km</a
+					>
+				</li>
+				<li>
+					<a
+						style="background:url('https://zenn.dev/images/logo-transparent.png')"
+						href="https://zenn.dev/km">Zenn</a
 					>
 				</li>
 				<li>
@@ -130,8 +136,7 @@
 	footer div.external_links ul li {
 		text-align: left;
 		list-style: none;
-		max-width: 112px;
-		width: auto;
+		max-width: 180px;
 	}
 
 	footer div.external_links ul li a {
@@ -141,8 +146,9 @@
 		padding-left: 24px;
 		padding-top: 2px;
 		padding-bottom: 2px;
-		margin-right: 24px;
+		margin-right: 16px;
 		vertical-align: text-top;
+		width: auto;
 	}
 
 	#sitemap {

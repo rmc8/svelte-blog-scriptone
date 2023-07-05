@@ -28,8 +28,8 @@
 	{/if}
 </svelte:head>
 
+<Header />
 <main>
-	<Header />
 	<article>
 		<div class="container">
 			<h1>{data.title}</h1>
@@ -72,8 +72,8 @@
 			</div>
 		</dl>
 	</div>
-	<Footer />
 </main>
+<Footer />
 
 <style>
 	* {

@@ -28,9 +28,8 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
+<Header />
 <main>
-	<Header />
-
 	<section id="articles">
 		<ul>
 			{#each data.contents as content}
@@ -94,5 +93,5 @@
 			{/each}
 		</div>
 	</section>
-	<Footer />
 </main>
+<Footer />

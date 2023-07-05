@@ -21,13 +21,12 @@
 </script>
 
 <svelte:head>
-	<title>Scriptone - Home</title>
+	<title>Scriptone - @Toc1Kwin's Profile & Tools</title>
 	<meta name="description" content="Home of Scriptone" />
 </svelte:head>
 
+<Header />
 <main>
-	<Header />
-
 	<section id="articles">
 		<ul>
 			{#each data.contents as content}
@@ -91,5 +90,5 @@
 			{/each}
 		</div>
 	</section>
-	<Footer />
 </main>
+<Footer />
