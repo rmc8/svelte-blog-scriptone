@@ -170,9 +170,6 @@
 						<a href="/ToC1Kwin/event_point_calculator">独りんぼエンヴィーポイント計算</a>
 					</li>
 					<li>
-						<a href="/ToC1Kwin/tag_search_query_collection">プロセカタグ検索クエリ集</a>
-					</li>
-					<li>
 						<a href="/ToC1Kwin/cheerful_bingo/">Cheerful Bingo Card</a>
 					</li>
 					<li>
@@ -181,7 +178,7 @@
 					<li>
 						<a href="/ToC1Kwin/simple_efficiency_table_for_prsk_music/">プロセカ楽曲効率表</a>
 					</li>
-					<!-- <li>						<a href="/ToC1Kwin/prsk_event_border_central/" target="_blank" rel="noopener noreferrer"							>プロセカイベントボーダー</a></li> -->
+					<!-- <li><a href="/ToC1Kwin/prsk_event_border_central/">プロセカイベントボーダー</a></li> -->
 					<li>
 						<a href="/ToC1Kwin/prsk_active_user_count/">プロセカアクティブユーザー数推移</a>
 					</li>

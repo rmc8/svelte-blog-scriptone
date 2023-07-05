@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Scriptone - [プロセカ] チアフルビンゴ</title>
+	<title>Scriptone - プロセカ チアフルビンゴ</title>
 	<meta name="description" content="チアフルイベントの連勝のランキングを掲載しております。" />
 	<meta name="twitter:site" content="@ToC1Kwin" />
 	<meta name="twitter:creator" content="@ToC1Kwin" />

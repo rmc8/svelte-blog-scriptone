@@ -59,28 +59,18 @@
 </script>
 
 <svelte:head>
-	<title>Scriptone - About</title>
+	<title>Scriptone - 独りんぼエンヴィーイベントポイント計算機</title>
 	<meta name="description" content="チアフルイベントの連勝のランキングを掲載しております。" />
 	<meta name="twitter:site" content="@ToC1Kwin" />
-	<meta name="twitter:creator" content="@ToC1Kwin" />
-	<meta property="og:title" content="チアフル連勝ランキング" />
-	<meta name="twitter:title" content="チアフル連勝ランキング" />
-	<meta
-		property="og:description"
-		content="チアフルイベントの連勝のランキングを掲載しております。"
-	/>
-	<meta
-		name="twitter:description"
-		content="チアフルイベントの連勝のランキングを掲載しております。"
-	/>
-	<meta
-		name="twitter:image"
-		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_winning_streak_ranking/img/cheerful_eyecatch.jpg"
-	/>
-	<meta
-		property="og:image"
-		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_winning_streak_ranking/img/cheerful_eyecatch.jpg"
-	/>
+    <meta name="twitter:creator" content="@ToC1Kwin" />
+    <meta property="og:title" content="独りんぼエンヴィーイベントポイント計算機" />
+    <meta name="twitter:title" content="独りんぼエンヴィーイベントポイント計算機" />
+    <meta property="og:description" content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。" />
+    <meta name="twitter:description" content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。" />
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
 </svelte:head>
 
 <Header />

@@ -27,28 +27,29 @@
 </script>
 
 <svelte:head>
-	<title>Scriptone - About</title>
-	<meta
-		name="description"
-		content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。"
-	/>
-	<meta property="og:title" content="独りんぼエンヴィーイベントポイント計算機" />
-	<meta name="twitter:title" content="独りんぼエンヴィーイベントポイント計算機" />
+	<title>Scriptone - チアフル連勝ランキング</title>
+	<meta name="description" content="チアフルイベントの連勝のランキングを掲載しております。" />
+	<meta property="og:title" content="チアフル連勝ランキング" />
+	<meta name="twitter:title" content="チアフル連勝ランキング" />
 	<meta
 		property="og:description"
-		content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。"
+		content="チアフルイベントの連勝のランキングを掲載しております。"
 	/>
 	<meta
 		name="twitter:description"
-		content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。"
+		content="チアフルイベントの連勝のランキングを掲載しております。"
 	/>
 	<meta
 		name="twitter:image"
-		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
+		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_winning_streak_ranking/img/cheerful_eyecatch.jpg"
+	/>
+	<meta
+		property="og:url"
+		content="https://rmc8.github.io/ToC1Kwin/cheerful_winning_streak_ranking/"
 	/>
 	<meta
 		property="og:image"
-		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
+		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_winning_streak_ranking/img/cheerful_eyecatch.jpg"
 	/>
 </svelte:head>
 
@@ -65,10 +66,11 @@
 					<p lang="ja" dir="ltr">
 						チアフルの連勝数を競うランキングをつくり、ランキングを公開するアカウントです。添付の画像に沿ってランキングを作成いたします。連勝数で競ったり、連勝の思い出を残したりなど楽しくご活用くださいましたら幸いです。
 						<a href="https://t.co/3LtBRGA54l">pic.twitter.com/3LtBRGA54l</a>
-					</p>&mdash; チアフル連勝ランキング
-					(@CheerfulWinsRnk) <a
-						href="https://twitter.com/CheerfulWinsRnk/status/1633356853886488577?ref_src=twsrc%5Etfw">March
-						8, 2023</a>
+					</p>
+					&mdash; チアフル連勝ランキング (@CheerfulWinsRnk)<a
+						href="https://twitter.com/CheerfulWinsRnk/status/1633356853886488577?ref_src=twsrc%5Etfw"
+						>March 8, 2023</a
+					>
 				</blockquote>
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
