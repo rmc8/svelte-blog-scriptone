@@ -27,22 +27,6 @@
 	<h2 style="color:transparent;font-size:0;border:0;">サイトマップ</h2>
 	<div class="container">
 		<div id="sitemap">
-			<section>
-				<h3>Category</h3>
-				<ul>
-					{#each categories as category}
-						<li><a href="/category/{category.id}/p/1" rel="external">{category.name}</a></li>
-					{/each}
-				</ul>
-			</section>
-
-			<section>
-				<h3>Link</h3>
-				<ul>
-					<li><a href="/ToC1Kwin">プロセカ関連</a></li>
-					<li><a href="/privacy_policy">プライバシーポリシー・免責事項</a></li>
-				</ul>
-			</section>
 			<section id="profile">
 				<h3>Profile</h3>
 				<div id="profile_header">
@@ -69,42 +53,58 @@
 					本サイトや筆者の詳細は<a href="/about">About</a>をご覧ください。
 				</p>
 			</section>
+			<section>
+				<h3>Link(Internal)</h3>
+				<ul>
+					<li><a href="/ToC1Kwin">プロセカ関連</a></li>
+					<li><a href="/privacy_policy">プライバシーポリシー・免責事項</a></li>
+				</ul>
+				<h3>Link(External)</h3>
+				<div class="external_links">
+					<ul style="padding-left:24px;padding-right:24px;width:96%;">
+						<li>
+							<a style="background:url('/icon/misskey_icon.webp')" href="https://misskey.io/@rmc8"
+								>rmc8@misskey.io</a
+							>
+						</li>
+						<li>
+							<a
+								style="background:url('https://github.githubassets.com/favicon.ico')"
+								href="https://github.com/rmc8/">GitHub</a
+							>
+						</li>
+						<li>
+							<a
+								style="background:url('https://abs.twimg.com/favicons/twitter.ico')"
+								href="https://twitter.com/rmc_km">@rmc_km</a
+							>
+						</li>
+						<li>
+							<a
+								style="background:url('https://zenn.dev/images/logo-transparent.png')"
+								href="https://zenn.dev/km">Zenn</a
+							>
+						</li>
+						<li>
+							<a
+								style="background:url('https://raw.githubusercontent.com/rmc8/rmc_km/main/docs/assets/icon/amznlogo.png');background-size:20px!important;background-position:0px 4px!important;"
+								href="https://www.amazon.jp/hz/wishlist/ls/EFSY7JHYBP5K?ref_=wl_share">WithList</a
+							>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h3>Category</h3>
+				<ul>
+					{#each categories as category}
+						<li><a href="/category/{category.id}/p/1" rel="external">{category.name}</a></li>
+					{/each}
+				</ul>
+			</section>
 		</div>
 	</div>
 	<div class="container">
-		<div class="external_links">
-			<ul style="padding-left:24px;padding-right:24px;width:96%;">
-				<li>
-					<a style="background:url('/icon/misskey_icon.webp')" href="https://misskey.io/@rmc8"
-						>rmc8@misskey.io</a
-					>
-				</li>
-				<li>
-					<a
-						style="background:url('https://github.githubassets.com/favicon.ico')"
-						href="https://github.com/rmc8/">GitHub</a
-					>
-				</li>
-				<li>
-					<a
-						style="background:url('https://abs.twimg.com/favicons/twitter.ico')"
-						href="https://twitter.com/rmc_km">@rmc_km</a
-					>
-				</li>
-				<li>
-					<a
-						style="background:url('https://zenn.dev/images/logo-transparent.png')"
-						href="https://zenn.dev/km">Zenn</a
-					>
-				</li>
-				<li>
-					<a
-						style="background:url('https://raw.githubusercontent.com/rmc8/rmc_km/main/docs/assets/icon/amznlogo.png');background-size:20px!important;background-position:0px 4px!important;"
-						href="https://www.amazon.jp/hz/wishlist/ls/EFSY7JHYBP5K?ref_=wl_share">WithList</a
-					>
-				</li>
-			</ul>
-		</div>
 		<p class="copyright">&copy;2023 - Scriptone</p>
 	</div>
 </footer>
@@ -120,10 +120,7 @@
 		padding-bottom: 128px;
 	}
 	footer div.external_links ul {
-		text-align: center;
-		display: flex;
 		list-style: none;
-		justify-content: center;
 		padding: 0;
 	}
 	footer h3 {
@@ -136,16 +133,15 @@
 	footer div.external_links ul li {
 		text-align: left;
 		list-style: none;
-		max-width: 180px;
 	}
 
 	footer div.external_links ul li a {
 		background-repeat: no-repeat !important;
 		background-position: 0px 3px !important;
 		background-size: 22px !important;
-		padding-left: 24px;
-		padding-top: 2px;
-		padding-bottom: 2px;
+		padding-left: 28px;
+		padding-top: 0px;
+		padding-bottom: 4px;
 		margin-right: 16px;
 		vertical-align: text-top;
 		width: auto;
