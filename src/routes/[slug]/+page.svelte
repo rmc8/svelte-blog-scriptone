@@ -2,12 +2,12 @@
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import type { PageData } from './$types';
-	import cheerio from 'cheerio';
+	import { load } from 'cheerio';
 	import hljs from 'highlight.js';
 
 	export let data: PageData;
 
-	const cheerio$ = cheerio.load(data.content);
+	const cheerio$ = load(data.content);
 	cheerio$('pre code').each((_, elm) => {
 		const result = hljs.highlightAuto(cheerio$(elm).text());
 		cheerio$(elm).html(result.value);

@@ -49,7 +49,7 @@
 								{#each content.tags as tag}
 									<div class="tag">
 										<div class="tag_icon">
-											<img src="tag.svg" width="20" height="20" alt="tag_icon" />
+											<img src="/logo/tag.svg" width="20" height="20" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
 											<a href="/tag/{tag.id}/p/1">
@@ -62,7 +62,7 @@
 						</div>
 						<dd>
 							<div class="clock">
-								<img src="clock.webp" width="20" height="20" alt="clock_icon" />
+								<img src="/clock.webp" width="20" height="20" alt="clock_icon" />
 							</div>
 							<time
 								>{new Date(content.createdAt)

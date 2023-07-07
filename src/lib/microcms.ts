@@ -7,6 +7,7 @@ const client = createClient({
 
 //型定義
 export type Blog = {
+	tags: any;
 	id: string;
 	createdAt: string;
 	updatedAt: string;
