@@ -7,11 +7,13 @@
 
 	export let data: PageData;
 
+	let existsCodeBlock = false;
 	const cheerio$ = load(data.content);
 	cheerio$('pre code').each((_, elm) => {
 		const result = hljs.highlightAuto(cheerio$(elm).text());
 		cheerio$(elm).html(result.value);
 		cheerio$(elm).addClass('hljs');
+		existsCodeBlock = true;
 	});
 	const article = cheerio$.html();
 	export { article };
@@ -25,6 +27,9 @@
 		<meta name="”description”" content={data.description} />
 		<meta property="twitter:description" content={data.description} />
 		<meta property="og:description" content={data.description} />
+	{/if}
+	{#if existsCodeBlock}
+		<link href="/css/codeblock.css" rel="stylesheet" />
 	{/if}
 </svelte:head>
 
