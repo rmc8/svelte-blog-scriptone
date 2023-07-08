@@ -1,0 +1,152 @@
+@font-face {
+	font-family: 'SourceHanCodeJP';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/font/SourceHanCodeJP-Regular.otf') format('opentype');
+	font-display: swap;
+}
+@font-face {
+	font-family: 'SourceHanCodeJP';
+	font-style: italic;
+	font-weight: 400;
+	src: url('/font/SourceHanCodeJP-RegularIt.otf') format('opentype');
+	font-display: swap;
+}
+@font-face {
+	font-family: 'SourceHanCodeJP';
+	font-style: normal;
+	font-weight: bold;
+	src: url('/font/SourceHanCodeJP-Bold.otf') format('opentype');
+	font-display: swap;
+}
+@font-face {
+	font-family: 'SourceHanCodeJP';
+	font-style: italic;
+	font-weight: bold;
+	src: url('/font/SourceHanCodeJP-BoldIt.otf') format('opentype');
+	font-display: swap;
+}
+
+pre {
+	overflow-x: auto !important;
+	background: #fffbee;
+	color: #272822;
+	border-radius: 5px;
+}
+
+code {
+	padding: 16px;
+}
+pre,
+code {
+	font-family: 'SourceHanCodeJP', monospace !important;
+}
+.hljs {
+	display: block;
+}
+
+.hljs-number {
+	color: #e400ff;
+}
+
+.hljs-title.function_ {
+	color: #f55e00;
+	font-weight: bold;
+}
+
+.hljs-keyword {
+	color: #f92654;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.hljs-params {
+	color: #656700;
+	font-weight: bold;
+}
+
+.hljs-string {
+	color: #0f9900;
+}
+.hljs-meta {
+	color: #007cce;
+	font-weight: bold;
+}
+.hljs-constructor,
+.hljs-literal {
+	color: #ff4400;
+	font-weight: bold;
+}
+.hljs-attr,
+.hljs-attribute {
+	color: #f92654;
+	font-weight: bold;
+}
+
+
+.hljs-comment,
+.hljs-quote,
+.hljs-variable {
+	color: #008484;
+}
+
+.hljs-selector-class,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name {
+	color: #00f;
+}
+
+.language-css.hljs .hljs-selector-class,
+.language-css.hljs .hljs-selector-tag{
+	font-weight: bold;
+}
+
+.language-css.hljs .hljs-number {
+	color: #0f9900;
+}
+
+.hljs-section,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-addition {
+	color: #a31515;
+}
+.hljs-deletion,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-meta {
+	color: #2b91af;
+}
+.hljs-doctag {
+	color: #808080;
+}
+.hljs-attr {
+	color: #f00;
+}
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+	color: #00b0e8;
+}
+.hljs-emphasis {
+	font-style: italic;
+}
+.hljs-strong {
+	font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+	pre,
+	code {
+		font-size: 13px;
+	}
+}
+@media (max-width: 480px) {
+	pre,
+	code {
+		font-size: 11px;
+	}
+}
