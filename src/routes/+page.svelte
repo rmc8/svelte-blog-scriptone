@@ -22,7 +22,7 @@
 
 <svelte:head>
 	<title>Scriptone - Home</title>
-	<meta name="description" content="Home of Scriptone" />
+	<!-- <meta name="description" content="Home of Scriptone" /> -->
 </svelte:head>
 
 <Header />

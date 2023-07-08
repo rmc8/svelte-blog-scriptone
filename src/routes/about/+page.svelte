@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>Scriptone - About</title>
-	<meta name="description" content="Detail Pages" />
+	<meta name="description" content="Scriptoneについて記載しております。" />
 </svelte:head>
 
 <Header />
