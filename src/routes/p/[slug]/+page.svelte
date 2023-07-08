@@ -23,6 +23,7 @@
 <svelte:head>
 	<title>Scriptone - Home</title>
 	<meta name="description" content="Home of Scriptone" />
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <Header />
