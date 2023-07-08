@@ -22,7 +22,7 @@
 
 <svelte:head>
 	<title>Scriptone - Home</title>
-	<!-- <meta name="description" content="Home of Scriptone" /> -->
+	<meta name="description" content="Programmingや書写、オーディオなど多様な趣味を掲載したブログです。" />
 </svelte:head>
 
 <Header />
