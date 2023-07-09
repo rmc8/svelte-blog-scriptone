@@ -22,7 +22,10 @@
 
 <svelte:head>
 	<title>Scriptone - Home</title>
-	<meta name="description" content="Programmingや書写、オーディオなど多様な趣味を掲載したブログです。" />
+	<meta
+		name="description"
+		content="Programmingや書写、オーディオなど多様な趣味を掲載したブログです。"
+	/>
 </svelte:head>
 
 <Header />
@@ -37,8 +40,8 @@
 							<img src={content.eyecatch} alt="eyecatch of {content.title}" />
 						</a>
 					</div>
-					<dl>
-						<dt><a href="/{content.id}">{content.title}</a></dt>
+					<div class="article_info">
+						<div class="article_link"><a href="/{content.id}">{content.title}</a></div>
 						<div class="upper" style="display:flex">
 							<div class="category">
 								<a class="category_link" href="/category/{content.category.id}/p/1" rel="external"
@@ -60,23 +63,21 @@
 								{/each}
 							</div>
 						</div>
-						<dd>
-							<div class="clock">
-								<img src="/clock.webp" width="20" height="20" alt="clock_icon" />
-							</div>
-							<time
-								>{new Date(content.createdAt)
-									.toLocaleString('ja-JP', {
-										year: 'numeric',
-										month: '2-digit',
-										day: '2-digit',
-										hour: '2-digit',
-										minute: '2-digit'
-									})
-									.replace(/\//g, '-')}</time
-							>
-						</dd>
-					</dl>
+						<div class="clock">
+							<img src="/clock.webp" width="20" height="20" alt="clock_icon" />
+						</div>
+						<time style="color:#666">
+							{new Date(content.createdAt)
+								.toLocaleString('ja-JP', {
+									year: 'numeric',
+									month: '2-digit',
+									day: '2-digit',
+									hour: '2-digit',
+									minute: '2-digit'
+								})
+								.replace(/\//g, '-')}</time
+						>
+					</div>
 				</li>
 			{/each}
 		</ul>
