@@ -41,16 +41,16 @@
 					text: 'プロセカ - アクティブユーザー数推移'
 				},
 				xaxis: {
-					type: 'datetime', // x軸を日付時間型に設定
+					type: 'datetime',
 					labels: {
-						datetimeUTC: false, // 日付データをUTCではなくローカルタイムとして扱う
+						datetimeUTC: false,
 						datetimeFormatter: {
 							year: 'yyyy',
 							month: "MMM 'yy",
 							day: 'dd MMM',
 							hour: 'HH:mm'
 						},
-						showEvery: 3 // 3つごとにラベルを表示
+						showEvery: 3
 					},
 					categories: labels
 				},
@@ -60,7 +60,7 @@
 					tickAmount: 6,
 					labels: {
 						formatter: function (val) {
-							return val.toLocaleString(); // 3桁ごとにカンマで区切る
+							return val.toLocaleString(); 
 						}
 					}
 				},

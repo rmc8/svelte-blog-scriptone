@@ -55,6 +55,9 @@
 				<div class="tags">
 					{#each data.tags as tag}
 						<div class="tag">
+							<div class="tag_icon">
+								<img class="tag_icon" src="/logo/tag.svg" width="20" height="20" alt="tag_icon" />
+							</div>
 							<div class="tag_link">
 								<a href="/tag/{tag.id}/p/1">
 									{tag.name}
@@ -63,17 +66,20 @@
 						</div>
 					{/each}
 				</div>
-				<time
-					>{new Date(data.createdAt)
-						.toLocaleString('ja-JP', {
-							year: 'numeric',
-							month: '2-digit',
-							day: '2-digit',
-							hour: '2-digit',
-							minute: '2-digit'
-						})
-						.replace(/\//g, '-')}</time
-				>
+				<div class="clock">
+					<img src="/clock.webp" width="20" height="20" alt="clock_icon" />
+					<time style="color:#666">
+						{new Date(data.createdAt)
+							.toLocaleString('ja-JP', {
+								year: 'numeric',
+								month: '2-digit',
+								day: '2-digit',
+								hour: '2-digit',
+								minute: '2-digit'
+							})
+							.replace(/\//g, '-')}
+					</time>
+				</div>
 			</div>
 		</dl>
 	</div>
@@ -103,16 +109,17 @@
 		height: 20px;
 	}
 	div.clock {
-		display: inline-block;
+		display: flex;
 		height: 20px;
 	}
 	div.clock img {
-		vertical-align: middle;
+		vertical-align: bottom;
+		padding-top: 4px;
+		width: 20px;
+		height: 24px;
 	}
 	time {
-		display: block;
 		margin-left: 4px;
-		height: 20px;
 		vertical-align: top;
 	}
 	div.upper {
@@ -138,15 +145,18 @@
 	div.tag a {
 		display: block;
 		vertical-align: middle;
+		padding-top: 6px;
 	}
+
 	.tags {
-		padding-left: 16px;
-		flex-grow: 1;
-		display: flexbox;
+		margin-bottom: 8px;
+	}
+	time {
+		color: #555;
 	}
 	.tag_icon {
-		padding-top: 5px;
-		margin-right: 2px;
+		width: 22px;
+		height: 22px;
 	}
 	.tag_link {
 		margin-right: 12px;

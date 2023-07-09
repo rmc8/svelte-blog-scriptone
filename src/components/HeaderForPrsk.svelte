@@ -2,18 +2,14 @@
 	<nav>
 		<ul>
 			<li><a href="/ToC1Kwin">Profile</a></li>
-            <li><a href="/ToC1Kwin#tools">Tools</a></li>
+			<li><a href="/ToC1Kwin#tools">Tools</a></li>
 			<li><a href="/">Home</a></li>
 		</ul>
 	</nav>
 	<div id="logo_container">
 		<h1>
 			<a href="https://rmc-8.com/" id="logo_link">
-				<img
-					id="logo"
-					alt="Scriptone logo"
-					src="/logo/scriptone_header.webp"
-				/>
+				<img id="logo" alt="Scriptone logo" width="300" height="56" src="/logo/scriptone_header.webp" />
 			</a>
 		</h1>
 	</div>
@@ -24,6 +20,10 @@
 		border: 0px;
 		text-align: center;
 		width: 100%;
+	}
+
+	nav ul {
+		padding-left: 8px;
 	}
 
 	#logo_container {
@@ -38,9 +38,10 @@
 	}
 
 	#logo {
-		width: 90%;
-		max-width: 400px;
-		max-height: 233px;
+		width: 80%;
+		height: auto;
+		max-width: 300px;
+		max-height: 56px;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
