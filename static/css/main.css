@@ -1,6 +1,6 @@
 :root {
 	--accent-color_dark: #0c323c;
-    --accent-color-light: #00a4a4;
+	--accent-color-light: #00a4a4;
 	--accent-color: #008484;
 	--border-color-basic: #c6cccc;
 	--border-color-hr: #dee3e3;
@@ -295,8 +295,9 @@ time {
 	height: 20px;
 	vertical-align: top;
 }
-div.upper, .tags{
-    padding-top: 12px;
+div.upper,
+.tags {
+	padding-top: 12px;
 }
 div.upper {
 	flex-direction: column;
@@ -307,7 +308,7 @@ div.tag {
 }
 
 div.upper a.category_link {
-	padding: 2px 8px;
+	padding: 4px 8px;
 	border: 1px solid var(--accent-color);
 	color: var(--accent-color);
 	white-space: nowrap;
@@ -319,12 +320,18 @@ div.upper a.category_link {
 
 .tags {
 	flex-grow: 1;
-    padding-bottom: 4px;
+	padding-bottom: 4px;
 }
 .tag_icon {
 	padding-top: 5px;
 	margin-right: 2px;
 }
+
+.tag_icon img {
+	width: 18px;
+	height: 18px;
+}
+
 .tag_link {
 	margin-right: 12px;
 }
@@ -344,7 +351,7 @@ div.upper a.category_link {
 	background-color: var(--accent-color-light);
 	color: white;
 	text-decoration: none;
-    font-weight: bold;
+	font-weight: bold;
 }
 article,
 #meta {
