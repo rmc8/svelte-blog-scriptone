@@ -51,7 +51,7 @@
 								{#each content.tags as tag}
 									<div class="tag">
 										<div class="tag_icon">
-											<img src="/logo/tag.svg" width="20" height="20" alt="tag_icon" />
+											<img src="/logo/tag.svg" width="18" height="18" alt="tag_icon" />
 										</div>
 										<div class="tag_link">
 											<a href="/tag/{tag.id}/p/1">

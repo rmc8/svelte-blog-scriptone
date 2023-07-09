@@ -131,17 +131,6 @@
 	div.tag {
 		display: inline-flex;
 	}
-
-	div.upper a.category_link {
-		padding: 2px 8px;
-		border: 1px solid var(--accent-color-light);
-		color: var(--accent-color-light);
-		white-space: nowrap;
-		border-radius: 3px;
-		font-size: 14px;
-		margin: 0 0 2px;
-		vertical-align: top;
-	}
 	div.tag a {
 		display: block;
 		vertical-align: middle;
@@ -152,7 +141,7 @@
 		margin-bottom: 8px;
 	}
 	time {
-		color: #555;
+		color: #666;
 	}
 	.tag_icon {
 		width: 22px;
