@@ -373,7 +373,7 @@ article li {
 	max-width: 100%;
 }
 
-article ul li:before {
+article.post ul li:before {
 	content: '✿';
 	position: absolute;
 	top: 0;

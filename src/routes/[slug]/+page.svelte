@@ -35,7 +35,7 @@
 
 <Header />
 <main>
-	<article>
+	<article class="post">
 		<div class="container">
 			<h1>{data.title}</h1>
 			<div class="contents">
