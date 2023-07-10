@@ -361,6 +361,7 @@ article,
 
 article ul {
 	padding: 0px;
+	padding-top: 16px;
 	display: block;
 }
 article li {
@@ -368,7 +369,7 @@ article li {
 	padding-left: 24px;
 	padding-right: 8px;
 	margin-bottom: 16px;
-	margin-left: 24px;
+	margin-left: 0px;
 	max-width: 100%;
 }
 
