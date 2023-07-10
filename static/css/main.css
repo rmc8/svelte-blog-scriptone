@@ -280,6 +280,14 @@ main li {
 	flex: 0 0 auto;
 }
 
+article ul li:before {
+	content: '✿';
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #009898;
+}
+
 div.clock {
 	display: inline-block;
 	height: 20px;
