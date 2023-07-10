@@ -280,18 +280,6 @@ main li {
 	flex: 0 0 auto;
 }
 
-article ul {
-	padding: 0px;
-}
-
-article ul li:before {
-	content: '✿';
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: #009898;
-}
-
 div.clock {
 	display: inline-block;
 	height: 20px;
@@ -372,9 +360,8 @@ article,
 }
 
 article ul {
+	padding: 0px;
 	display: block;
-	padding-top: 16px;
-	padding-bottom: 16px;
 }
 article li {
 	position: relative;
@@ -383,4 +370,12 @@ article li {
 	margin-bottom: 16px;
 	margin-left: 24px;
 	max-width: 100%;
+}
+
+article ul li:before {
+	content: '✿';
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #009898;
 }
