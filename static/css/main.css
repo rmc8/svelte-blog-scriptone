@@ -280,6 +280,10 @@ main li {
 	flex: 0 0 auto;
 }
 
+article ul {
+	padding: 0px;
+}
+
 article ul li:before {
 	content: '✿';
 	position: absolute;
