@@ -63,14 +63,20 @@
 				<div class="external_links">
 					<ul style="padding-left:24px;padding-right:24px;width:96%;">
 						<li>
-							<a style="background:url('/icon/misskey_icon.webp')" href="https://misskey.io/@rmc8"
-								>rmc8@misskey.io</a
+							<a
+								style="background:url('/icon/bluesky.webp')"
+								href="https://bsky.app/profile/k.rmc-8.com">k.rmc-8.com(bluesky)</a
 							>
 						</li>
 						<li>
 							<a
 								style="background:url('https://github.githubassets.com/favicon.ico')"
 								href="https://github.com/rmc8/">GitHub</a
+							>
+						</li>
+						<li>
+							<a style="background:url('/icon/misskey_icon.webp')" href="https://misskey.io/@rmc8"
+								>rmc8@misskey.io</a
 							>
 						</li>
 						<li>
