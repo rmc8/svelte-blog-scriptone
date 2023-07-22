@@ -210,7 +210,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		color: #009898;
+		color: #008c9c;
 	}
 
 	#tools ul {
