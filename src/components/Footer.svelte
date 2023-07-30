@@ -44,7 +44,7 @@
 							alt="DiscordIcon"
 							class="discord_icon"
 						/>
-						うみつばめ(k8x)
+						k8x
 					</p>
 				</div>
 				<p style="padding:16px;">
