@@ -45,7 +45,7 @@
 			{:else}
 				{#each images as image}
 					<div class="bingo_card">
-						<a href={image} class="gallery-item">
+						<a href={image} class="gallery-item-link">
 							<img src={image} alt={image} class="gallery-item" />
 						</a>
 					</div>
