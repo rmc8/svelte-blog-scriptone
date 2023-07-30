@@ -15,8 +15,8 @@
 		}
 		for (const number of numbers) {
 			const paddedNumber = String(number).padStart(4, '0');
-			const baseUrl = 'https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_bingo';
-			const imagePath = `${baseUrl}/img/bingo_${paddedNumber}.webp`;
+			const baseUrl = 'https://raw.githubusercontent.com/rmc8/prsk_bingo_card/';
+			const imagePath = `${baseUrl}/bingo/bingo_${paddedNumber}.png`;
 			images.push(imagePath);
 		}
 		isLoading = false;
@@ -37,8 +37,7 @@
 	<div class="container" id="lightgallery_images">
 		<h2>Cheerful Bingo</h2>
 		<p>チアフルイベント用のビンゴカードがランダムで6種類表示されます。ご自由にご活用ください！</p>
-		<div id="gallery">
-			<!--  bind:this={galleryElement} -->
+		<div id="gallery" bind:this={galleryElement}>
 			{#if isLoading}
 				<div>Loading...</div>
 			{:else}
