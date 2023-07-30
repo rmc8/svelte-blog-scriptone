@@ -15,7 +15,7 @@
 		}
 		for (const number of numbers) {
 			const paddedNumber = String(number).padStart(4, '0');
-			const baseUrl = 'https://raw.githubusercontent.com/rmc8/prsk_bingo_card/';
+			const baseUrl = 'https://raw.githubusercontent.com/rmc8/prsk_bingo_card/main';
 			const imagePath = `${baseUrl}/bingo/bingo_${paddedNumber}.png`;
 			images.push(imagePath);
 		}
