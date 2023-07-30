@@ -15,8 +15,8 @@
 		}
 		for (const number of numbers) {
 			const paddedNumber = String(number).padStart(4, '0');
-			const baseUrl = 'https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/cheerful_bingo';
-			const imagePath = `${baseUrl}/img/bingo_${paddedNumber}.webp`;
+			const baseUrl = 'https://raw.githubusercontent.com/rmc8/prsk_bingo_card/main';
+			const imagePath = `${baseUrl}/bingo/bingo_${paddedNumber}.png`;
 			images.push(imagePath);
 		}
 		isLoading = false;
@@ -25,7 +25,9 @@
 		await Promise.resolve();
 
 		// Initialize lightGallery after the images are loaded
-		galleryInstance = lightGallery(galleryElement, {});
+		galleryInstance = lightGallery(galleryElement, {
+			selector: '.gallery-item'
+		});
 	});
 
 	onDestroy(() => {
@@ -37,18 +39,17 @@
 	<div class="container" id="lightgallery_images">
 		<h2>Cheerful Bingo</h2>
 		<p>チアフルイベント用のビンゴカードがランダムで6種類表示されます。ご自由にご活用ください！</p>
-		<div id="gallery">
-			<!--  bind:this={galleryElement} -->
+		<div id="gallery" bind:this={galleryElement}>
 			{#if isLoading}
 				<div>Loading...</div>
 			{:else}
 				{#each images as image}
 					<div class="bingo_card">
-						<a href={image} data-src={image} class="gallery-item">
+						<a href={image} class="gallery-item-link">
 							<img src={image} alt={image} class="gallery-item" />
 						</a>
 					</div>
-				{/each}
+				{/each}		
 			{/if}
 		</div>
 	</div>
