@@ -25,7 +25,9 @@
 		await Promise.resolve();
 
 		// Initialize lightGallery after the images are loaded
-		galleryInstance = lightGallery(galleryElement, {});
+		galleryInstance = lightGallery(galleryElement, {
+			selector: '.gallery-item'
+		});
 	});
 
 	onDestroy(() => {
@@ -43,11 +45,11 @@
 			{:else}
 				{#each images as image}
 					<div class="bingo_card">
-						<a href={image} data-src={image} class="gallery-item">
+						<a href={image} class="gallery-item">
 							<img src={image} alt={image} class="gallery-item" />
 						</a>
 					</div>
-				{/each}
+				{/each}		
 			{/if}
 		</div>
 	</div>
