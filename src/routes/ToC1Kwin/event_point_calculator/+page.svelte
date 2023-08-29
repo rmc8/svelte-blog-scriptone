@@ -78,10 +78,12 @@
 	<article>
 		<div class="container">
 			<h2>Event Point Calculator</h2>
+			<p style="font-weight:bold;">※現在、計算機のメンテナスをしております。ご不便をおかけします。</p>
 			<p>
 				独りんぼエンヴィーでのイベントポイントの調整のための計算をします。炊きありの場合には小数点の切り捨ての関係で誤差が出る場合がありますため、最終的な調整は0炊きでお願いいたします。
 			</p>
-			<div class="calculator" style="padding-top:32px">
+			<!-- TODO: メンテナンスが終わったら再表示する -->
+			<div class="calculator" style="padding-top:32px;display:none;">
 				<div class="form">
 					<p>
 						<label>獲得したいイベントポイントを数値で入力してください。</label><br />
