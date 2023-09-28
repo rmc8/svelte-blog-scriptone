@@ -75,22 +75,17 @@
 							>
 						</li>
 						<li>
-							<a style="background:url('/icon/misskey_icon.webp')" href="https://misskey.io/@rmc8"
-								>rmc8@misskey.io</a
-							>
-						</li>
-						<li>
 							<a
 								style="background:url('https://abs.twimg.com/favicons/twitter.ico')"
 								href="https://twitter.com/rmc_km">@rmc_km</a
 							>
 						</li>
-						<li>
+						<!-- <li>
 							<a
 								style="background:url('https://zenn.dev/images/logo-transparent.png')"
 								href="https://zenn.dev/km">Zenn</a
 							>
-						</li>
+						</li> -->
 						<li>
 							<a
 								style="background:url('https://raw.githubusercontent.com/rmc8/rmc_km/main/docs/assets/icon/amznlogo.png');background-size:20px!important;background-position:0px 4px!important;"

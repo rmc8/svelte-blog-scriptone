@@ -41,7 +41,7 @@
 						src="https://rmc8.github.io/ToC1Kwin/assets/icon/discord-mark-blue-icon.png"
 						alt="DiscordIcon"
 						class="discord_icon"
-					/>うみつばめ(k8x)
+					/>k8x
 				</p>
 			</section>
 			<section id="about">
@@ -119,7 +119,7 @@
 							<li>Walk on and on 43位</li>
 							<li>Cast Spell on You 62位</li>
 							<li>お悩み聞かせて！わくわくピクニック 72位</li>
-							<li>TOP200~TOP1000 25回</li>
+							<li>TOP200~TOP1000 30回(2023-09-29時点)</li>
 						</ul>
 						<p />
 					</li>
