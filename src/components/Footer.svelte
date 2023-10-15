@@ -56,6 +56,7 @@
 			<section>
 				<h3>Link(Internal)</h3>
 				<ul>
+					<li><a href="/moyouSky">moyouSky</a></li>
 					<li><a href="/ToC1Kwin">プロセカ関連</a></li>
 					<li><a href="/privacy_policy">プライバシーポリシー・免責事項</a></li>
 				</ul>
