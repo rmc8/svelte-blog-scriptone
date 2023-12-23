@@ -8,9 +8,9 @@
 
 <svelte:head>
 	<title>Scriptone - プロセカ チアフルビンゴ</title>
-	<meta name="description" content="チアフルイベントの連勝のランキングを掲載しております。" />
-	<meta name="twitter:site" content="@ToC1Kwin" />
-	<meta name="twitter:creator" content="@ToC1Kwin" />
+	<meta name="description" content="チアフルイベント用のビンゴカードを配布しております。" />
+	<meta name="twitter:site" content="@mskydev" />
+	<meta name="twitter:creator" content="@mskydev" />
 	<meta name="twitter:title" content="Cheerful Bingo" />
 	<meta property="og:title" content="Cheerful Bingo" />
 	<meta property="og:url" content="https://rmc8.github.io/ToC1Kwin/cheerful_bingo/" />

@@ -5,13 +5,13 @@
 
 <svelte:head>
 	<title>Scriptone - @Toc1Kwin's Profile & Tools</title>
-	<meta name="description" content="ToC1Kwin@twitter.comのプロセカのプロフィールです。" />
-	<meta name="twitter:site" content="@ToC1Kwin" />
-	<meta name="twitter:creator" content="@ToC1Kwin" />
-	<meta property="og:title" content="ToC1KWin@twitter.com Project Sekai Profile & Tools" />
-	<meta name="twitter:title" content="ToC1KWin@twitter.com Project Sekai Profile & Tools" />
-	<meta property="og:description" content="ToC1Kwin@twitter.comのプロセカのプロフィールです。" />
-	<meta name="twitter:description" content="ToC1Kwin@twitter.comのプロセカのプロフィールです。" />
+	<meta name="description" content="mskydev@twitter.comのプロセカのプロフィールです。" />
+	<meta name="twitter:site" content="@mskydev" />
+	<meta name="twitter:creator" content="@mskydev" />
+	<meta property="og:title" content="mskydev@twitter.com Project Sekai Profile & Tools" />
+	<meta name="twitter:title" content="mskydev@twitter.com Project Sekai Profile & Tools" />
+	<meta property="og:description" content="mskydev@twitter.comのプロセカのプロフィールです。" />
+	<meta name="twitter:description" content="mskydev@twitter.comのプロセカのプロフィールです。" />
 	<meta
 		name="twitter:image"
 		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"

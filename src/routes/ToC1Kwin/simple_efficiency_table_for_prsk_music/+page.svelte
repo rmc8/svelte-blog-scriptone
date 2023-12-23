@@ -8,8 +8,8 @@
 <svelte:head>
 	<title>Scriptone - プロセカ楽曲効率</title>
 	<meta name="description" content="チアフルイベントの連勝のランキングを掲載しております。" />
-	<meta name="twitter:site" content="@ToC1Kwin" />
-	<meta name="twitter:creator" content="@ToC1Kwin" />
+	<meta name="twitter:site" content="@mskydev" />
+	<meta name="twitter:creator" content="@mskydev" />
 	<meta property="og:title" content="プロセカ楽曲効率" />
     <meta name="twitter:title" content="プロセカ楽曲効率" />
     <meta property="og:description" content="プロセカの楽曲効率を簡単にまとめた表です。" />

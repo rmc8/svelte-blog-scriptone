@@ -1,7 +1,7 @@
 :root {
 	--accent-color_dark: #0c323c;
-	--accent-color-light: #009cac;
-	--accent-color: #008292;
+	--accent-color-light: #0aadb9; /* #009cac */
+	--accent-color: #0aadb9; /* #008292 */
 	--border-color-basic: #c6cccc;
 	--border-color-hr: #dee3e3;
 }
