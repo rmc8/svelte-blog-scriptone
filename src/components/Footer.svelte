@@ -66,7 +66,7 @@
 						<li>
 							<a
 								style="background:url('/icon/bluesky.webp')"
-								href="https://bsky.app/profile/k.rmc-8.com">k.rmc-8.com(bluesky)</a
+								href="https://bsky.app/profile/k.rmc-8.com">k.rmc-8.com</a
 							>
 						</li>
 						<li>
