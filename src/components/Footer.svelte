@@ -71,13 +71,13 @@
 						</li>
 						<li>
 							<a
-								style="background:url('https://github.githubassets.com/favicon.ico')"
+								style="background:url('/icon/github.ico')"
 								href="https://github.com/rmc8/">GitHub</a
 							>
 						</li>
 						<li>
 							<a
-								style="background:url('https://abs.twimg.com/favicons/twitter.ico')"
+								style="background:url('/icon/x.webp')"
 								href="https://twitter.com/rmc_km">@rmc_km</a
 							>
 						</li>
@@ -89,7 +89,7 @@
 						</li> -->
 						<li>
 							<a
-								style="background:url('https://raw.githubusercontent.com/rmc8/rmc_km/main/docs/assets/icon/amznlogo.png');background-size:20px!important;background-position:0px 4px!important;"
+								style="background:url('/icon/amzn.webp');background-size:20px!important;background-position:0px 4px!important;"
 								href="https://www.amazon.jp/hz/wishlist/ls/EFSY7JHYBP5K?ref_=wl_share">WithList</a
 							>
 						</li>
