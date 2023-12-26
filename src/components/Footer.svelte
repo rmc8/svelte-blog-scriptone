@@ -187,7 +187,8 @@
 	}
 
 	footer section ul li:hover {
-		background-color: #777;
+		/* background-color: #777; */
+		background-color: #0aadb9;
 		color: #fff;
 	}
 
