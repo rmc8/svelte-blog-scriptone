@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Scriptone - @Toc1Kwin's Profile & Tools</title>
+	<title>Scriptone - @mskydev's Profile & Tools</title>
 	<meta name="description" content="mskydev@twitter.comのプロセカのプロフィールです。" />
 	<meta name="twitter:site" content="@mskydev" />
 	<meta name="twitter:creator" content="@mskydev" />
@@ -101,7 +101,7 @@
 							<li>Walk on and on 43位</li>
 							<li>Cast Spell on You 62位</li>
 							<li>お悩み聞かせて！わくわくピクニック 72位</li>
-							<li>TOP200~TOP1000 31回(2023-10-14時点)</li>
+							<li>TOP200~TOP1000 33回(2024-01-08時点)</li>
 						</ul>
 						<p />
 					</li>
