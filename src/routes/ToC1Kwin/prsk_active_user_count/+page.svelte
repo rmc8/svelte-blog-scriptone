@@ -4,6 +4,7 @@
 	import moment from 'moment';
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
+	import Profile from '../../../components/ProsekaProfile.svelte';
 	import Chart from './Chart.svelte';
 
 	let columns = {};
@@ -104,6 +105,10 @@
 					</table>
 				</div>
 			{/if}
+		</div>
+		<div class="container">
+			<h2>Profile</h2>
+			<Profile />
 		</div>
 	</article>
 </main>

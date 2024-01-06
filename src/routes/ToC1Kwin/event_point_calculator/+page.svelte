@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
+	import Profile from '../../../components/ProsekaProfile.svelte';
 
 	import { onMount } from 'svelte';
 	import axios from 'axios';
@@ -63,15 +64,25 @@
 	<title>Scriptone - 独りんぼエンヴィーイベントポイント計算機</title>
 	<meta name="description" content="チアフルイベントの連勝のランキングを掲載しております。" />
 	<meta name="twitter:site" content="@ToC1Kwin" />
-    <meta name="twitter:creator" content="@ToC1Kwin" />
-    <meta property="og:title" content="独りんぼエンヴィーイベントポイント計算機" />
-    <meta name="twitter:title" content="独りんぼエンヴィーイベントポイント計算機" />
-    <meta property="og:description" content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。" />
-    <meta name="twitter:description" content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。" />
-    <meta name="twitter:image"
-        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
+	<meta name="twitter:creator" content="@ToC1Kwin" />
+	<meta property="og:title" content="独りんぼエンヴィーイベントポイント計算機" />
+	<meta name="twitter:title" content="独りんぼエンヴィーイベントポイント計算機" />
+	<meta
+		property="og:description"
+		content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。"
+	/>
+	<meta
+		name="twitter:description"
+		content="独りんぼエンヴィーでのイベントポイントの調整のための計算をします。"
+	/>
+	<meta
+		name="twitter:image"
+		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
+	/>
+	<meta
+		property="og:image"
+		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
+	/>
 </svelte:head>
 
 <Header />
@@ -131,6 +142,10 @@
 					{/if}
 				</div>
 			</div>
+		</div>
+		<div class="container">
+			<h2>Profile</h2>
+			<Profile />
 		</div>
 	</article>
 </main>

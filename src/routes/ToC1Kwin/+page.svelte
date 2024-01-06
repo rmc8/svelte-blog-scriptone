@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from '../../components/HeaderForPrsk.svelte';
 	import Footer from '../../components/Footer.svelte';
+	import Profile from '../../components/ProsekaProfile.svelte';
 </script>
 
 <svelte:head>
@@ -27,49 +28,28 @@
 	<article>
 		<div class="container">
 			<h1>Profile & Tools</h1>
-			<section id="profile">
-				<div class="profile-icon">
-					<img
-						src="https://rmc8.github.io/ToC1Kwin/assets/icon/twi.jpg"
-						alt="TwitterIcon"
-						class="twitter_icon"
-					/>
-				</div>
-				<h2 class="user_name">K</h2>
-				<p>
-					<img
-						src="https://rmc8.github.io/ToC1Kwin/assets/icon/discord-mark-blue-icon.png"
-						alt="DiscordIcon"
-						class="discord_icon"
-					/>k8x
-				</p>
-			</section>
-			<section id="about">
-				<h2>About</h2>
-				<p>
-					はじめまして。Kと申します。プロセカでおまかせしたり連勝したりすることが好きです。スタンプ押しながらまったりご一緒できましたらうれしいです！
-				</p>
-			</section>
+			<Profile profile_link_enable={false} />
+
 			<section id="prsk">
 				<h2>Project Sekai</h2>
 				<ul style="padding:0;">
 					<li style="padding:0">
 						<h3>ツイ募</h3>
 						<p>
-							普段は36万編成で誰でも募集を以下のようにしています。SFもとくに気にせず適当に叩きながらスタンプをひたすら連打しているので、気楽にご一緒できましたらうれしいです！
+							普段は36万編成で募集を以下のようにしています。SFもとくに気にせず適当に叩きながらスタンプをひたすら連打しているので、気楽にご一緒できましたらうれしいです！
 						</p>
 						<div>
 							<h4>マラソンイベ</h4>
 							<blockquote>
-								おまかせ(選曲○)【[room_number]】＠４<br />[leader_skill]%　募：だれでも！<br
-								/>#プロセカ募集 #プロセカ協力<br />
+								おまかせ(選曲○)【[room_number]】＠４<br />主[leader_skill]% 募☆4<br />#プロセカ募集
+								#プロセカ協力<br />
 							</blockquote>
 						</div>
 						<div>
 							<h4>チアフルイベ</h4>
 							<blockquote>
-								[team_name]【[room_number]】＠４<br />[leader_skill]%　募：だれでも！<br
-								/>#プロセカ募集 #プロセカ協力<br />
+								[team_name]【[room_number]】＠４<br />主[leader_skill]% 募☆4<br />#プロセカ募集
+								#プロセカ協力<br />
 							</blockquote>
 						</div>
 					</li>
@@ -79,10 +59,11 @@
 							ツイ募支援が多めですがお声がけくださいましたらDiscordの周回にもお邪魔します。連勝用であればいろいろな総合力の調整に対応できます。
 						</p>
 						<ul class="decoration">
-							<li>150/690/36.3(P1)</li>
-							<li>150/730/33.8(P2)</li>
-							<li>150/710/19.3</li>
-							<li>150/680/16.3</li>
+							<li>150/700/36.3(P1)</li>
+							<li>150/730/33.6(P2)</li>
+							<li>150/740/22.5(P1)</li>
+							<li>100/700/19.6</li>
+							<li>150/710/16.7</li>
 						</ul>
 						<p />
 					</li>
@@ -211,43 +192,12 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		color: #008c9c;
+		color: #0aadb9;
 	}
 
 	#tools ul {
 		text-align: left;
 		margin-right: auto;
 		padding-left: 0px;
-	}
-
-	#profile p {
-		font-size: 18px;
-		margin: 0;
-		text-align: center;
-	}
-
-	#profile img.twitter_icon {
-		width: 120px;
-		height: 120px;
-		object-fit: cover;
-		border-radius: 50%;
-		margin-bottom: 10px;
-	}
-	#profile h2.user_name {
-		font-size: 24px;
-		font-weight: 500;
-		margin: 0;
-		border: 0px;
-		text-align: center;
-	}
-
-	.discord_icon {
-		width: 20px;
-		height: 20px;
-		margin-right: 2px;
-		margin-bottom: 2px;
-		object-fit: contain;
-		display: inline-block;
-		vertical-align: middle;
 	}
 </style>

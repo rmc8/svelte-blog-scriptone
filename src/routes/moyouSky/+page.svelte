@@ -23,7 +23,7 @@
 </svelte:head>
 
 <Header />
-]
+
 <main>
 	<article>
 		<div class="container">

@@ -3,6 +3,7 @@
 	import axios from 'axios';
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
+	import Profile from '../../../components/ProsekaProfile.svelte';
 	import Gallery from './Gallery.svelte';
 </script>
 
@@ -37,6 +38,10 @@
 	<article>
 		<div class="container">
 			<Gallery />
+		</div>
+		<div class="container">
+			<h2>Profile</h2>
+			<Profile />
 		</div>
 	</article>
 </main>

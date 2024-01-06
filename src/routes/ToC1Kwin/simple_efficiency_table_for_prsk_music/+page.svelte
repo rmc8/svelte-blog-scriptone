@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
+	import Profile from '../../../components/ProsekaProfile.svelte';
 	import Table from './Table.svelte';
 
 </script>
@@ -25,6 +26,10 @@
 	<article>
 		<div class="container">
 			<Table />
+		</div>
+		<div class="container">
+			<h2>Profile</h2>
+			<Profile />
 		</div>
 	</article>
 </main>

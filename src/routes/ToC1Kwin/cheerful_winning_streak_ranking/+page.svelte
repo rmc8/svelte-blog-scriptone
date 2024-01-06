@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
-
+	import Profile from '../../../components/ProsekaProfile.svelte';
 	import { onMount } from 'svelte';
 	import axios from 'axios';
 
@@ -117,6 +117,10 @@
 					</div>
 				</div>
 			{/if}
+		</div>
+		<div class="container">
+			<h2>Profile</h2>
+			<Profile />
 		</div>
 	</article>
 	<Footer />
