@@ -20,9 +20,10 @@
 					{ name: 'Master', data: Object.values(diffObj.master) },
 					{ name: 'Append', data: Object.values(diffObj.append) }
 				],
-                title: {text:"楽曲難易度分布", align: "center", style:{fontSize: "20px"}},
-				chart: { type: 'bar', height: 350, stacked: true, toolbar: { show: true } },
-                xaxis: { categories: diffObj.difficulties },
+				title: { text: '楽曲難易度分布', align: 'center', style: { fontSize: '20px' } },
+				chart: { type: 'bar', stacked: true, toolbar: { show: true } },
+				plotOptions: { bar: { horizontal: true } },
+				xaxis: { categories: diffObj.difficulties },
 				grid: { show: false },
 				colors: [
 					'#2be7a6', // Easy
