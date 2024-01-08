@@ -17,7 +17,7 @@
 			const activeUserCountData = jsonData.data.map((item) => item.active_user_count);
 			const movingAverageData = jsonData.data.map((item) => item.moving_average);
 			const eventNames = jsonData.data.map((item) => item.event_name);
-            ApexCharts = (await import('apexcharts')).default;
+			ApexCharts = (await import('apexcharts')).default;
 
 			chart = new ApexCharts(chartDiv, {
 				series: [
@@ -60,7 +60,7 @@
 					tickAmount: 6,
 					labels: {
 						formatter: function (val) {
-							return val.toLocaleString(); 
+							return val.toLocaleString();
 						}
 					}
 				},

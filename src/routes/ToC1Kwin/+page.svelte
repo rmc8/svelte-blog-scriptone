@@ -152,6 +152,9 @@
 						<a href="/ToC1Kwin/event_point_calculator">独りんぼエンヴィーポイント計算</a>
 					</li>
 					<li>
+						<a href="/ToC1Kwin/prsk_dashboard">プロセカダッシュボード(開発中)</a>
+					</li>
+					<li>
 						<a href="/ToC1Kwin/cheerful_bingo/">Cheerful Bingo Card</a>
 					</li>
 					<li>
