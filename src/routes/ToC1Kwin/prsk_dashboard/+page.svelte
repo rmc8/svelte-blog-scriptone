@@ -42,7 +42,6 @@
 		property="og:image"
 		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
 	/>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </svelte:head>
 
 <Header />
@@ -50,7 +49,9 @@
 	<article>
 		<div class="container">
 			<div class="alert alert-warning" role="alert">
-				現在、本ダッシュボードは開発中です。カード枚数のまとめなど実装予定ですが何かまとめて欲しい情報などありましたら<a href="https://x.com/mskydev">@mskydev</a>にご連絡ください。
+				現在、本ダッシュボードは開発中です。カード枚数のまとめなど実装予定ですが何かまとめて欲しい情報などありましたら<a
+					href="https://x.com/mskydev">@mskydev</a
+				>にご連絡ください。
 			</div>
 			<h2>Project Sekai Dashboard (PSD)</h2>
 			{#if data == null}
@@ -68,3 +69,24 @@
 </main>
 
 <Footer />
+
+<style>
+	.alert a {
+		color: #007bff;
+		text-decoration: none;
+		background-color: transparent;
+	}
+	.alert {
+		position: relative;
+		padding: 0.75rem 1.25rem;
+		margin-bottom: 1rem;
+		border: 1px solid transparent;
+		border-radius: 0.25rem;
+	}
+
+	.alert-warning {
+		color: #856404;
+		background-color: #fff3cd;
+		border-color: #ffeeba;
+	}
+</style>
