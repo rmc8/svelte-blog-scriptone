@@ -32,7 +32,7 @@
 				},
 				series: series,
 				title: {
-					text: 'キャラクター×レアリティー別カード枚数まとめ',
+					text: 'キャラクター×レアリティー別',
 					align: 'center',
 					style: { fontSize: '20px' }
 				},

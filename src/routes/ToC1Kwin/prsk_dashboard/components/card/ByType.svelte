@@ -36,7 +36,7 @@
 				},
 				series: series,
 				title: {
-					text: '☆4キャラクター×タイプ別カード枚数まとめ',
+					text: '☆4キャラクター×タイプ別',
 					align: 'center',
 					style: { fontSize: '20px' }
 				},

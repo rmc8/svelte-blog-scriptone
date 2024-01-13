@@ -35,7 +35,7 @@
 				},
 				series: series,
 				title: {
-					text: 'バーチャルシンガー×レアリティー別カード枚数まとめ',
+					text: 'バーチャルシンガー×レアリティー別',
 					align: 'center',
 					style: { fontSize: '20px' }
 				},

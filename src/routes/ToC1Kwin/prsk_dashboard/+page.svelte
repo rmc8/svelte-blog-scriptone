@@ -65,7 +65,7 @@
 			{/if}
 			{#if data?.card != undefined}
 				<div id="card">
-					<h3>カードまとめ</h3>
+					<h3>カード枚数</h3>
 					<ByRarity rarityCounter={data.card.byRarity} />
 					<ByRarityVs rarityCounter={data.card.byRarityForVs} />
 					<ByType typeCounter={data.card.byType} />

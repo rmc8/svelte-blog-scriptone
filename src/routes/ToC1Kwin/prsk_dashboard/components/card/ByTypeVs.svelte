@@ -36,7 +36,7 @@
 				},
 				series: series,
 				title: {
-					text: '☆4バーチャルシンガー×タイプ別カード枚数まとめ',
+					text: '☆4バーチャルシンガー×タイプ別',
 					align: 'center',
 					style: { fontSize: '20px' }
 				},
