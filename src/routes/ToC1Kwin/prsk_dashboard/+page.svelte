@@ -5,12 +5,18 @@
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
 	import Diff from './components/Difficuluties.svelte';
+	import ByRarity from './components/card/ByRarity.svelte';
+	import ByRarityVs from './components/card/ByRarityVs.svelte';
+	import ByType from './components/card/ByType.svelte';
+	import ByTypeVs from './components/card/ByTypeVs.svelte';
+	import BySkill from './components/card/BySkill.svelte';
+	import BySkillVs from './components/card/BySkillVs.svelte';
 
 	let data: ApiResponse | null = null;
 
 	onMount(async () => {
 		const url =
-			'https://script.google.com/macros/s/AKfycbwho0hynu4aHnLkzbbGHos3xpA0kIBNFVhv6aMmQGivc53wOIwUzqghhdxyY8VgESpv/exec';
+			'https://script.google.com/macros/s/AKfycbyhafQCbPr3OZlyNlPsqJvmxEvw7wiu2uN5EAhvb-2Wx0xnFnJhAkKlfw3uEgk9lsF2/exec';
 		try {
 			const response = await fetch(url);
 			if (response.ok) {
@@ -57,8 +63,22 @@
 			{#if data == null}
 				<p>Now loading...</p>
 			{/if}
+			{#if data?.card != undefined}
+				<div id="card">
+					<h3>カードまとめ</h3>
+					<ByRarity rarityCounter={data.card.byRarity} />
+					<ByRarityVs rarityCounter={data.card.byRarityForVs} />
+					<ByType typeCounter={data.card.byType} />
+					<ByTypeVs typeCounter={data.card.byTypeForVs} />
+					<BySkill skillCounter={data.card.bySkill} />
+					<BySkillVs skillCounter={data.card.bySkillForVs} />
+				</div>
+			{/if}
 			{#if data?.diff != undefined}
-				<Diff diffObj={data.diff} />
+				<div id="music">
+					<h3>楽曲</h3>
+					<Diff diffObj={data.diff} />
+				</div>
 			{/if}
 		</div>
 		<div class="container">
