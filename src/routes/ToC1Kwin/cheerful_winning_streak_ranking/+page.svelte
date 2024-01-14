@@ -2,6 +2,7 @@
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
+	import Tools from '../PrskTools.svelte';
 	import { onMount } from 'svelte';
 	import axios from 'axios';
 
@@ -119,6 +120,7 @@
 			{/if}
 		</div>
 		<div class="container">
+			<Tools />
 			<h2>Profile</h2>
 			<Profile />
 		</div>

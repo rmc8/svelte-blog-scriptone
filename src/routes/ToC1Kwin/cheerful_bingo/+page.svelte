@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import axios from 'axios';
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
 	import Gallery from './Gallery.svelte';
+	import Tools from '../PrskTools.svelte';
 </script>
 
 <svelte:head>
@@ -40,6 +39,7 @@
 			<Gallery />
 		</div>
 		<div class="container">
+			<Tools />
 			<h2>Profile</h2>
 			<Profile />
 		</div>
@@ -47,4 +47,3 @@
 </main>
 
 <Footer />
-

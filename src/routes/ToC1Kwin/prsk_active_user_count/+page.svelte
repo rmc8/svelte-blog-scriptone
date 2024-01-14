@@ -5,6 +5,7 @@
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
+	import Tools from '../PrskTools.svelte';
 	import Chart from './Chart.svelte';
 
 	let columns = {};
@@ -107,6 +108,7 @@
 			{/if}
 		</div>
 		<div class="container">
+			<Tools />
 			<h2>Profile</h2>
 			<Profile />
 		</div>

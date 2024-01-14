@@ -2,8 +2,8 @@
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
+	import Tools from '../PrskTools.svelte';
 	import Table from './Table.svelte';
-
 </script>
 
 <svelte:head>
@@ -12,13 +12,17 @@
 	<meta name="twitter:site" content="@mskydev" />
 	<meta name="twitter:creator" content="@mskydev" />
 	<meta property="og:title" content="プロセカ楽曲効率" />
-    <meta name="twitter:title" content="プロセカ楽曲効率" />
-    <meta property="og:description" content="プロセカの楽曲効率を簡単にまとめた表です。" />
-    <meta name="twitter:description" content="プロセカの楽曲効率を簡単にまとめた表です。" />
-    <meta name="twitter:image"
-        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg" />
+	<meta name="twitter:title" content="プロセカ楽曲効率" />
+	<meta property="og:description" content="プロセカの楽曲効率を簡単にまとめた表です。" />
+	<meta name="twitter:description" content="プロセカの楽曲効率を簡単にまとめた表です。" />
+	<meta
+		name="twitter:image"
+		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
+	/>
+	<meta
+		property="og:image"
+		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
+	/>
 </svelte:head>
 
 <Header />
@@ -28,6 +32,7 @@
 			<Table />
 		</div>
 		<div class="container">
+			<Tools />
 			<h2>Profile</h2>
 			<Profile />
 		</div>
