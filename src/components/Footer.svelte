@@ -54,8 +54,31 @@
 				</p>
 			</section>
 			<section>
+				<h3>Buy me a coffee</h3>
+				<div id="buyme">
+					<ul>
+						<li>
+							<a href="https://www.buymeacoffee.com/rmc8">
+								<img class="bn" src="/logo/default-yellow.png" />
+							</a>
+						</li>
+						<li>
+							<img class="qr" src="/logo/bmc_qr.png" />
+						</li>
+					</ul>
+				</div>
+				<h3>Category</h3>
+				<ul>
+					{#each categories as category}
+						<li><a href="/category/{category.id}/p/1" rel="external">{category.name}</a></li>
+					{/each}
+				</ul>
+			</section>
+			<section>
 				<h3>Link(Internal)</h3>
 				<ul>
+
+					<li><a href="/random_shosha">ランダム書写Bot</a></li>
 					<li><a href="/moyouSky">moyouSky</a></li>
 					<li><a href="/ToC1Kwin">プロセカ関連</a></li>
 					<li><a href="/privacy_policy">プライバシーポリシー・免責事項</a></li>
@@ -70,15 +93,12 @@
 							>
 						</li>
 						<li>
-							<a
-								style="background:url('/icon/github.ico')"
-								href="https://github.com/rmc8/">GitHub</a
+							<a style="background:url('/icon/github.ico')" href="https://github.com/rmc8/"
+								>GitHub</a
 							>
 						</li>
 						<li>
-							<a
-								style="background:url('/icon/x.webp')"
-								href="https://twitter.com/rmc_km">@rmc_km</a
+							<a style="background:url('/icon/x.webp')" href="https://twitter.com/rmc_km">@rmc_km</a
 							>
 						</li>
 						<!-- <li>
@@ -95,14 +115,6 @@
 						</li>
 					</ul>
 				</div>
-			</section>
-			<section>
-				<h3>Category</h3>
-				<ul>
-					{#each categories as category}
-						<li><a href="/category/{category.id}/p/1" rel="external">{category.name}</a></li>
-					{/each}
-				</ul>
 			</section>
 		</div>
 	</div>
@@ -256,5 +268,12 @@
 		object-fit: contain;
 		display: inline-block;
 		vertical-align: middle;
+	}
+
+	#buyme img.bn {
+		width: 192px;
+	}
+	#buyme img.qr {
+		width: 128px;
 	}
 </style>
