@@ -11,6 +11,22 @@
   <priority>0.8</priority>
 </url>
 <url>
+  <loc>https://rmc-8.com/learn-flutter-create-counter-app</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://rmc-8.com/learning-flutter-reasons-and-resources</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://rmc-8.com/twitter-to-bluesky</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://rmc-8.com/twitter-to-misskey</loc>
+  <priority>0.8</priority>
+</url>
+<url>
   <loc>https://rmc-8.com/sveltekit-syntaxhighlight</loc>
   <priority>0.8</priority>
 </url>
@@ -19,19 +35,11 @@
   <priority>0.8</priority>
 </url>
 <url>
-  <loc>https://rmc-8.com/focal-utopia-np-first-impression</loc>
+  <loc>https://rmc-8.com/random_shosha</loc>
   <priority>0.8</priority>
 </url>
 <url>
-  <loc>https://rmc-8.com/akg-k702-recable</loc>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://rmc-8.com/using-notion-api-with-python</loc>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://rmc-8.com/ticktick2notion</loc>
+  <loc>https://rmc-8.com/moyouSky</loc>
   <priority>0.8</priority>
 </url>
 <url>
@@ -44,6 +52,10 @@
 </url>
 <url>
   <loc>https://rmc-8.com/ToC1Kwin/event_point_calculator</loc>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://rmc-8.com/ToC1Kwin/prsk_dashboard</loc>
   <priority>0.7</priority>
 </url>
 
