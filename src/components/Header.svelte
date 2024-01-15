@@ -8,7 +8,7 @@
 	<div id="logo_container">
 		<h1>
 			<a href="https://rmc-8.com/" id="logo_link">
-				<img id="logo" alt="Scriptone logo" width="360" height="67" src="/logo/scriptone_header.webp" />
+				<img id="logo" alt="Scriptone" width="360" height="67" src="/logo/scriptone_header.webp" />
 			</a>
 		</h1>
 	</div>
