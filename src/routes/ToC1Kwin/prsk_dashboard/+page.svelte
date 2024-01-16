@@ -17,7 +17,7 @@
 
 	onMount(async () => {
 		const url =
-			'https://script.google.com/macros/s/AKfycbyhafQCbPr3OZlyNlPsqJvmxEvw7wiu2uN5EAhvb-2Wx0xnFnJhAkKlfw3uEgk9lsF2/exec';
+			'https://script.google.com/macros/s/AKfycbwJS0vNcUFGzV0C4lGVZevGdeCC_8-APg5goLZ_drO2wE4wFW0_8vXUbbQfizNQaNh3/exec';
 		try {
 			const response = await fetch(url);
 			if (response.ok) {
