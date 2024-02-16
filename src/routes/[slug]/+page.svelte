@@ -6,26 +6,26 @@
 	import hljs from 'highlight.js';
 
 	export let data: PageData;
-    let existsCodeBlock = false;
-    const cheerio$ = load(data.content);
+	let existsCodeBlock = false;
+	const cheerio$ = load(data.content);
 
-    // コードブロックのハイライト
-    cheerio$('pre code').each((_, elm) => {
-        const result = hljs.highlightAuto(cheerio$(elm).text());
-        cheerio$(elm).html(result.value);
-        cheerio$(elm).addClass('hljs');
-        existsCodeBlock = true;
-    });
+	// コードブロックのハイライト
+	cheerio$('pre code').each((_, elm) => {
+		const result = hljs.highlightAuto(cheerio$(elm).text());
+		cheerio$(elm).html(result.value);
+		cheerio$(elm).addClass('hljs');
+		existsCodeBlock = true;
+	});
 
-    // {{iframe style="..." src="..."}} 記法を HTML iframe に置換する
-    const iframeRegex = /{{iframe style="([^"]+)" src="([^"]+)"}}/g;
-    let htmlContent = cheerio$.html();
-    htmlContent = htmlContent.replace(iframeRegex, (_, style, src) => {
-        return `<iframe src="${src}" style="${style}" frameborder="0"></iframe>`;
-    });
+	// {{iframe style="..." src="..."}} 記法を HTML iframe に置換する
+	const iframeRegex = /{{iframe style="([^"]+)" src="([^"]+)"}}/g;
+	let htmlContent = cheerio$.html();
+	htmlContent = htmlContent.replace(iframeRegex, (_, style, src) => {
+		return `<iframe src="${src}" style="${style}" frameborder="0"></iframe>`;
+	});
 
-    const article = htmlContent;
-    export { article };
+	const article = htmlContent;
+	export { article };
 </script>
 
 <svelte:head>
@@ -175,5 +175,4 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-	
 </style>
