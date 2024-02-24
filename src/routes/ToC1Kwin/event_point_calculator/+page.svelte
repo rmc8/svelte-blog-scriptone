@@ -99,7 +99,7 @@
 					<p>
 						<label>獲得したいイベントポイントを数値で入力してください。</label><br />
 						<input
-							class="event_point_input"
+							class="event_point_input border border-gray-300 rounded-md"
 							type="number"
 							bind:value={inputNumber}
 							placeholder="Input number"
@@ -176,7 +176,6 @@
 		background-color: #24aab3;
 		color: white;
 		font-weight: bold;
-		padding: 6px;
 		width: 32px;
 		height: 32px;
 		margin-right: 8px;
