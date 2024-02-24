@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Tag from 'svelte-material-icons/Tag.svelte';
+	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
 	type Blog = {
 		title: string;
 		id: string;
@@ -37,7 +39,7 @@
 				{#each content.tags as tag}
 					<div class="tag">
 						<div class="tag_icon">
-							<img src="/logo/tag.svg" width="20" height="20" alt="tag_icon" />
+							<Tag color="#0aadb9" />
 						</div>
 						<div class="tag_link">
 							<a href="/tag/{tag.id}/p/1">
@@ -48,19 +50,21 @@
 				{/each}
 			</div>
 		</div>
-		<div class="clock">
-			<img src="/clock.webp" width="20" height="20" alt="clock_icon" />
+		<div>
+			<div class="clock pt-1">
+				<ClockOutline width={20} height={20} />
+			</div>
+			<time style="color:#666">
+				{new Date(content.createdAt)
+					.toLocaleString('ja-JP', {
+						year: 'numeric',
+						month: '2-digit',
+						day: '2-digit',
+						hour: '2-digit',
+						minute: '2-digit'
+					})
+					.replace(/\//g, '-')}</time
+			>
 		</div>
-		<time style="color:#666">
-			{new Date(content.createdAt)
-				.toLocaleString('ja-JP', {
-					year: 'numeric',
-					month: '2-digit',
-					day: '2-digit',
-					hour: '2-digit',
-					minute: '2-digit'
-				})
-				.replace(/\//g, '-')}</time
-		>
 	</div>
 </li>

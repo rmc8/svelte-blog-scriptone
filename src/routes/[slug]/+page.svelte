@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Tag from 'svelte-material-icons/Tag.svelte';
+	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import type { PageData } from './$types';
@@ -59,9 +61,9 @@
 				</div>
 				<div class="tags">
 					{#each data.tags as tag}
-						<div class="tag">
-							<div class="tag_icon">
-								<img class="tag_icon" src="/logo/tag.svg" width="20" height="20" alt="tag_icon" />
+						<div class="tag pr-2">
+							<div class="tag_icon mt-1">
+								<Tag color="#0aadb9" width={20} height={20} />
 							</div>
 							<div class="tag_link">
 								<a href="/tag/{tag.id}/p/1">
@@ -72,7 +74,9 @@
 					{/each}
 				</div>
 				<div class="clock">
-					<img src="/clock.webp" width="20" height="20" alt="clock_icon" />
+					<div class="pt-1">
+						<ClockOutline width={20} height={20} />
+					</div>
 					<time style="color:#666">
 						{new Date(data.createdAt)
 							.toLocaleString('ja-JP', {
@@ -147,13 +151,6 @@
 	}
 	time {
 		color: #666;
-	}
-	.tag_icon {
-		width: 22px;
-		height: 22px;
-	}
-	.tag_link {
-		margin-right: 12px;
 	}
 
 	#meta {
