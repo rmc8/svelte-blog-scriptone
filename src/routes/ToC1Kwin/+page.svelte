@@ -102,7 +102,8 @@
 							<li>Walk on and on 43位</li>
 							<li>Cast Spell on You 62位</li>
 							<li>お悩み聞かせて！わくわくピクニック 72位</li>
-							<li>TOP200~TOP1000 33回(2024-01-08時点)</li>
+							<li>Take the Best Shot！ 78位</li>
+							<li>TOP200~TOP1000 39回(2024-02-28時点)</li>
 						</ul>
 						<p />
 					</li>

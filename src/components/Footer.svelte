@@ -34,7 +34,7 @@
 						<img
 							src="https://rmc8.github.io/rmc_km/assets/icon/twi.webp"
 							alt="TwitterIcon"
-							class="twitter_icon"
+							class="twitter_icon flex justify-center items-center mx-auto"
 						/>
 					</div>
 					<h4 class="user_name">K</h4>

@@ -4,6 +4,7 @@
 	import type { PageData } from './$types';
 	import { load } from 'cheerio';
 	import hljs from 'highlight.js';
+	import "./codeblock.css";
 
 	export let data: PageData;
 	let existsCodeBlock = false;
@@ -48,7 +49,7 @@
 		<div class="container">
 			<h1>{data.title}</h1>
 			<div class="contents">
-				<div class="eyecatch_block">
+				<div class="eyecatch_block pb-8">
 					<img src={data.eyecatch} alt="eyecatch-{data.title}" />
 				</div>
 				{@html article}
@@ -95,7 +96,7 @@
 </main>
 <Footer />
 
-<style>
+<style lang="postcss">
 	* {
 		box-sizing: border-box;
 	}

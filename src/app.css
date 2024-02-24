@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
 	--accent-color_dark: #0c323c;
 	--accent-color-light: #0aadb9; /* #009cac */

@@ -1,5 +1,5 @@
 <header>
-	<nav>
+	<nav class="py-3">
 		<ul>
 			<li><a href="/ToC1Kwin">Profile</a></li>
 			<li><a href="/ToC1Kwin#tools">Tools</a></li>
