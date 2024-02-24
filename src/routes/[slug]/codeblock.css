@@ -32,10 +32,13 @@ pre {
 	background: #fffbee;
 	color: #272822;
 	border-radius: 5px;
+	margin-bottom: 20px;
+	margin-top: 12px;
 }
 
 code {
 	padding: 16px;
+	margin-bottom: 20px;
 }
 pre,
 code {

@@ -50,6 +50,7 @@
 					<img src={data.eyecatch} alt="eyecatch-{data.title}" />
 				</div>
 				{@html article}
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</div>
 	</article>
@@ -167,5 +168,9 @@
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.contents img {
+		border-radius: 8px !important;
 	}
 </style>
