@@ -34,7 +34,7 @@
 		updateFilteredData();
 	}
 
-	function changePage(page) {
+	function changePage(page:any) {
 		currentPage = page;
 		updateFilteredData();
 	}
