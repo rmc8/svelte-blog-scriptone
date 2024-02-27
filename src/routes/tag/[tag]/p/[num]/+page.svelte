@@ -4,7 +4,6 @@
 	import Articles from '../../../../../components/Articles.svelte';
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
-	import { contents } from 'cheerio/lib/api/traversing';
 
 	export let data: PageData;
 	let p: number;
