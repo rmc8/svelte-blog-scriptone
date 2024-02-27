@@ -3,13 +3,13 @@
 	import Footer from '../../../../../components/Footer.svelte';
 	import Articles from '../../../../../components/Articles.svelte';
 	import type { PageData } from './$types';
-	import { onMount } from 'svelte';
+	import { onMount , beforeUpdate} from 'svelte';
 
 	export let data: PageData;
 	let currentPageNum: number = 1;
 	let categorySlug: string;
 
-	onMount(() => {
+	beforeUpdate(() => {
 		const parts = window.location.pathname.split('/');
 		currentPageNum = Number(parts[parts.length - 1]) || 1;
 		categorySlug = parts[parts.length - 3] || undefined;
