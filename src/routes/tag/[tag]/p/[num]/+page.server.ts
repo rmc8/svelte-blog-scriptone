@@ -15,4 +15,4 @@ export const load: PageServerLoad = async ({ params }) => {
 	return await getList({ offset, limit, filters });
 };
 
-export const ssr = true;
+export const csr = true;
