@@ -6,7 +6,8 @@
 	import { onMount } from 'svelte';
 
 	export let data: PageData;
-	let currentPageNum: number = 1;
+	let p: number;
+	let currentPageNum: number;
 	let tagSlug: string;
 
 	onMount(() => {
@@ -14,12 +15,11 @@
 		currentPageNum = Number(parts[parts.length - 1]) || 1;
 		tagSlug = parts[parts.length - 3] || undefined;
 	});
-
+	let pagination: number[] = [];
 	$: {
 		const pages = Math.ceil(data.totalCount / 6);
 		pagination = Array.from({ length: pages }, (_, i) => i + 1);
 	}
-	let pagination: number[] = [];
 </script>
 
 <svelte:head>

@@ -3,13 +3,16 @@
 	import Footer from '../../../../../components/Footer.svelte';
 	import Articles from '../../../../../components/Articles.svelte';
 	import type { PageData } from './$types';
-	import { onMount , beforeUpdate} from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
-	let currentPageNum: number = 1;
-	let categorySlug: string;
 
-	beforeUpdate(() => {
+	let n: number;
+	let currentPageNum: number;
+	let categorySlug: string | undefined;
+	let pagination: number[] = [];
+
+	onMount(() => {
 		const parts = window.location.pathname.split('/');
 		currentPageNum = Number(parts[parts.length - 1]) || 1;
 		categorySlug = parts[parts.length - 3] || undefined;
@@ -20,7 +23,7 @@
 		pagination = Array.from({ length: pages }, (_, i) => i + 1);
 	}
 
-	let pagination: number[] = [];
+
 </script>
 
 <svelte:head>
