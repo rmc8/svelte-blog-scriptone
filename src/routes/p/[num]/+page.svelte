@@ -3,14 +3,14 @@
 	import Footer from '../../../components/Footer.svelte';
 	import Articles from '../../../components/Articles.svelte';
 	import type { PageData } from './$types';
-	import { beforeUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
 
 	let pagination: number[] = [];
 	let currentPageNum: number;
 
-	beforeUpdate(() => {
+	onMount(() => {
 		const slugNumber = parseInt(window.location.pathname.split('/').pop() || '1', 10);
 		currentPageNum = isNaN(slugNumber) ? 1 : slugNumber;
 	});

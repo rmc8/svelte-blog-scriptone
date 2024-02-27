@@ -22,8 +22,6 @@
 		const pages = Math.ceil(data.totalCount / 6);
 		pagination = Array.from({ length: pages }, (_, i) => i + 1);
 	}
-
-
 </script>
 
 <svelte:head>
@@ -45,7 +43,7 @@
 				<!-- {#if p === +currentPageNum}
 				<span>{p}</span>
 			{:else} -->
-				<a href={`/category/${categorySlug}/p/${p}`}>{p}</a>
+				<a href={`/category/${categorySlug}/p/${p}/`}>{p}</a>
 				<!-- {/if} -->
 			{/each}
 		</div>
