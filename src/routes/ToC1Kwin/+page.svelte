@@ -75,6 +75,7 @@
 						</p>
 						<ul id="winning_streak_record" class="decoration">
 							<li>金魚グループ「株式会社スイミーグループ」1120連勝</li>
+							<li>お散歩グループ「フレーミー財閥」1000連勝</li>
 							<li>しょうゆグループ「fantasista」816連勝</li>
 							<li>放送委員会グループ「（株）みんなでフルコンボ！」674連勝</li>
 							<li>みどりぷよグループ「fantasista」500連勝</li>
@@ -103,7 +104,7 @@
 							<li>Cast Spell on You 62位</li>
 							<li>お悩み聞かせて！わくわくピクニック 72位</li>
 							<li>Take the Best Shot！ 78位</li>
-							<li>TOP200~TOP1000 39回(2024-02-28時点)</li>
+							<li>TOP200~TOP1000 42回(2024-04-20時点)</li>
 						</ul>
 						<p />
 					</li>
