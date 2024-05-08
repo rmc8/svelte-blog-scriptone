@@ -65,13 +65,8 @@ const hardcodedUrls = [
 	`https://${domain}/`,
 	`https://${domain}/about`,
 	`https://${domain}/moyouSky`,
-	`https://${domain}/privacy_policy`,
 	`https://${domain}/ToC1Kwin`,
-	`https://${domain}/ToC1Kwin/cheerful_bingo`,
-	`https://${domain}/ToC1Kwin/cheerful_winning_streak_ranking`,
 	`https://${domain}/ToC1Kwin/event_point_calculator`,
-	`https://${domain}/ToC1Kwin/prsk_active_user_count`,
-	`https://${domain}/ToC1Kwin/prsk_dashboard`,
 	`https://${domain}/ToC1Kwin/simple_efficiency_table_for_prsk_music`
 ];
 

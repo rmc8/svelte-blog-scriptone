@@ -30,6 +30,7 @@
 		property="og:image"
 		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
 	/>
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <Header />

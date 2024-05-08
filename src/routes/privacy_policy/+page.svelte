@@ -6,6 +6,7 @@
 <svelte:head>
 	<title>Scriptone - プライバシーポリシー・免責事項</title>
 	<meta name="description" content="Detail Pages" />
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <Header />

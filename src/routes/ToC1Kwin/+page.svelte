@@ -104,7 +104,7 @@
 							<li>Cast Spell on You 62位</li>
 							<li>お悩み聞かせて！わくわくピクニック 72位</li>
 							<li>Take the Best Shot！ 78位</li>
-							<li>TOP200~TOP1000 42回(2024-04-20時点)</li>
+							<li>TOP200~TOP1000 44回(2024-05-08時点)</li>
 						</ul>
 						<p />
 					</li>
