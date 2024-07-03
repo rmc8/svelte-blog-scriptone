@@ -24,7 +24,7 @@
 <section id="table">
 	<h3 class="text-left mb-2">スコアアップ倍率表</h3>
 	<p class="w-full pb-4">
-		スコアアップ倍率および内部値を表示した表です。フィルターに数値を入力すると、部分的に一致した行を最大で30件表示します。
+		スコアアップ倍率(実効値)および内部値を表示した表です。フィルターに数値を入力すると、部分的に一致した行を最大で30件表示します。
 	</p>
 	<div　class="text-left w-full">
 		<table class="rounded-md overflow-hidden">

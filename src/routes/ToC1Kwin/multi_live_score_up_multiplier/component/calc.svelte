@@ -72,7 +72,7 @@
 			>
 		</form>
 		<div class="mt-6 bg-[#e6f7f8] p-4 rounded-lg text-[#0aadb9] font-medium  max-w-md">
-			<p class="mb-2">スコアアップ倍率（実行値）＝ <b>{scoreUpResult}%</b></p>
+			<p class="mb-2">スコアアップ倍率（実効値）＝ <b>{scoreUpResult}%</b></p>
 			<p>内部値 ＝ <b>{internalValue}</b></p>
 		</div>
 	</div>
