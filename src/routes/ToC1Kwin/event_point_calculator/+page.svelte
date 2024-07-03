@@ -63,7 +63,7 @@
 
 <svelte:head>
 	<title>Scriptone - 独りんぼエンヴィーイベントポイント計算機</title>
-	<meta name="description" content="チアフルイベントの連勝のランキングを掲載しております。" />
+	<meta name="description" content="独りんぼエンヴィーでのイベントポイントの調整のためのスコア計算をします。" />
 	<meta name="twitter:site" content="@ToC1Kwin" />
 	<meta name="twitter:creator" content="@ToC1Kwin" />
 	<meta property="og:title" content="独りんぼエンヴィーイベントポイント計算機" />
