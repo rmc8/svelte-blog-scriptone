@@ -50,7 +50,7 @@
 			{#each otherMultipliers as multiplier, index (index)}
 				<div class="flex items-center">
 					<label for={`other-${index}`} class="font-medium text-gray-700 w-48"
-						>{index + 2}枠（リーダー以外）</label
+						>{index + 2}枠</label
 					>
 					<div class="relative flex-1">
 						<input
