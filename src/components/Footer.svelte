@@ -59,11 +59,11 @@
 					<ul>
 						<li>
 							<a href="https://www.buymeacoffee.com/rmc8">
-								<img class="bn" src="/logo/default-yellow.png" />
+								<img class="bn" alt="buymeacoffee" src="/logo/default-yellow.png" />
 							</a>
 						</li>
 						<li>
-							<img class="qr" src="/logo/bmc_qr.png" />
+							<img class="qr" alt="buymeacoffee_qr" src="/logo/bmc_qr.png" />
 						</li>
 					</ul>
 				</div>

@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Scriptone - みんなでライブ用スコアアップ倍率確認/title>
+	<title>Scriptone - みんなでライブ用スコアアップ倍率確認</title>
 	<meta name="description" content="みんなでライブ向けのスコアアップ倍率（実行値）の計算をしたり、表による実行値の表示をしたりします。" />
 	<meta name="twitter:site" content="@mskydev" />
 	<meta name="twitter:creator" content="@mskydev" />
