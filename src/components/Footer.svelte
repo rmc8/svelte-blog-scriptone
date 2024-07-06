@@ -132,10 +132,17 @@
 </footer>
 
 <style>
+	footer h3 {
+		padding-bottom: 8px;
+	}
+	footer section ul li,
+	.external-link {
+		transition: all 750ms ease;
+	}
+
 	footer section ul li {
 		list-style: none;
 		padding: 10px;
-		transition: background 0.5s ease, color 0.5s ease;
 		border-radius: 5px;
 		margin-left: 0px;
 		margin-bottom: 0px;
@@ -208,14 +215,5 @@
 	}
 	#buyme img.qr {
 		width: 128px;
-	}
-
-	.about-link {
-		color: #0aadb9;
-	}
-
-	.external-link:hover {
-		color: white;
-		background-color: #0aadb9;
 	}
 </style>
