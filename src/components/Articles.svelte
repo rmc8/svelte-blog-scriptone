@@ -23,13 +23,12 @@
 <li>
 	<div class="eyecatch_section">
 		<a href="/{content.id}">
-			<!-- <img src={content.eyecatch?.url} alt="eyecatch of {content.title}" /> -->
 			<img src={content.eyecatch} alt="eyecatch of {content.title}" />
 		</a>
 	</div>
 	<div class="article_info">
 		<div class="article_link"><a href="/{content.id}">{content.title}</a></div>
-		<div class="upper" style="display:flex">
+		<div class="upper flex">
 			<div class="category">
 				<a class="category_link" href="/category/{content.category.id}/p/1" rel="external"
 					>{content.category.name}</a
@@ -37,7 +36,7 @@
 			</div>
 			<div class="tags">
 				{#each content.tags as tag}
-					<div class="tag">
+					<div class="tag inline-flex">
 						<div class="tag_icon">
 							<Tag color="#0aadb9" />
 						</div>
@@ -50,11 +49,11 @@
 				{/each}
 			</div>
 		</div>
-		<div>
+		<div class="flex items-center">
 			<div class="clock pt-1">
 				<ClockOutline width={20} height={20} />
 			</div>
-			<time style="color:#666">
+			<time class="text-gray-600 ml-1">
 				{new Date(content.createdAt)
 					.toLocaleString('ja-JP', {
 						year: 'numeric',
@@ -63,8 +62,8 @@
 						hour: '2-digit',
 						minute: '2-digit'
 					})
-					.replace(/\//g, '-')}</time
-			>
+					.replace(/\//g, '-')}
+			</time>
 		</div>
 	</div>
 </li>

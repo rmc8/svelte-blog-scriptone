@@ -1,35 +1,21 @@
 <script>
 	let categories = [
-		{
-			id: 'programming',
-			name: 'Programming'
-		},
-		{
-			id: 'gadget',
-			name: 'Gadget'
-		},
-		{
-			id: 'audio',
-			name: 'Audio'
-		}
-		// {
-		// 	id: 'coffee',
-		// 	name: 'Coffee'
-		// },
-		// {
-		// 	id: 'fragrance',
-		// 	name: 'Fragrance'
-		// },
+		{ id: 'programming', name: 'Programming' },
+		{ id: 'gadget', name: 'Gadget' },
+		{ id: 'audio', name: 'Audio' }
 	];
 </script>
 
-<footer>
-	<h2 style="color:transparent;font-size:0;border:0;">サイトマップ</h2>
+<footer class="mt-16 border-t border-[#eff3f3] text-center px-4 pt-16 pb-32">
+	<h2 class="sr-only">サイトマップ</h2>
 	<div class="container">
-		<div id="sitemap">
-			<section id="profile">
-				<h3>Profile</h3>
-				<div id="profile_header">
+		<div id="sitemap" class="flex flex-wrap justify-start items-start">
+			<section
+				id="profile"
+				class="w-full md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left flex flex-col items-center"
+			>
+				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full text-left">Profile</h3>
+				<div id="profile_header" class="text-center">
 					<div class="profile-icon">
 						<img
 							src="https://rmc8.github.io/rmc_km/assets/icon/twi.webp"
@@ -37,8 +23,8 @@
 							class="twitter_icon flex justify-center items-center mx-auto"
 						/>
 					</div>
-					<h4 class="user_name">K</h4>
-					<p>
+					<h4 class="user_name text-2xl font-medium m-0">K</h4>
+					<p class="flex items-center justify-center">
 						<img
 							src="https://rmc8.github.io/rmc_km/assets/icon/discord-mark-blue-icon.png"
 							alt="DiscordIcon"
@@ -47,17 +33,18 @@
 						k8x
 					</p>
 				</div>
-				<p style="padding:16px;">
+				<p class="p-4">
 					プログラミング・書写・文房具・オーディオ・コーヒー・フレグランスなどいろいろと趣味があります。
 					プログラミングはPythonがメインで、Scriptone開設時にJavaScriptを学び本サイトを作りました。
-					本サイトや筆者の詳細は<a href="/about">About</a>をご覧ください。
+					本サイトや筆者の詳細は<a href="/about" class="text-blue-600 hover:underline">About</a
+					>をご覧ください。
 				</p>
 			</section>
-			<section>
-				<h3>Buy me a coffee</h3>
+			<section class="w-full md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left">
+				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Buy me a coffee</h3>
 				<div id="buyme">
-					<ul>
-						<li>
+					<ul class="p-1">
+						<li class="mb-2">
 							<a href="https://www.buymeacoffee.com/rmc8">
 								<img class="bn" alt="buymeacoffee" src="/logo/default-yellow.png" />
 							</a>
@@ -67,49 +54,62 @@
 						</li>
 					</ul>
 				</div>
-				<h3>Category</h3>
-				<ul>
+				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Category</h3>
+				<ul class="p-1">
 					{#each categories as category}
-						<li><a href="/category/{category.id}/p/1" rel="external">{category.name}</a></li>
+						<li
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[#0aadb9] hover:text-white"
+						>
+							<a href="/category/{category.id}/p/1" rel="external" class="block w-full h-full"
+								>{category.name}</a
+							>
+						</li>
 					{/each}
 				</ul>
 			</section>
-			<section>
-				<h3>Link(Internal)</h3>
-				<ul>
-
-					<li><a href="/random_shosha">ランダム書写Bot</a></li>
-					<!-- <li><a href="/moyouSky">moyouSky</a></li> -->
-					<li><a href="/ToC1Kwin">プロセカ関連</a></li>
-					<li><a href="/privacy_policy">プライバシーポリシー・免責事項</a></li>
+			<section class="w-full md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left">
+				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Link(Internal)</h3>
+				<ul class="p-1">
+					<li
+						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[#0aadb9] hover:text-white"
+					>
+						<a href="/random_shosha" class="block w-full h-full">ランダム書写Bot</a>
+					</li>
+					<li
+						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[#0aadb9] hover:text-white"
+					>
+						<a href="/ToC1Kwin" class="block w-full h-full">プロセカ関連</a>
+					</li>
+					<li
+						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[#0aadb9] hover:text-white"
+					>
+						<a href="/privacy_policy" class="block w-full h-full">プライバシーポリシー・免責事項</a>
+					</li>
 				</ul>
-				<h3>Link(External)</h3>
+				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Link(External)</h3>
 				<div class="external_links">
-					<ul style="padding-left:24px;padding-right:24px;width:96%;">
-						<li>
+					<ul class="pl-6 pr-6 w-[96%] list-none">
+						<li class="mb-2 rounded-md text-left">
 							<a
-								style="background:url('/icon/bluesky.webp')"
+								class="inline-block bg-[url('/icon/bluesky.webp')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top"
 								href="https://bsky.app/profile/k.rmc-8.com">k.rmc-8.com</a
 							>
 						</li>
-						<li>
-							<a style="background:url('/icon/github.ico')" href="https://github.com/rmc8/"
-								>GitHub</a
+						<li class="mb-2 rounded-md text-left">
+							<a
+								class="inline-block bg-[url('/icon/github.ico')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top"
+								href="https://github.com/rmc8/">GitHub</a
 							>
 						</li>
-						<li>
-							<a style="background:url('/icon/x.webp')" href="https://twitter.com/rmc_km">@rmc_km</a
+						<li class="mb-2 rounded-md text-left">
+							<a
+								class="inline-block bg-[url('/icon/x.webp')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top"
+								href="https://twitter.com/rmc_km">@rmc_km</a
 							>
 						</li>
-						<!-- <li>
+						<li class="mb-2 rounded-md text-left">
 							<a
-								style="background:url('https://zenn.dev/images/logo-transparent.png')"
-								href="https://zenn.dev/km">Zenn</a
-							>
-						</li> -->
-						<li>
-							<a
-								style="background:url('/icon/amzn.webp');background-size:20px!important;background-position:0px 4px!important;"
+								class="inline-block bg-[url('/icon/amzn.webp')] bg-no-repeat bg-[0_4px] bg-[length:20px] pl-7 pb-1 align-text-top"
 								href="https://www.amazon.jp/hz/wishlist/ls/EFSY7JHYBP5K?ref_=wl_share">WithList</a
 							>
 						</li>
@@ -119,63 +119,11 @@
 		</div>
 	</div>
 	<div class="container">
-		<p class="copyright">&copy;2023 - Scriptone</p>
+		<p class="text-center">&copy;2023 - Scriptone</p>
 	</div>
 </footer>
 
 <style>
-	footer {
-		margin-top: 64px;
-		border-top: 1px solid #eff3f3;
-		text-align: center;
-		padding-left: 16px;
-		padding-right: 16px;
-		padding-top: 64px;
-		padding-bottom: 128px;
-	}
-	footer div.external_links ul {
-		list-style: none;
-		padding: 0;
-	}
-	footer h3 {
-		font-size: 1.5em;
-		border-bottom: #ececec 1px solid;
-		color: #444;
-		width: 100%;
-		text-align: left;
-	}
-	footer div.external_links ul li {
-		text-align: left;
-		list-style: none;
-	}
-
-	footer div.external_links ul li a {
-		background-repeat: no-repeat !important;
-		background-position: 0px 3px !important;
-		background-size: 22px !important;
-		padding-left: 28px;
-		padding-top: 0px;
-		padding-bottom: 4px;
-		margin-right: 16px;
-		vertical-align: text-top;
-		width: auto;
-	}
-
-	#sitemap {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		align-items: flex-start;
-	}
-
-	footer #sitemap ul {
-		justify-content: flex-start;
-	}
-
-	footer section ul {
-		padding: 4px !important;
-	}
-
 	footer section ul li {
 		list-style: none;
 		padding: 10px;
@@ -186,26 +134,11 @@
 		width: 100%;
 	}
 
-	.external_links ul li {
-		margin-bottom: 8px;
-		border-radius: 5px;
-	}
-
 	footer section ul li a {
 		text-decoration: none;
 		display: block;
 		width: 100%;
 		height: 100%;
-	}
-
-	footer section ul li:hover {
-		/* background-color: #777; */
-		background-color: #0aadb9;
-		color: #fff;
-	}
-
-	footer section ul li:hover a {
-		color: #fff;
 	}
 
 	footer section {
@@ -229,29 +162,12 @@
 		}
 	}
 
-	#sitemap ul li {
-		margin-bottom: 0px;
-	}
-	.copyright {
-		text-align: center;
-	}
-
-	#profile {
-		flex-direction: column;
-		align-items: center;
-	}
-
 	#profile_header,
 	#profile h4.user_name,
 	#profile_header p {
 		text-align: center;
 	}
 
-	#profile h4.user_name {
-		font-size: 24px;
-		font-weight: 500;
-		margin: 0;
-	}
 	#profile img.twitter_icon {
 		width: 120px;
 		height: 120px;

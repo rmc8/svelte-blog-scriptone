@@ -1,92 +1,37 @@
 <header>
-	<nav class="py-3">
-		<ul>
-			<li><a href="/ToC1Kwin">Profile</a></li>
-			<li><a href="/ToC1Kwin#tools">Tools</a></li>
-			<li><a href="/">Home</a></li>
+	<nav class="py-3 fixed top-0 left-0 right-0 bg-[#0aadb9] shadow-md z-50">
+		<ul class="flex justify-start items-center h-6 pl-2">
+			<li class="w-22 mx-1 list-none">
+				<a href="/ToC1Kwin" class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black">
+					Profile
+				</a>
+			</li>
+			<li class="w-22 mx-1 list-none">
+				<a href="/ToC1Kwin#tools" class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black">
+					Tools
+				</a>
+			</li>
+			<li class="w-22 mx-1 list-none">
+				<a href="/" class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black">
+					Home
+				</a>
+			</li>
 		</ul>
 	</nav>
-	<div id="logo_container">
-		<h1>
-			<a href="https://rmc-8.com/" id="logo_link">
-				<img id="logo" alt="Scriptone" width="300" height="56" src="/logo/scriptone_header.webp" />
+	<div id="logo_container" class="flex justify-center w-full">
+		<h1 class="border-0 text-center w-full">
+			<a href="https://rmc-8.com/" id="logo_link" class="block mt-24">
+				<img id="logo" alt="Scriptone" width="300" height="56" src="/logo/scriptone_header.webp" class="w-4/5 h-auto max-w-[300px] max-h-[56px] block mx-auto" />
 			</a>
 		</h1>
 	</div>
 </header>
 
 <style>
-	header h1 {
-		border: 0px;
-		text-align: center;
-		width: 100%;
-	}
-
-	nav ul {
-		padding-left: 8px;
-	}
-
-	#logo_container {
-		display: flex;
-		justify-content: center;
-		width: 100%;
-	}
-
-	#logo_link {
-		display: block;
-		margin-top: 96px;
-	}
-
-	#logo {
-		width: 80%;
-		height: auto;
-		max-width: 300px;
-		max-height: 56px;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	@media screen and (min-width: 600px) {
-		#logo {
-			width: 560px;
-		}
-	}
-	nav {
-		display: block;
-		background-color: #fff;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 999;
-	}
-
-	nav ul {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		height: 24px;
-	}
-
 	nav ul li a {
 		font-size: 18px;
 		padding: 8px 16px;
 		border-radius: 5px;
-		transition: background-color 0.2s ease-in-out;
-		color: var(--text-color);
-	}
-
-	nav ul li {
-		width: 88px;
-		margin-left: 4px;
-		margin-right: 4px;
-		list-style: none;
-	}
-
-	nav ul li a:hover {
-		background-color: var(--accent-color-light);
-		color: #fff;
 		transition: all 0.5s ease;
 	}
 </style>

@@ -6,7 +6,7 @@
 	import type { PageData } from './$types';
 	import { load } from 'cheerio';
 	import hljs from 'highlight.js';
-	import "./codeblock.css";
+	import './codeblock.css';
 
 	export let data: PageData;
 	const cheerio$ = load(data.content);
@@ -39,46 +39,49 @@
 		<meta property="og:description" content={data.description} />
 	{/if}
 </svelte:head>
-
 <Header />
-<main>
-	<article class="post">
+<main class="w-full">
+	<article class="post flex flex-col justify-center items-center">
 		<div class="container">
 			<h1>{data.title}</h1>
 			<div class="contents">
-				<div class="eyecatch_block pb-8">
-					<img src={data.eyecatch} alt="eyecatch-{data.title}" />
+				<div class="eyecatch_block pb-8 w-full">
+					<img
+						src={data.eyecatch}
+						alt="eyecatch-{data.title}"
+						class="w-full max-w-[400px] mx-auto rounded-lg"
+					/>
 				</div>
 				{@html article}
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</div>
 	</article>
-	<div class="container" id="meta">
+	<div class="container mt-16 pt-8 border-t border-gray-200" id="meta">
 		<dl>
-			<div class="upper" style="display:flex">
+			<div class="upper flex items-start mt-2">
 				<div class="category">
 					<a class="category_link" href="/category/{data.category.id}/p/1">{data.category.name}</a>
 				</div>
-				<div class="tags">
+				<div class="tags mb-2">
 					{#each data.tags as tag}
-						<div class="tag pr-2">
+						<div class="tag pr-2 inline-flex">
 							<div class="tag_icon mt-1">
 								<Tag color="#0aadb9" width={20} height={20} />
 							</div>
 							<div class="tag_link">
-								<a href="/tag/{tag.id}/p/1">
+								<a href="/tag/{tag.id}/p/1" class="block pt-1.5">
 									{tag.name}
 								</a>
 							</div>
 						</div>
 					{/each}
 				</div>
-				<div class="clock">
+				<div class="clock flex h-5">
 					<div class="pt-1">
 						<ClockOutline width={20} height={20} />
 					</div>
-					<time style="color:#666">
+					<time class="ml-1 text-gray-600">
 						{new Date(data.createdAt)
 							.toLocaleString('ja-JP', {
 								year: 'numeric',
@@ -95,82 +98,3 @@
 	</div>
 </main>
 <Footer />
-
-<style lang="postcss">
-	* {
-		box-sizing: border-box;
-	}
-	main {
-		width: 100%;
-	}
-	article {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-
-	dl {
-		margin-top: 6px;
-	}
-	dd {
-		margin-left: 0px;
-		margin-top: 2px;
-		height: 20px;
-	}
-	div.clock {
-		display: flex;
-		height: 20px;
-	}
-	div.clock img {
-		vertical-align: bottom;
-		padding-top: 4px;
-		width: 20px;
-		height: 24px;
-	}
-	time {
-		margin-left: 4px;
-		vertical-align: top;
-	}
-	div.upper {
-		display: flex;
-		align-items: flex-start;
-		margin-top: 8px;
-	}
-
-	div.tag {
-		display: inline-flex;
-	}
-	div.tag a {
-		display: block;
-		vertical-align: middle;
-		padding-top: 6px;
-	}
-
-	.tags {
-		margin-bottom: 8px;
-	}
-	time {
-		color: #666;
-	}
-
-	#meta {
-		margin-top: 64px;
-		padding-top: 32px;
-		border-top: 1px solid #eeeeee;
-	}
-	.eyecatch_block,
-	.eyecatch_block img {
-		width: 100%;
-	}
-	.eyecatch_block img {
-		max-width: 400px;
-		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.contents img {
-		border-radius: 8px !important;
-	}
-</style>
