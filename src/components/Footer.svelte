@@ -1,9 +1,14 @@
-<script>
-	let categories = [
-		{ id: 'programming', name: 'Programming' },
-		{ id: 'gadget', name: 'Gadget' },
-		{ id: 'audio', name: 'Audio' }
+<script lang="ts">
+	interface Category {
+		id: string;
+		name: string;
+	}
+	let categories: Category[] = [
+		{ id: 'programming', name: 'プログラミング' },
+		{ id: 'consumer_electronics', name: '家電製品' },
+		{ id: 'audio', name: 'オーディオ' }
 	];
+	categories.sort((a, b) => a.name.localeCompare(b.name, 'ja'));
 </script>
 
 <footer class="mt-16 border-t border-[#eff3f3] text-center px-4 pt-16 pb-32">
