@@ -36,7 +36,7 @@
 				<p class="p-4">
 					プログラミング・書写・文房具・オーディオ・コーヒー・フレグランスなどいろいろと趣味があります。
 					プログラミングはPythonがメインで、Scriptone開設時にJavaScriptを学び本サイトを作りました。
-					本サイトや筆者の詳細は<a href="/about" class="text-blue-600 hover:underline">About</a
+					本サイトや筆者の詳細は<a href="/about" class="about-link hover:underline">About</a
 					>をご覧ください。
 				</p>
 			</section>
@@ -88,28 +88,36 @@
 				</ul>
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Link(External)</h3>
 				<div class="external_links">
-					<ul class="pl-6 pr-6 w-[96%] list-none">
-						<li class="mb-2 rounded-md text-left">
+					<ul class="p-1">
+						<li
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[#0aadb9] hover:text-white"
+						>
 							<a
-								class="inline-block bg-[url('/icon/bluesky.webp')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top"
+								class="inline-block bg-[url('/icon/bluesky.webp')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top external-link"
 								href="https://bsky.app/profile/k.rmc-8.com">k.rmc-8.com</a
 							>
 						</li>
-						<li class="mb-2 rounded-md text-left">
+						<li
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[#0aadb9] hover:text-white"
+						>
 							<a
-								class="inline-block bg-[url('/icon/github.ico')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top"
+								class="inline-block bg-[url('/icon/github.ico')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top external-link"
 								href="https://github.com/rmc8/">GitHub</a
 							>
 						</li>
-						<li class="mb-2 rounded-md text-left">
+						<li
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[#0aadb9] hover:text-white"
+						>
 							<a
-								class="inline-block bg-[url('/icon/x.webp')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top"
+								class="inline-block bg-[url('/icon/x.webp')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top external-link"
 								href="https://twitter.com/rmc_km">@rmc_km</a
 							>
 						</li>
-						<li class="mb-2 rounded-md text-left">
+						<li
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[#0aadb9] hover:text-white"
+						>
 							<a
-								class="inline-block bg-[url('/icon/amzn.webp')] bg-no-repeat bg-[0_4px] bg-[length:20px] pl-7 pb-1 align-text-top"
+								class="inline-block bg-[url('/icon/amzn.webp')] bg-no-repeat bg-[0_4px] bg-[length:20px] pl-7 pb-1 align-text-top external-link"
 								href="https://www.amazon.jp/hz/wishlist/ls/EFSY7JHYBP5K?ref_=wl_share">WithList</a
 							>
 						</li>
@@ -139,6 +147,15 @@
 		display: block;
 		width: 100%;
 		height: 100%;
+		color: inherit;
+	}
+
+	footer section ul li:hover a {
+		color: white;
+	}
+
+	footer section ul li:hover {
+		background-color: #0aadb9;
 	}
 
 	footer section {
@@ -191,5 +208,14 @@
 	}
 	#buyme img.qr {
 		width: 128px;
+	}
+
+	.about-link {
+		color: #0aadb9;
+	}
+
+	.external-link:hover {
+		color: white;
+		background-color: #0aadb9;
 	}
 </style>
