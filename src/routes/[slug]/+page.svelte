@@ -41,7 +41,7 @@
 </svelte:head>
 <Header />
 <main class="w-full">
-	<article class="post flex flex-col justify-center items-center">
+	<article class="post flex flex-col justify-center items-center pb-12">
 		<div class="container">
 			<h1>{data.title}</h1>
 			<div class="contents">
@@ -63,9 +63,9 @@
 				<div class="category">
 					<a class="category_link" href="/category/{data.category.id}/p/1">{data.category.name}</a>
 				</div>
-				<div class="tags mb-2">
+				<div class="tags mb-1">
 					{#each data.tags as tag}
-						<div class="tag pr-2 inline-flex">
+						<div class="tag mr-1 inline-flex">
 							<div class="tag_icon mt-1">
 								<Tag color="#0aadb9" width={20} height={20} />
 							</div>
@@ -77,11 +77,11 @@
 						</div>
 					{/each}
 				</div>
-				<div class="clock flex h-5">
-					<div class="pt-1">
+				<div class="flex items-center">
+					<div class="clock pt-1">
 						<ClockOutline width={20} height={20} />
 					</div>
-					<time class="ml-1 text-gray-600">
+					<time class="text-gray-600 ml-1">
 						{new Date(data.createdAt)
 							.toLocaleString('ja-JP', {
 								year: 'numeric',
