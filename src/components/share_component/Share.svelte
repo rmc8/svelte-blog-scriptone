@@ -9,12 +9,11 @@
 	export let share_title: string;
 	export let share_url: string;
 
-	const newline = encodeURIComponent('\n');
+	const newline = encodeURIComponent('\r');
 	const encodedTitle = encodeURIComponent(share_title);
 	const encodedUrl = encodeURIComponent(share_url);
-
-	const BLUESKY_BASE_URL = `https://bsky.app/intent/compose?text=${encodedTitle}${newline}${encodedUrl}`;
-	const X_BASE_URL = `https://x.com/intent/post?text=${encodedTitle}&url=${encodedUrl}`;
+	const BLUESKY_BASE_URL = `https://bsky.app/intent/compose?text=${encodedTitle}${newline}${encodedUrl}${newline}`;
+	const X_BASE_URL = `https://x.com/intent/post?text=${encodedTitle}${newline}&url=${share_url}`;
 	const HATENA_BASE_URL = `https://b.hatena.ne.jp/add?url=${encodedUrl}`;
 	const THREADS_BASE_URL = `https://www.threads.net/intent/post?text=${encodedTitle}${newline}${encodedUrl}`;
 	const MISSKEY_BASE_URL = `https://misskey-hub.net/share?text=${encodedTitle}&url=${encodedUrl}`;
