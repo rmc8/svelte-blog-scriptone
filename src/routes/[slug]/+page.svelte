@@ -98,8 +98,6 @@
 				</div>
 			</div>
 		</dl>
-	</div>
-	<div class="container">
 		<Share share_title={data.title} share_url={currentUrl} />
 	</div>
 </main>
