@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Tag from 'svelte-material-icons/Tag.svelte';
 	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
 	import Header from '../../components/Header.svelte';
@@ -7,6 +8,7 @@
 	import { load } from 'cheerio';
 	import hljs from 'highlight.js';
 	import './codeblock.css';
+	import Share from '../../components/share_component/Share.svelte';
 
 	export let data: PageData;
 	const cheerio$ = load(data.content);
@@ -26,6 +28,7 @@
 	});
 
 	const article = htmlContent;
+	$: currentUrl = $page.url.href;
 	export { article };
 </script>
 
@@ -95,6 +98,9 @@
 				</div>
 			</div>
 		</dl>
+	</div>
+	<div class="container">
+		<Share share_title={data.title} share_url={currentUrl} />
 	</div>
 </main>
 <Footer />

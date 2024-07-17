@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import Share from '../../../components/share_component/Share.svelte';
 	import { onMount } from 'svelte';
 	import axios from 'axios';
 	import moment from 'moment';
@@ -7,6 +9,8 @@
 	import Profile from '../../../components/ProsekaProfile.svelte';
 	import Tools from '../PrskTools.svelte';
 	import Chart from './Chart.svelte';
+
+	$: currentUrl = $page.url.href;
 
 	let columns = {};
 	let data = [];
@@ -107,6 +111,9 @@
 					</table>
 				</div>
 			{/if}
+		</div>
+		<div class="container">
+			<Share share_title="[プロセカ]アクティブユーザー数推移" share_url={currentUrl} />
 		</div>
 		<div class="container">
 			<Tools />

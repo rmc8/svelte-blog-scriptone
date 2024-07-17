@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import Share from '../../../components/share_component/Share.svelte';
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
 	import Gallery from './Gallery.svelte';
 	import Tools from '../PrskTools.svelte';
+	$: currentUrl = $page.url.href;
 </script>
 
 <svelte:head>
@@ -38,6 +41,9 @@
 	<article>
 		<div class="container">
 			<Gallery />
+		</div>
+		<div class="container">
+			<Share share_title="Cheerful Bingo" share_url={currentUrl} />
 		</div>
 		<div class="container">
 			<Tools />

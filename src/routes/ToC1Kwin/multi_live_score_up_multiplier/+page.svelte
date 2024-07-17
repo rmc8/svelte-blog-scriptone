@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import Share from '../../../components/share_component/Share.svelte';
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
@@ -8,11 +10,15 @@
 	import Tabs from './component/tabs.svelte'; // タブコンポーネントをインポート
 
 	let activeTab = 'table_contents'; // 初期表示タブを設定
+	$: currentUrl = $page.url.href;
 </script>
 
 <svelte:head>
 	<title>Scriptone - みんなでライブ用スコアアップ倍率確認</title>
-	<meta name="description" content="みんなでライブ向けのスコアアップ倍率（実行値）の計算をしたり、表による実行値の表示をしたりします。" />
+	<meta
+		name="description"
+		content="みんなでライブ向けのスコアアップ倍率（実行値）の計算をしたり、表による実行値の表示をしたりします。"
+	/>
 	<meta name="twitter:site" content="@mskydev" />
 	<meta name="twitter:creator" content="@mskydev" />
 	<meta property="og:title" content="みんなでライブ用スコアアップ倍率確認" />
@@ -54,6 +60,9 @@
 					</div>
 				</Tabs>
 			</div>
+		</div>
+		<div class="container">
+			<Share share_title="みんなでライブ用スコアアップ倍率確認" share_url={currentUrl} />
 		</div>
 
 		<div class="container">

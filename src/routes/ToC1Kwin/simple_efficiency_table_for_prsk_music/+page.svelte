@@ -1,9 +1,13 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import Share from '../../../components/share_component/Share.svelte';
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
 	import Tools from '../PrskTools.svelte';
 	import Table from './Table.svelte';
+
+	$: currentUrl = $page.url.href;
 </script>
 
 <svelte:head>
@@ -30,6 +34,9 @@
 	<article>
 		<div class="container">
 			<Table />
+		</div>
+		<div class="container">
+			<Share share_title="プロセカ楽曲効率表" share_url={currentUrl} />
 		</div>
 		<div class="container">
 			<Tools />

@@ -1,8 +1,12 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import Share from '../../components/share_component/Share.svelte';
 	import Header from '../../components/HeaderForPrsk.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import Profile from '../../components/ProsekaProfile.svelte';
 	import Tools from './PrskTools.svelte';
+
+	$: currentUrl = $page.url.href;
 </script>
 
 <svelte:head>
@@ -151,6 +155,9 @@
 			<Tools />
 		</div>
 	</article>
+	<div class="container">
+		<Share share_title="@mskydevのプロフィール" share_url={currentUrl} />
+	</div>
 </main>
 <Footer />
 

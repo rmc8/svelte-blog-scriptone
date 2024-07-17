@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import Share from '../../../components/share_component/Share.svelte';
 	import { onMount } from 'svelte';
 	import type { ApiResponse } from './types/types';
 	import Header from '../../../components/HeaderForPrsk.svelte';
@@ -12,6 +14,8 @@
 	import ByTypeVs from './components/card/ByTypeVs.svelte';
 	import BySkill from './components/card/BySkill.svelte';
 	import BySkillVs from './components/card/BySkillVs.svelte';
+
+	$: currentUrl = $page.url.href;
 
 	let data: ApiResponse | null = null;
 
@@ -82,6 +86,9 @@
 					<Diff diffObj={data.diff} />
 				</div>
 			{/if}
+		</div>
+		<div class="container">
+			<Share share_title="プロセカダッシュボード(Alpha)" share_url={currentUrl} />
 		</div>
 		<div class="container">
 			<Tools />

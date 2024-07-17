@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import Share from '../../../components/share_component/Share.svelte';
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
@@ -6,6 +8,7 @@
 	import { onMount } from 'svelte';
 	import axios from 'axios';
 
+	$: currentUrl = $page.url.href;
 	let contents = {};
 	let columns = {};
 	let rankings = [];
@@ -118,6 +121,9 @@
 					</div>
 				</div>
 			{/if}
+		</div>
+		<div class="container">
+			<Share share_title="チアフル連勝ランキング" share_url={currentUrl} />
 		</div>
 		<div class="container">
 			<Tools />

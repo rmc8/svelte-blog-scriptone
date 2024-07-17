@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Header from '../../../components/HeaderForPrsk.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import Profile from '../../../components/ProsekaProfile.svelte';
@@ -6,7 +7,9 @@
 
 	import { onMount } from 'svelte';
 	import axios from 'axios';
+	import Share from '../../../components/share_component/Share.svelte';
 
+	$: currentUrl = $page.url.href;
 	let inputNumber: number | null = null;
 	let jsonData = {};
 	let contents = {};
@@ -34,7 +37,7 @@
 		updateFilteredData();
 	}
 
-	function changePage(page:any) {
+	function changePage(page: any) {
 		currentPage = page;
 		updateFilteredData();
 	}
@@ -63,7 +66,10 @@
 
 <svelte:head>
 	<title>Scriptone - 独りんぼエンヴィーイベントポイント計算機</title>
-	<meta name="description" content="独りんぼエンヴィーでのイベントポイントの調整のためのスコア計算をします。" />
+	<meta
+		name="description"
+		content="独りんぼエンヴィーでのイベントポイントの調整のためのスコア計算をします。"
+	/>
 	<meta name="twitter:site" content="@ToC1Kwin" />
 	<meta name="twitter:creator" content="@ToC1Kwin" />
 	<meta property="og:title" content="独りんぼエンヴィーイベントポイント計算機" />
@@ -143,6 +149,9 @@
 					{/if}
 				</div>
 			</div>
+		</div>
+		<div class="container">
+			<Share share_title="独りんぼエンヴィーイベントポイント計算機" share_url={currentUrl} />
 		</div>
 		<div class="container">
 			<Tools />
