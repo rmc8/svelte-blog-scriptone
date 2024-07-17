@@ -153,11 +153,11 @@
 				</ul>
 			</section>
 			<Tools />
+			<div class="container">
+				<Share share_title="@mskydevのプロフィール" share_url={currentUrl} />
+			</div>
 		</div>
 	</article>
-	<div class="container">
-		<Share share_title="@mskydevのプロフィール" share_url={currentUrl} />
-	</div>
 </main>
 <Footer />
 
