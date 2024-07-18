@@ -13,7 +13,7 @@
 	const newline = encodeURIComponent('\r\n');
 	const encodedTitle = encodeURIComponent(share_title);
 	const encodedUrl = encodeURIComponent(share_url);
-	const BLUESKY_BASE_URL = `https://bsky.app/intent/compose?text=${encodedTitle}${newline}${encodedUrl}${newline}`;
+	const BLUESKY_BASE_URL = `https://bsky.app/intent/compose?text=${encodedTitle}${newline}${encodedUrl}`;
 	const X_BASE_URL = `https://twitter.com/intent/tweet?text=${encodedTitle}${newline}&url=${encodedUrl}`;
 	const HATENA_BASE_URL = `https://b.hatena.ne.jp/add?url=${encodedUrl}`;
 	const THREADS_BASE_URL = `https://www.threads.net/intent/post?text=${encodedTitle}${newline}${encodedUrl}`;
@@ -34,20 +34,34 @@
 
 <div class="share_block">
 	<h2>Share</h2>
-	<div class="flex space-x-4 mt-8 mb-8">
-		{#each shareIcons as { url, icon, alt }}
-			<a href={url} target="_blank" rel="noopener noreferrer" class="share-icon-link">
-				<div class="share-icon-wrapper">
-					<img src={icon} {alt} class="share-icon" />
-				</div>
-			</a>
-		{/each}
+	<div class="share-icons-container">
+		<div class="share-icons-scroll">
+			{#each shareIcons as { url, icon, alt }}
+				<a href={url} target="_blank" rel="noopener noreferrer" class="share-icon-link">
+					<div class="share-icon-wrapper">
+						<img src={icon} {alt} class="share-icon" />
+					</div>
+				</a>
+			{/each}
+		</div>
 	</div>
 </div>
 
 <style lang="postcss">
+	.share-icons-container {
+		@apply relative w-full overflow-hidden mt-8 mb-8;
+	}
+	.share-icons-scroll {
+		@apply flex space-x-4 overflow-x-auto pb-4 -mb-4;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none; /* Firefox */
+		-ms-overflow-style: none; /* IE and Edge */
+	}
+	.share-icons-scroll::-webkit-scrollbar {
+		display: none; /* Chrome, Safari and Opera */
+	}
 	.share-icon-wrapper {
-		@apply w-12 h-12 flex items-center justify-center rounded-full bg-[#0aadb9] hover:bg-[#089aa5] transition-all duration-300 ease-in-out;
+		@apply w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#0aadb9] hover:bg-[#089aa5] transition-all duration-300 ease-in-out;
 	}
 	.share-icon {
 		@apply w-6 h-6 object-contain transition-transform duration-300 ease-in-out;
