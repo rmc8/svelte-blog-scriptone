@@ -10,18 +10,25 @@
 	export let share_title: string;
 	export let share_url: string;
 
-	const newline = encodeURIComponent('\r\n');
-	const encodedTitle = encodeURIComponent(share_title);
-	const encodedUrl = encodeURIComponent(share_url);
-	const BLUESKY_BASE_URL = `https://bsky.app/intent/compose?text=${encodedTitle}${newline}${encodedUrl}`;
-	const X_BASE_URL = `https://twitter.com/intent/tweet?text=${encodedTitle}${newline}&url=${encodedUrl}`;
-	const HATENA_BASE_URL = `https://b.hatena.ne.jp/add?url=${encodedUrl}`;
-	const THREADS_BASE_URL = `https://www.threads.net/intent/post?text=${encodedTitle}${newline}${encodedUrl}`;
-	const MISSKEY_BASE_URL = `https://misskey-hub.net/share?text=${encodedTitle}&url=${encodedUrl}`;
-	const MASTODON_BASE_URL = `https://donshare.net/share.html?text=${encodedTitle}${newline}${encodedUrl}`;
-	const POCKET_BASE_URL = `https://getpocket.com/edit?url=${encodedUrl}&title=${encodedTitle}`;
+	const newline: string = encodeURIComponent('\r\n');
+	const encodedTitle: string = encodeURIComponent(share_title);
+	const encodedUrl: string = encodeURIComponent(share_url);
 
-	const shareIcons = [
+	const BLUESKY_BASE_URL: string = `https://bsky.app/intent/compose?text=${encodedTitle}${newline}${encodedUrl}`;
+	const X_BASE_URL: string = `https://twitter.com/intent/tweet?text=${encodedTitle}${newline}&url=${encodedUrl}`;
+	const HATENA_BASE_URL: string = `https://b.hatena.ne.jp/add?url=${encodedUrl}`;
+	const THREADS_BASE_URL: string = `https://www.threads.net/intent/post?text=${encodedTitle}${newline}${encodedUrl}`;
+	const MISSKEY_BASE_URL: string = `https://misskey-hub.net/share?text=${encodedTitle}&url=${encodedUrl}`;
+	const MASTODON_BASE_URL: string = `https://donshare.net/share.html?text=${encodedTitle}${newline}${encodedUrl}`;
+	const POCKET_BASE_URL: string = `https://getpocket.com/edit?url=${encodedUrl}&title=${encodedTitle}`;
+
+	interface ShareIcon {
+		url: string;
+		icon: string;
+		alt: string;
+	}
+
+	const shareIcons: ShareIcon[] = [
 		{ url: X_BASE_URL, icon: xIcon, alt: 'Share on X' },
 		{ url: BLUESKY_BASE_URL, icon: blueskyIcon, alt: 'Share on Bluesky' },
 		{ url: HATENA_BASE_URL, icon: hatenaBookmarkIcon, alt: 'Share on Hatena Bookmark' },
