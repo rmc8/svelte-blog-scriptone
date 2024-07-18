@@ -5,6 +5,7 @@
 	import threadsIcon from './img/threads_share.webp';
 	import misskeyIcon from './img/misskey_share.webp';
 	import mastodonIcon from './img/mastodon_share.webp';
+	import pocketIcon from './img/pocket_share.webp';
 
 	export let share_title: string;
 	export let share_url: string;
@@ -13,17 +14,28 @@
 	const encodedTitle = encodeURIComponent(share_title);
 	const encodedUrl = encodeURIComponent(share_url);
 	const BLUESKY_BASE_URL = `https://bsky.app/intent/compose?text=${encodedTitle}${newline}${encodedUrl}${newline}`;
-	const X_BASE_URL = `https://x.com/intent/post?text=${encodedTitle}${newline}&url=${encodedUrl}`;
+	const X_BASE_URL = `https://twitter.com/intent/tweet?text=${encodedTitle}${newline}&url=${encodedUrl}`;
 	const HATENA_BASE_URL = `https://b.hatena.ne.jp/add?url=${encodedUrl}`;
 	const THREADS_BASE_URL = `https://www.threads.net/intent/post?text=${encodedTitle}${newline}${encodedUrl}`;
 	const MISSKEY_BASE_URL = `https://misskey-hub.net/share?text=${encodedTitle}&url=${encodedUrl}`;
 	const MASTODON_BASE_URL = `https://donshare.net/share.html?text=${encodedTitle}${newline}${encodedUrl}`;
+	const POCKET_BASE_URL = `https://getpocket.com/edit?url=${encodedUrl}&title=${encodedTitle}`;
+
+	const shareIcons = [
+		{ url: X_BASE_URL, icon: xIcon, alt: 'Share on X' },
+		{ url: BLUESKY_BASE_URL, icon: blueskyIcon, alt: 'Share on Bluesky' },
+		{ url: HATENA_BASE_URL, icon: hatenaBookmarkIcon, alt: 'Share on Hatena Bookmark' },
+		{ url: POCKET_BASE_URL, icon: pocketIcon, alt: 'Save to Pocket' },
+		{ url: THREADS_BASE_URL, icon: threadsIcon, alt: 'Share on Threads' },
+		{ url: MASTODON_BASE_URL, icon: mastodonIcon, alt: 'Share on Mastodon' },
+		{ url: MISSKEY_BASE_URL, icon: misskeyIcon, alt: 'Share on Misskey' }
+	];
 </script>
 
 <div class="share_block">
 	<h2>Share</h2>
 	<div class="flex space-x-4 mt-8 mb-8">
-		{#each [{ url: X_BASE_URL, icon: xIcon, alt: 'Share on X' }, { url: BLUESKY_BASE_URL, icon: blueskyIcon, alt: 'Share on Bluesky' }, { url: HATENA_BASE_URL, icon: hatenaBookmarkIcon, alt: 'Share on Hatena Bookmark' }, { url: THREADS_BASE_URL, icon: threadsIcon, alt: 'Share on Threads' }, { url: MASTODON_BASE_URL, icon: mastodonIcon, alt: 'Share on Mastodon' }, { url: MISSKEY_BASE_URL, icon: misskeyIcon, alt: 'Share on Misskey' }] as { url, icon, alt }}
+		{#each shareIcons as { url, icon, alt }}
 			<a href={url} target="_blank" rel="noopener noreferrer" class="share-icon-link">
 				<div class="share-icon-wrapper">
 					<img src={icon} {alt} class="share-icon" />
