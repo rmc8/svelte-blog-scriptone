@@ -1,13 +1,30 @@
-import { createClient, type MicroCMSQueries } from 'microcms-js-sdk'; // , type MicroCMSImage
+import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
 import { MICROCMS_SERVICE_DOMAIN, MICROCMS_API_KEY } from '$env/static/private';
 const client = createClient({
 	serviceDomain: MICROCMS_SERVICE_DOMAIN,
 	apiKey: MICROCMS_API_KEY
 });
 
-//型定義
+export type Tag = {
+	id: string;
+	createdAt: string;
+	updatedAt: string;
+	publishedAt: string;
+	revisedAt: string;
+	name: string;
+};
+
+export type Category = {
+	id: string;
+	createdAt: string;
+	updatedAt: string;
+	publishedAt: string;
+	revisedAt: string;
+	name: string;
+};
+
 export type Blog = {
-	tags: any;
+	tags: Tag[];
 	id: string;
 	createdAt: string;
 	updatedAt: string;
@@ -15,8 +32,7 @@ export type Blog = {
 	revisedAt: string;
 	title: string;
 	content: string;
-	category: any;
-	tag: any;
+	category: Category;
 	eyecatch: string;
 	description: string;
 	toc: boolean;

@@ -54,8 +54,7 @@
 	</div>
 </div>
 
-<style lang="postcss">
-	.share-icons-container {
+<style lang="postcss">	.share-icons-container {
 		@apply relative w-full overflow-hidden mt-8 mb-8;
 	}
 	.share-icons-scroll {

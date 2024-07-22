@@ -1,22 +1,7 @@
 <script lang="ts">
 	import Tag from 'svelte-material-icons/Tag.svelte';
 	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
-	type Blog = {
-		title: string;
-		id: string;
-		eyecatch: string;
-		category: {
-			id: string;
-			name: string;
-		};
-		tags: [
-			{
-				id: string;
-				name: string;
-			}
-		];
-		createdAt: string;
-	};
+	import type { Blog } from '$lib/microcms';
 	export let content: Blog;
 </script>
 

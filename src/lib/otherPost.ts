@@ -1,11 +1,8 @@
-import { getDetail } from '../../lib/microcms';
-import type { PageServerLoad } from './$types';
-
 import { get } from 'svelte/store';
-import { allBlogs, fetchAllBlogs } from '$lib/blogStore';
+import { allBlogs } from '$lib/blogStore';
 import type { Blog, Tag } from '$lib/microcms';
 
-function getRelatedPosts(currentPost: Blog, count = 6): Blog[] {
+export function getRelatedPosts(currentPost: Blog, count = 6): Blog[] {
 	const blogs = get(allBlogs);
 	let relatedPosts: Blog[] = [];
 
@@ -47,15 +44,3 @@ function shuffleArray(array: Blog[]): void {
 		[array[i], array[j]] = [array[j], array[i]];
 	}
 }
-
-export const load: PageServerLoad = async ({ params }) => {
-	await fetchAllBlogs();
-	const blogData = await getDetail(params.slug);
-	const res = {
-		blog: blogData,
-		relatedPosts: getRelatedPosts(blogData)
-	};
-	return res;
-};
-
-export const prerender = true;
