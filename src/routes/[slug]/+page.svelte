@@ -81,7 +81,7 @@
 					{#each data.blog.tags as tag}
 						<div class="tag mr-1 inline-flex">
 							<div class="tag_icon mt-1">
-								<Tag color="#0aadb9" width={20} height={20} />
+								<Tag color="#00c0ce" width={20} height={20} />
 							</div>
 							<div class="tag_link">
 								<a href="/tag/{tag.id}/p/1" class="block pt-1.5">
