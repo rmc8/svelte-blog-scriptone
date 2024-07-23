@@ -28,6 +28,7 @@
 </svelte:head>
 
 <Header />
+<div class="mb-16" />
 <main>
 	<section id="articles">
 		<ul>

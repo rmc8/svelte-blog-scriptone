@@ -60,6 +60,6 @@
 	li {
 		margin: 0;
 		padding-left: 0px;
-		padding-right: 8px;
+		padding-right: 6px;
 	}
 </style>
