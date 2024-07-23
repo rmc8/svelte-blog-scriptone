@@ -5,8 +5,8 @@
 :root {
 	--accent-color_dark: #0c323c;
 	--accent-color-light: #00c0ce; /* #0aadb9,  #009cac */
-	--accent-color: #00c0ce; 
-	--accent-color-dark:  #008e98; 
+	--accent-color: #00c0ce;
+	--accent-color-dark: #008e98;
 	--border-color-basic: #c6cccc;
 	--border-color-hr: #dee3e3;
 	--bg-main-color: #fefcf4;
@@ -236,14 +236,40 @@ blockquote {
 .shj {
 	font-family: 'SourceHanCodeJP';
 }
+
 table {
 	border-collapse: collapse;
 	width: auto;
 	background-color: #fff;
 	margin-top: 16px;
 	margin-bottom: 16px;
-	border-radius: 4px !important;
+	border-spacing: 0;
+	border-radius: 4px;
+	overflow: hidden;
 }
+
+table th,
+table td {
+	padding: 8px;
+}
+
+table th {
+	background-color: var(--accent-color);
+	color: white;
+}
+
+table tr:last-child td:first-child {
+	border-bottom-left-radius: 8px;
+}
+
+table tr:last-child td:last-child {
+	border-bottom-right-radius: 8px;
+}
+
+article.post img {
+	border-radius: 4px;
+}
+
 .iframely-embed {
 	margin-top: 8px;
 	margin-bottom: 16px;
@@ -256,7 +282,7 @@ td {
 }
 
 th {
-	background-color: #00c0ce;
+	background-color: var(--accent-color);
 	color: white;
 	text-align: center;
 }
