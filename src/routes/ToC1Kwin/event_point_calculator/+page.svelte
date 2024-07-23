@@ -173,8 +173,29 @@
 
 	table {
 		max-width: 440px;
+		border-collapse: separate;
+		border-spacing: 0;
+		border-radius: 8px;
+		overflow: hidden;
 	}
 
+	table th,
+	table td {
+		padding: 8px;
+	}
+
+	table th {
+		background-color: var(--accent-color);
+		color: white;
+	}
+
+	table tr:last-child td:first-child {
+		border-bottom-left-radius: 8px;
+	}
+
+	table tr:last-child td:last-child {
+		border-bottom-right-radius: 8px;
+	}
 	.error {
 		color: #822;
 		font-weight: bold;
