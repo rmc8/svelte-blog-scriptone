@@ -4,7 +4,7 @@
 	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
-	import type { PageData } from './$types';
+	import TopicList from '../../components/BreadcrumbsListArticle.svelte';
 	import type { Blog } from '$lib/microcms';
 	import { load } from 'cheerio';
 	import hljs from 'highlight.js';
@@ -48,11 +48,14 @@
 		<meta property="og:description" content={data.blog.description} />
 	{/if}
 </svelte:head>
+
 <Header />
+
 <main class="w-full">
 	<article class="post flex flex-col justify-center items-center pb-12">
 		<div class="container">
 			<h1>{data.blog.title}</h1>
+			<TopicList blog={data.blog} />
 			<div class="contents">
 				<div class="eyecatch_block pb-8 w-full">
 					<img
@@ -70,7 +73,9 @@
 		<dl>
 			<div class="upper flex items-start mt-2">
 				<div class="category">
-					<a class="category_link" href="/category/{data.blog.category.id}/p/1">{data.blog.category.name}</a>
+					<a class="category_link" href="/category/{data.blog.category.id}/p/1"
+						>{data.blog.category.name}</a
+					>
 				</div>
 				<div class="tags mb-1">
 					{#each data.blog.tags as tag}
