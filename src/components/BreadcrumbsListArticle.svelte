@@ -8,8 +8,8 @@
 	export let blog: Blog;
 </script>
 
-<nav aria-label="パンくずリスト" class="text-sm breadcrumbs mb-2 w-full">
-	<ol class="list-none p-0 flex items-center w-full bg-white rounded-md pb-8 overflow-hidden whitespace-nowrap">
+<nav aria-label="パンくずリスト" class="text-sm breadcrumbs mb-2 w-full overflow-x-auto scrollbar-hide">
+	<ol class="list-none p-0 flex items-center w-max bg-white rounded-md pb-8 whitespace-nowrap">
 		<li class="flex-shrink-0 flex items-center">
 			<a
 				href="/"
@@ -34,7 +34,7 @@
 		<li class="flex-shrink-0 flex items-center">
 			<ChevronRight size="1.1em" class="text-gray-400 mx-1" />
 		</li>
-		<li class="flex-grow flex items-center min-w-0">
+		<li class="flex-shrink-0 flex items-center">
 			<span class="text-gray-700 flex items-center truncate">
 				<FileDocumentOutline size="1.2em" />
 				<span class="ml-1 truncate">{blog.title}</span>
@@ -61,5 +61,13 @@
 		margin: 0;
 		padding-left: 0px;
 		padding-right: 6px;
+	}
+
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
 	}
 </style>
