@@ -9,11 +9,11 @@
 </script>
 
 <nav aria-label="パンくずリスト" class="text-sm breadcrumbs mb-2 w-full overflow-x-auto scrollbar-hide">
-	<ol class="list-none p-0 flex items-center w-max bg-white rounded-md pb-8 whitespace-nowrap">
+	<ol class="list-none p-0 flex items-center w-max rounded-md mb-8 whitespace-nowrap">
 		<li class="flex-shrink-0 flex items-center">
 			<a
 				href="/"
-				class="text-[#0aadb9] hover:text-[#088c96] transition duration-300 ease-in-out flex items-center"
+				class="text-[--accent-color] hover:text-[#088c96] transition duration-300 ease-in-out flex items-center"
 			>
 				<Home size="1.2em" />
 				<span class="ml-1">Home</span>
@@ -25,7 +25,7 @@
 		<li class="flex-shrink-0 flex items-center">
 			<a
 				href="/category/{blog.category.id}/p/1"
-				class="text-[#0aadb9] hover:text-[#088c96] transition duration-300 ease-in-out flex items-center"
+				class="text-[--accent-color] hover:text-[--accent-color-dark] transition duration-300 ease-in-out flex items-center"
 			>
 				<FolderOutline size="1.2em" />
 				<span class="ml-1 truncate max-w-[100px]">{blog.category.name}</span>

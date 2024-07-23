@@ -18,14 +18,14 @@
 				<h2>当ブログの運営者情報</h2>
 				<p>運営者：K</p>
 				<p>ブログ名：Scriptone</p>
-				<p>ブログURL：<a href="https://blog.rmc-8.com/">https://blog.rmc-8.com/</a></p>
+				<p>ブログURL：<a href="https://rmc-8.com/">https://blog.rmc-8.com/</a></p>
 				<p>連絡先：contact*rmc-8.com (*を半角のアットマークに置換してください。)</p>
 			</section>
 			<section>
 				<h2>当ブログのプライバシーポリシー</h2>
 				<h3>初出掲載日・最終改定日</h3>
 				<p>初出掲載日：2021年2月25日</p>
-				<p>最終改定日：2023年6月25日</p>
+				<p>最終改定日：2024年7月23日</p>
 				<!-- 以下にその他のプライバシーポリシーセクションが続きます。-->
 			</section>
 

@@ -67,7 +67,7 @@
 		display: none; /* Chrome, Safari and Opera */
 	}
 	.share-icon-wrapper {
-		@apply w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#0aadb9] hover:bg-[#089aa5] transition-all duration-300 ease-in-out;
+		@apply w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[--accent-color] hover:bg-[--accent-color-dark] transition-all duration-300 ease-in-out;
 	}
 	.share-icon {
 		@apply w-6 h-6 object-contain transition-transform duration-300 ease-in-out;

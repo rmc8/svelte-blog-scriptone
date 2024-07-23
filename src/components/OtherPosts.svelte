@@ -12,7 +12,7 @@
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 		{#each relatedPosts as post}
 			<a href="/{post.id}" class="block hover:shadow-lg transition-shadow duration-300">
-				<div class="card bg-white rounded-lg overflow-hidden shadow-md h-full flex flex-col">
+				<div class="card rounded-lg overflow-hidden shadow-md h-full flex flex-col">
 					<div class="aspect-video w-full overflow-hidden">
 						<div class="card-image-container">
 							<img src={post.eyecatch} alt={post.title} class="card-image" />
@@ -36,7 +36,7 @@
 
 <style>
 	.card {
-		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 	}
 
 	.card-image-container {
@@ -59,6 +59,7 @@
 
 	.card {
 		border-radius: 0.5rem;
+		background-color: #fefcf4; /* #ffffff */
 	}
 
 	.card img {

@@ -182,7 +182,7 @@
 
 	.pagination button {
 		border: 0px;
-		background-color: #24aab3;
+		background-color: var(--accent-color);
 		color: white;
 		font-weight: bold;
 		width: 32px;

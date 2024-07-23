@@ -181,6 +181,6 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		color: #0aadb9;
+		color: var(--accent-color);
 	}
 </style>
