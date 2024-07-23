@@ -14,6 +14,7 @@
 
 	export let data: {
 		blog: Blog;
+		recentPosts: Blog[];
 		relatedPosts: Blog[];
 	};
 	const cheerio$ = load(data.blog.content);
@@ -104,7 +105,8 @@
 			</div>
 		</dl>
 		<Share share_title={data.blog.title} share_url={currentUrl} />
-		<OtherPosts relatedPosts={data.relatedPosts} />
+		<OtherPosts headerLabel="ほかの記事を見る" relatedPosts={data.relatedPosts} />
+		<OtherPosts headerLabel="最新の記事を見る" relatedPosts={data.recentPosts} />
 	</div>
 </main>
 <Footer />
