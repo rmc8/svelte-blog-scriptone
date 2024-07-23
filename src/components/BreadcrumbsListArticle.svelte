@@ -9,8 +9,8 @@
 </script>
 
 <nav aria-label="パンくずリスト" class="text-sm breadcrumbs mb-2 w-full">
-	<ol class="list-none p-0 flex flex-wrap items-center w-full bg-white rounded-md pb-8">
-		<li class="flex items-center">
+	<ol class="list-none p-0 flex items-center w-full bg-white rounded-md pb-8 overflow-hidden whitespace-nowrap">
+		<li class="flex-shrink-0 flex items-center">
 			<a
 				href="/"
 				class="text-[#0aadb9] hover:text-[#088c96] transition duration-300 ease-in-out flex items-center"
@@ -19,22 +19,22 @@
 				<span class="ml-1">Home</span>
 			</a>
 		</li>
-		<li class="flex items-center">
-			<ChevronRight size="1.1em" class="text-gray-400" />
+		<li class="flex-shrink-0 flex items-center">
+			<ChevronRight size="1.1em" class="text-gray-400 mx-1" />
 		</li>
-		<li class="flex items-center">
+		<li class="flex-shrink-0 flex items-center">
 			<a
 				href="/category/{blog.category.id}/p/1"
 				class="text-[#0aadb9] hover:text-[#088c96] transition duration-300 ease-in-out flex items-center"
 			>
 				<FolderOutline size="1.2em" />
-				<span class="ml-1">{blog.category.name}</span>
+				<span class="ml-1 truncate max-w-[100px]">{blog.category.name}</span>
 			</a>
 		</li>
-		<li class="flex items-center">
-			<ChevronRight size="1.1em" class="text-gray-400" />
+		<li class="flex-shrink-0 flex items-center">
+			<ChevronRight size="1.1em" class="text-gray-400 mx-1" />
 		</li>
-		<li class="flex items-center flex-1">
+		<li class="flex-grow flex items-center min-w-0">
 			<span class="text-gray-700 flex items-center truncate">
 				<FileDocumentOutline size="1.2em" />
 				<span class="ml-1 truncate">{blog.title}</span>
