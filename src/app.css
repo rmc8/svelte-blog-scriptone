@@ -4,9 +4,9 @@
 
 :root {
 	--accent-color_dark: #0c323c;
-	--accent-color-light: #00c0ce; /* #0aadb9,  #009cac */
-	--accent-color: #00c0ce;
-	--accent-color-dark: #008e98;
+	--accent-color-light: #00c0ce;
+	--accent-color: #009cac;
+	--accent-color-dark: #00747c;
 	--border-color-basic: #c6cccc;
 	--border-color-hr: #dee3e3;
 	--bg-main-color: #fefcf4;
@@ -173,7 +173,7 @@ p {
 /* scroll bar */
 html {
 	scrollbar-width: 10px;
-	scrollbar-color: var(--accent-color) #eeeeee;
+	scrollbar-color: var(--accent-color-light) #f5f2e8;
 	overflow-x: hidden;
 }
 

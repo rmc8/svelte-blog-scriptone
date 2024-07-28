@@ -63,7 +63,7 @@
 				<ul class="p-1">
 					{#each categories as category}
 						<li
-							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color] hover:text-white"
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 						>
 							<a href="/category/{category.id}/p/1" rel="external" class="block w-full h-full"
 								>{category.name}</a
@@ -76,17 +76,17 @@
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Link(Internal)</h3>
 				<ul class="p-1">
 					<li
-						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color] hover:text-white"
+						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 					>
 						<a href="/random_shosha" class="block w-full h-full">ランダム書写Bot</a>
 					</li>
 					<li
-						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color] hover:text-white"
+						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 					>
 						<a href="/ToC1Kwin" class="block w-full h-full">プロセカ関連</a>
 					</li>
 					<li
-						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color] hover:text-white"
+						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 					>
 						<a href="/privacy_policy" class="block w-full h-full">プライバシーポリシー・免責事項</a>
 					</li>
@@ -95,7 +95,7 @@
 				<div class="external_links">
 					<ul class="p-1">
 						<li
-							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color] hover:text-white"
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 						>
 							<a
 								class="inline-block bg-[url('/icon/bluesky.webp')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top external-link"
@@ -103,7 +103,7 @@
 							>
 						</li>
 						<li
-							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color] hover:text-white"
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 						>
 							<a
 								class="inline-block bg-[url('/icon/github.ico')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top external-link"
@@ -111,7 +111,7 @@
 							>
 						</li>
 						<li
-							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color] hover:text-white"
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 						>
 							<a
 								class="inline-block bg-[url('/icon/x.webp')] bg-no-repeat bg-[0_3px] bg-[length:22px] pl-7 pb-1 align-text-top external-link"
@@ -119,7 +119,7 @@
 							>
 						</li>
 						<li
-							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color] hover:text-white"
+							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 						>
 							<a
 								class="inline-block bg-[url('/icon/amzn.webp')] bg-no-repeat bg-[0_4px] bg-[length:20px] pl-7 pb-1 align-text-top external-link"
@@ -167,7 +167,7 @@
 	}
 
 	footer section ul li:hover {
-		background-color: --accent-color;
+		background-color: --accent-color-light;
 	}
 
 	footer section {

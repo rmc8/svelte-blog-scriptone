@@ -35,6 +35,12 @@
 </section>
 
 <style>
+	a {
+		color: var(--accent-color-light);
+	}
+	a:hover{
+		color: var(--accent-color);
+	}
 	.card {
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 	}

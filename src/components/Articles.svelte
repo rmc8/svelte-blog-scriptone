@@ -23,7 +23,7 @@
 				{#each content.tags as tag}
 					<div class="tag inline-flex">
 						<div class="tag_icon">
-							<Tag color="#00c0ce" />
+							<Tag color="#009cac" />
 						</div>
 						<div class="tag_link">
 							<a href="/tag/{tag.id}/p/1">

@@ -1,5 +1,5 @@
 <header>
-	<nav class="py-3 fixed top-0 left-0 right-0 bg-[--accent-color] shadow-md z-50">
+	<nav class="py-3 fixed top-0 left-0 right-0 bg-[--accent-color-light] shadow-md z-50">
 		<ul class="flex justify-start items-center h-6 pl-2">
 			<li class="w-22 mx-1 list-none">
 				<a
@@ -39,5 +39,6 @@
 		padding: 8px 16px;
 		border-radius: 5px;
 		transition: all 0.5s ease;
+		font-weight: 500;
 	}
 </style>
