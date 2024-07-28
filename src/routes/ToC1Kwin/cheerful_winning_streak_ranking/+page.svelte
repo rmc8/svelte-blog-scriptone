@@ -147,8 +147,6 @@
 	}
 
 	th {
-		background-color: var(--accent-color);
-		color: white;
 		text-align: center;
 	}
 

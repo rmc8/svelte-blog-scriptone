@@ -59,39 +59,37 @@
 </section>
 
 <style>
-    div.table-container {
-        overflow-x: auto;
-    }
+	div.table-container {
+		overflow-x: auto;
+	}
 
-    th {
-        background-color: var(--accent-color);
-        color: white;
-        text-align: center;
-    }
+	th {
+		text-align: center;
+	}
 
-    tbody tr {
-        /* border-bottom: 1px dotted #ddd; */
-    }
+	tbody tr {
+		/* border-bottom: 1px dotted #ddd; */
+	}
 
-    td.N,
-    td.Y {
-        font-size: 13px;
-        font-weight: bold;
-    }
+	td.N,
+	td.Y {
+		font-size: 13px;
+		font-weight: bold;
+	}
 
-    td.N {
-        background-color: #0088ff22;
-    }
+	td.N {
+		background-color: #0088ff22;
+	}
 
-    td.Y {
-        background-color: #ff4a5222;
-    }
+	td.Y {
+		background-color: #ff4a5222;
+	}
 
-    tr:nth-child(even) {
-    background-color: #f5f8f8;
-}
+	tr:nth-child(even) {
+		background-color: #f5f8f8;
+	}
 
-tbody tr {
-    border-bottom: 1px solid #eeeeee; 
-}
+	tbody tr {
+		border-bottom: 1px solid #eeeeee;
+	}
 </style>

@@ -121,6 +121,11 @@ a {
 	text-decoration: none;
 	color: var(--accent-color);
 }
+
+a:hover {
+	color: var(--accent-color-dark);
+}
+
 li {
 	display: list-item;
 	text-align: -webkit-match-parent;
@@ -253,11 +258,6 @@ table td {
 	padding: 8px;
 }
 
-table th {
-	background-color: var(--accent-color);
-	color: white;
-}
-
 table tr:last-child td:first-child {
 	border-bottom-left-radius: 8px;
 }
@@ -282,7 +282,7 @@ td {
 }
 
 th {
-	background-color: var(--accent-color);
+	background-color: var(--accent-color-light);
 	color: white;
 	text-align: center;
 }

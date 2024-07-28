@@ -185,7 +185,6 @@
 	}
 
 	table th {
-		background-color: var(--accent-color);
 		color: white;
 	}
 
@@ -203,7 +202,7 @@
 
 	.pagination button {
 		border: 0px;
-		background-color: var(--accent-color);
+		background-color: var(--accent-color-light);
 		color: white;
 		font-weight: bold;
 		width: 32px;
@@ -214,12 +213,12 @@
 
 	.pagination button:hover,
 	.pagination button:active {
-		background-color: #0c323c;
+		background-color: var(--accent-color-dark);
 	}
 
 	.pagination button.active {
-		background-color: #eeeeee;
-		color: #444;
+		background-color: var(--accent-color-dark);
+		color: white;
 	}
 
 	.pagination {
