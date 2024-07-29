@@ -3,7 +3,7 @@
 		<ul class="flex justify-start items-center h-6 pl-2">
 			<li class="w-22 mx-1 list-none">
 				<a
-					href="/ToC1Kwin"
+					href="/project_sekai"
 					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black"
 				>
 					Profile
@@ -11,7 +11,7 @@
 			</li>
 			<li class="w-22 mx-1 list-none">
 				<a
-					href="/ToC1Kwin#tools"
+					href="/project_sekai#tools"
 					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black"
 				>
 					Tools
@@ -29,7 +29,7 @@
 	</nav>
 	<div id="logo_container" class="flex justify-center w-full">
 		<h1 class="border-0 text-center w-full">
-			<a href="/ToC1Kwin" id="logo_link" class="block mt-24">
+			<a href="/project_sekai" id="logo_link" class="block mt-24">
 				<img
 					id="logo"
 					alt="Scriptone"

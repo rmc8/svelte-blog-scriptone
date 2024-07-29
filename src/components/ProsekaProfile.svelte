@@ -18,7 +18,7 @@
 			class="discord_icon inline-block align-middle w-5 h-5 mr-1 mb-1 object-contain"
 		/>k8x
 	</p>
-	<p class="text-center m-0 text-lg">
+	<!-- <p class="text-center m-0 text-lg">
 		<a href="https://x.com/mskydev" class="flex items-center justify-center">
 			<img
 				src="/icon/x.webp"
@@ -26,7 +26,7 @@
 				class="x_icon inline-block align-middle w-5 h-5 mr-1 mb-1 object-contain"
 			/>mskydev
 		</a>
-	</p>
+	</p> -->
 	<p class="text-center m-0 text-lg">
 		<a href="https://k.rmc-8.com" class="flex items-center justify-center">
 			<img

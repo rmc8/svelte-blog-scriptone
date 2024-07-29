@@ -83,7 +83,7 @@
 					<li
 						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 					>
-						<a href="/ToC1Kwin" class="block w-full h-full">プロセカ関連</a>
+						<a href="/project_sekai" class="block w-full h-full">プロセカ関連</a>
 					</li>
 					<li
 						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"

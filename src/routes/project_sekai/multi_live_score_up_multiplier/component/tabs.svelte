@@ -12,7 +12,7 @@
 		<button
 			class="px-4 py-2 border-t border-l border-r rounded-t-lg focus:outline-none
                    {activeTab === tab.id
-				? 'bg-[#0aadb9] text-white'
+				? 'bg-[--accent-color-light] text-white'
 				: 'bg-white text-gray-500 border-gray-300 hover:bg-gray-100'}"
 			on:click={() => (activeTab = tab.id)}
 		>
