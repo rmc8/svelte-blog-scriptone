@@ -2,19 +2,18 @@ import { getList } from '../../lib/microcms';
 
 // APIレスポンスの型定義
 interface Item {
+	tags: Tag[];
 	id: string;
 	createdAt: string;
 	updatedAt: string;
 	publishedAt: string;
 	revisedAt: string;
 	title: string;
+	body_markdown: string;
 	category: Category;
 	eyecatch: string;
-	content: string;
 	description: string;
-	tags: Tag[];
 	toc: boolean;
-	// 他の必要なプロパティをここに追加
 }
 
 interface Category {
@@ -59,15 +58,16 @@ async function getAllItems(): Promise<Item[]> {
 	return items;
 }
 
-const domain: string = 'rmc-8.com';
+const domain = 'rmc-8.com';
 
 const hardcodedUrls = [
 	`https://${domain}/`,
 	`https://${domain}/about`,
 	`https://${domain}/moyouSky`,
-	`https://${domain}/ToC1Kwin`,
-	`https://${domain}/ToC1Kwin/event_point_calculator`,
-	`https://${domain}/ToC1Kwin/simple_efficiency_table_for_prsk_music`
+	`https://${domain}/project_sekai`,
+	`https://${domain}/project_sekai/event_point_calculator`,
+	`https://${domain}/project_sekai/simple_efficiency_table_for_prsk_music`,
+	`https://${domain}/project_sekai/multi_live_score_up_multiplier`
 ];
 
 export async function GET(): Promise<Response> {
