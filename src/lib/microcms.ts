@@ -31,7 +31,8 @@ export type Blog = {
 	publishedAt: string;
 	revisedAt: string;
 	title: string;
-	content: string;
+	// content: string;
+	body_markdown: string;
 	category: Category;
 	eyecatch: string;
 	description: string;

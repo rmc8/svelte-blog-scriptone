@@ -7,35 +7,35 @@
 	import TopicList from '../../components/BreadcrumbsListArticle.svelte';
 	import type { Blog } from '$lib/microcms';
 	import { load } from 'cheerio';
+	import { marked } from 'marked';
 	import hljs from 'highlight.js';
 	import './codeblock.css';
 	import Share from '../../components/share_component/Share.svelte';
 	import OtherPosts from '../../components/OtherPosts.svelte';
+	import { onMount } from 'svelte';
 
 	export let data: {
 		blog: Blog;
 		recentPosts: Blog[];
 		relatedPosts: Blog[];
 	};
-	const cheerio$ = load(data.blog.content);
 
-	// コードブロックのハイライト
-	cheerio$('pre code').each((_, elm) => {
-		const result = hljs.highlightAuto(cheerio$(elm).text());
-		cheerio$(elm).html(result.value);
-		cheerio$(elm).addClass('hljs');
+	let htmlContent = '';
+
+	onMount(async () => {
+		const html_text: string = await marked(data.blog.body_markdown);
+		const cheerio$ = load(html_text);
+
+		// コードブロックのハイライト
+		cheerio$('pre code').each((_, elm) => {
+			const result = hljs.highlightAuto(cheerio$(elm).text());
+			cheerio$(elm).html(result.value);
+			cheerio$(elm).addClass('hljs');
+		});
+		htmlContent = cheerio$.html();
 	});
 
-	// {{iframe style="..." src="..."}} 記法を HTML iframe に置換する
-	const iframeRegex = /{{iframe style="([^"]+)" src="([^"]+)"}}/g;
-	let htmlContent = cheerio$.html();
-	htmlContent = htmlContent.replace(iframeRegex, (_, style, src) => {
-		return `<iframe src="${src}" style="${style}" frameborder="0"></iframe>`;
-	});
-
-	const article = htmlContent;
 	$: currentUrl = $page.url.href;
-	export { article };
 </script>
 
 <svelte:head>
@@ -64,7 +64,9 @@
 						class="w-full max-w-[400px] mx-auto rounded-lg"
 					/>
 				</div>
-				{@html article}
+				<div id="article">
+					{@html htmlContent}
+				</div>
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</div>
