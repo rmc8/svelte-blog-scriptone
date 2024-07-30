@@ -17,35 +17,39 @@
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 		<script>
-			// 広告の遅延読み込み
-			function loadAdScript() {
-				var script = document.createElement('script');
-				script.async = true;
-				script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5016891070616278";
-				script.crossOrigin = "anonymous";
-				document.body.appendChild(script);
+			// 広告とGoogle Tag Managerの遅延読み込み
+			function loadScripts() {
+				// AdSenseスクリプトの読み込み
+				var adScript = document.createElement('script');
+				adScript.async = true;
+				adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5016891070616278";
+				adScript.crossOrigin = "anonymous";
+				document.body.appendChild(adScript);
 
-				// 広告リクエストの一時停止と非パーソナライズ広告の設定
+				// Google Tag Managerスクリプトの読み込み
+				var gtmScript = document.createElement('script');
+				gtmScript.async = true;
+				gtmScript.src = "https://www.googletagmanager.com/gtag/js?id=G-TMCBTNX7PX";
+				document.body.appendChild(gtmScript);
+
+				// 広告設定
 				(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;
 				(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;
 
-				// メインコンテンツが読み込まれた後に広告リクエストを再開
+				// メインコンテンツ読み込み後に広告リクエストを再開
 				setTimeout(function() {
 					(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;
-				}, 1000); // 2秒後に再開（適切な時間に調整してください）
+				}, 1000);
+
+				// Google Analytics設定
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-TMCBTNX7PX');
 			}
 
-			// DOMContentLoadedイベント後に広告スクリプトを読み込む
-			document.addEventListener('DOMContentLoaded', loadAdScript);
-		</script>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMCBTNX7PX"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
-			gtag('config', 'G-TMCBTNX7PX');
+			// ページコンテンツ読み込み後にスクリプトを読み込む
+			window.addEventListener('load', loadScripts);
 		</script>
 	</body>
 </html>
