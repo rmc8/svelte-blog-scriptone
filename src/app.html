@@ -13,55 +13,36 @@
 		<link rel="preconnect" href="https://www.googletagmanager.com" />
 		<link rel="preconnect" href="https://pagead2.googlesyndication.com" />
 		%sveltekit.head%
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMCBTNX7PX"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
 			}
 			gtag('js', new Date());
-
 			gtag('config', 'G-TMCBTNX7PX');
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 		<script>
-			let lazyloadads = !1;
-			window.addEventListener(
-				'scroll',
-				function () {
-					((0 != document.documentElement.scrollTop && !1 === lazyloadads) ||
-						(0 != document.body.scrollTop && !1 === lazyloadads)) &&
-						(!(function () {
-							let e = document.createElement('script');
-							(e.type = 'text/javascript'),
-								(e.async = !0),
-								(e.src =
-									'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5016891070616278');
-							let t = document.getElementsByTagName('script')[0];
-							t.parentNode.insertBefore(e, t);
-						})(),
-						(lazyloadads = !0));
-				},
-				!0
-			);
-		</script>
-		<script>
-			// 一度だけ実行されるようにフラグを設定
-			let scriptAdded = false;
-			window.addEventListener('scroll', function () {
-				// スクロールが検知されたら実行
-				if (!scriptAdded) {
-					// 新しい script 要素を作成
-					let newScript = document.createElement('script');
-					newScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX';
-					newScript.async = true;
-					// head 要素に追加
-					let head = document.head || document.getElementsByTagName('head')[0];
-					head.appendChild(newScript);
-					// スクリプトが追加されたことを記録
-					scriptAdded = true;
-				}
+			document.addEventListener('DOMContentLoaded', function() {
+				const loadAdSense = () => {
+					const script = document.createElement('script');
+					script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5016891070616278';
+					script.async = true;
+					script.onerror = () => console.error('AdSense script failed to load');
+					document.head.appendChild(script);
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					if (entries[0].isIntersecting) {
+						loadAdSense();
+						observer.disconnect();
+					}
+				});
+
+				observer.observe(document.body);
 			});
 		</script>
 	</body>
