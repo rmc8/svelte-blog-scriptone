@@ -16,7 +16,28 @@
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5016891070616278" crossorigin="anonymous"></script>
+		<script>
+			// 広告の遅延読み込み
+			function loadAdScript() {
+				var script = document.createElement('script');
+				script.async = true;
+				script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5016891070616278";
+				script.crossOrigin = "anonymous";
+				document.body.appendChild(script);
+
+				// 広告リクエストの一時停止と非パーソナライズ広告の設定
+				(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;
+				(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;
+
+				// メインコンテンツが読み込まれた後に広告リクエストを再開
+				setTimeout(function() {
+					(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;
+				}, 1000); // 2秒後に再開（適切な時間に調整してください）
+			}
+
+			// DOMContentLoadedイベント後に広告スクリプトを読み込む
+			document.addEventListener('DOMContentLoaded', loadAdScript);
+		</script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMCBTNX7PX"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
