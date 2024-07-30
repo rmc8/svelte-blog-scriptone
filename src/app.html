@@ -17,7 +17,6 @@
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 		<script type="module">
-			// 広告とGoogle Tag Managerの遅延読み込み
 			const loadScripts = async () => {
 				const loadScript = (src, attrs = {}) => {
 					return new Promise((resolve, reject) => {
@@ -30,31 +29,34 @@
 					});
 				};
 
-				try {
-					// AdSenseスクリプトの読み込み
-					await loadScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5016891070616278", {
-						async: true,
-						crossOrigin: "anonymous"
+				const loadAds = () => {
+					return new Promise((resolve) => {
+						window.adsbygoogle = window.adsbygoogle || [];
+						window.adsbygoogle.pauseAdRequests = 1;
+						window.adsbygoogle.onload = resolve;
+						loadScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5016891070616278", {
+							async: true,
+							crossOrigin: "anonymous"
+						});
 					});
+				};
 
-					// Google Tag Managerスクリプトの読み込み
+				try {
+					// 重要なコンテンツを読み込んだ後に広告を読み込む
+					await new Promise(resolve => setTimeout(resolve, 2000));
+					await loadAds();
+
+					// Google Tag Managerの読み込み
 					await loadScript("https://www.googletagmanager.com/gtag/js?id=G-TMCBTNX7PX", { async: true });
-
-					// 広告設定
-					window.adsbygoogle = window.adsbygoogle || [];
-					window.adsbygoogle.pauseAdRequests = 1;
-					window.adsbygoogle.requestNonPersonalizedAds = 1;
-
-					// メインコンテンツ読み込み後に広告リクエストを再開
-					setTimeout(() => {
-						window.adsbygoogle.pauseAdRequests = 0;
-					}, 1000);
 
 					// Google Analytics設定
 					window.dataLayer = window.dataLayer || [];
 					function gtag(){dataLayer.push(arguments);}
 					gtag('js', new Date());
-					gtag('config', 'G-TMCBTNX7PX');
+					gtag('config', 'G-TMCBTNX7PX', { 'send_page_view': false });
+
+					// 広告リクエストを再開
+					window.adsbygoogle.pauseAdRequests = 0;
 				} catch (error) {
 					console.error('Script loading error:', error);
 				}
