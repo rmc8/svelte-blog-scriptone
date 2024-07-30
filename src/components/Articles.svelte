@@ -68,7 +68,7 @@
 
 	.card-image-container {
 		@apply w-full relative overflow-hidden;
-		padding-top: 56.29%; /* アスペクト比を維持 */
+		padding-top: 56.29%;
 	}
 
 	.card-image {
@@ -76,7 +76,7 @@
 	}
 
 	.eyecatch_section {
-		@apply overflow-hidden rounded-t-lg; /* 上部の角だけを丸くする */
+		@apply overflow-hidden rounded-t-lg;
 	}
 
 	@keyframes hover-shadow {
