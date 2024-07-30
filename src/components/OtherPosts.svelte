@@ -24,7 +24,7 @@
 						<div class="flex items-center text-xs text-gray-500">
 							<ClockOutline width={16} height={16} />
 							<time class="ml-1">
-								{formatDate(post.updatedAt)}
+								{formatDate(post.createdAt)}
 							</time>
 						</div>
 					</div>
