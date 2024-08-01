@@ -28,7 +28,7 @@
 							class="twitter_icon flex justify-center items-center mx-auto"
 						/>
 					</div>
-					<h4 class="user_name text-2xl font-medium m-0">K</h4>
+					<h4 class="user_name text-2xl font-medium m-0 pb-1">K</h4>
 					<p class="flex items-center justify-center">
 						<img
 							src="https://rmc8.github.io/rmc_km/assets/icon/discord-mark-blue-icon.png"
@@ -36,6 +36,15 @@
 							class="discord_icon"
 						/>
 						k8x
+					</p>
+					<p class="text-center m-0 text-lg">
+						<a href="https://k.rmc-8.com" class="flex items-center justify-center">
+							<img
+								src="/icon/bluesky.webp"
+								alt="Bluesky_Icon"
+								class="bsky_icon inline-block align-middle w-5 h-5 mr-1 mb-1 object-contain"
+							/>k.rmc-8.com
+						</a>
 					</p>
 				</div>
 				<p class="p-4">
@@ -137,6 +146,16 @@
 </footer>
 
 <style>
+	.bsky_icon {
+		width: 20px;
+		height: 20px;
+		margin-right: 4px;
+		margin-bottom: 2px;
+		object-fit: contain;
+		display: inline-block;
+		vertical-align: middle;
+		border-radius: 0;
+	}
 	footer h3 {
 		padding-bottom: 8px;
 	}
