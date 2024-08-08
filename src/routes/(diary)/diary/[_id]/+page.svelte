@@ -52,17 +52,29 @@
 				{@html post.body}
 			</div>
 		</div>
+		<div class="container max-w-3xl mx-auto px-4 mt-8 pt-8 border-t border-gray-200">
+			<Share share_title={post.title} share_url={currentUrl} />
+		</div>
 	</article>
-	<div class="container max-w-3xl mx-auto px-4 mt-8 pt-8 border-t border-gray-200">
-		<Share share_title={post.title} share_url={currentUrl} />
-	</div>
 </main>
 
 <Footer />
 
 <style>
+	.content {
+		padding-bottom: 32px;
+		font-size: 18px;
+		line-height: 1.8em;
+	}
+
 	:global(.prose img) {
 		margin-left: auto;
 		margin-right: auto;
+	}
+	:global(p, blockquote) {
+		margin-bottom: 32px;
+	}
+	:global(blockquote p:last-child) {
+		margin-bottom: 0;
 	}
 </style>
