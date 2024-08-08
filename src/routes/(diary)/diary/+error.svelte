@@ -5,7 +5,8 @@
 </script>
 
 <svelte:head>
-	<title>エラー - Scriptone</title>
+	<title>Scriptone - Error</title>
+	<meta name="robots" content="noindex, nofollow">
 </svelte:head>
 
 <Header />
