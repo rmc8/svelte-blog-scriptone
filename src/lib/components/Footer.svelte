@@ -97,6 +97,11 @@
 					<li
 						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
 					>
+						<a href="/diary" class="block w-full h-full">ダイアリー</a>
+					</li>
+					<li
+						class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
+					>
 						<a href="/privacy_policy" class="block w-full h-full">プライバシーポリシー・免責事項</a>
 					</li>
 				</ul>
