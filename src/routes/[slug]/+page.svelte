@@ -2,16 +2,16 @@
 	import { page } from '$app/stores';
 	import Tag from 'svelte-material-icons/Tag.svelte';
 	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
-	import Header from '../../components/Header.svelte';
-	import Footer from '../../components/Footer.svelte';
-	import TopicList from '../../components/BreadcrumbsListArticle.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import TopicList from '$lib/components/BreadcrumbsListArticle.svelte';
 	import type { Blog } from '$lib/microcms';
 	import { load } from 'cheerio';
 	import { marked } from 'marked';
 	import hljs from 'highlight.js';
 	import './codeblock.css';
-	import Share from '../../components/share_component/Share.svelte';
-	import OtherPosts from '../../components/OtherPosts.svelte';
+	import Share from '$lib/components/share_component/Share.svelte';
+	import OtherPosts from '$lib/components/OtherPosts.svelte';
 	import { onMount } from 'svelte';
 
 	export let data: {

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Share from '../../components/share_component/Share.svelte';
-	import Header from '../../components/HeaderForPrsk.svelte';
-	import Footer from '../../components/Footer.svelte';
-	import Profile from '../../components/ProsekaProfile.svelte';
+	import Share from '../../../lib/components/share_component/Share.svelte';
+	import Header from '../../../lib/components/HeaderForPrsk.svelte';
+	import Footer from '../../../lib/components/Footer.svelte';
+	import Profile from '../../../lib/components/ProsekaProfile.svelte';
 	import Tools from './PrskTools.svelte';
 
 	$: currentUrl = $page.url.href;

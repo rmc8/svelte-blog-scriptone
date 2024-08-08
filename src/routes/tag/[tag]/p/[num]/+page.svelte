@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Header from '../../../../../components/Header.svelte';
-	import Footer from '../../../../../components/Footer.svelte';
-	import Articles from '../../../../../components/Articles.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import Articles from '$lib/components/Articles.svelte';
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
 
 	export let data: PageData;
 	let p: number;
 	let currentPageNum: number;
-	let tagSlug: string;
+	let tagSlug: string | undefined;
 
 	onMount(() => {
 		const parts = window.location.pathname.split('/');

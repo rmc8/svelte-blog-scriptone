@@ -1,4 +1,4 @@
-import { getList } from '../../lib/microcms';
+import { getList } from '$lib/microcms';
 
 // APIレスポンスの型定義
 interface Item {
@@ -50,7 +50,6 @@ async function getAllItems(): Promise<Item[]> {
 		const response: ItemListResponse = await getList({ offset, limit });
 		items = items.concat(response.contents);
 		if (items.length >= response.totalCount) {
-			// 全てのアイテムを取得した場合、ループを終了
 			break;
 		}
 		offset += limit;

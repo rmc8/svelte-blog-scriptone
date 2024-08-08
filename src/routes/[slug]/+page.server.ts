@@ -1,8 +1,8 @@
-import { getDetail } from '../../lib/microcms';
+import { getDetail } from '$lib/microcms';
 import type { PageServerLoad } from './$types';
 
 import { get } from 'svelte/store';
-import { allBlogs, fetchAllBlogs } from '$lib/blogStore';
+import { allBlogs, fetchAllBlogs } from '$lib/microcms/blogStore';
 import type { Blog, Tag } from '$lib/microcms';
 
 function shuffleArray(array: Blog[]): void {

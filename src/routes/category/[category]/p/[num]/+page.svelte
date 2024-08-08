@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Header from '../../../../../components/Header.svelte';
-	import Footer from '../../../../../components/Footer.svelte';
-	import Articles from '../../../../../components/Articles.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import Articles from '$lib/components/Articles.svelte';
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
 
