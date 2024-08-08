@@ -26,7 +26,7 @@
 	</nav>
 	<div id="logo_container" class="flex justify-center w-full">
 		<h1 class="border-0 text-center w-full">
-			<a href="/" id="logo_link" class="block mt-24">
+			<a href="/diary" id="logo_link" class="block mt-24">
 				<img
 					id="logo"
 					alt="Scriptone"

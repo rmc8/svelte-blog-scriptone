@@ -1,12 +1,11 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { fetchSinglePost } from '$lib/diary/wp_client'; // この関数は別途実装が必要です
-
+import { fetchSinglePost } from '$lib/diary/newt_diary_client';
 export const load: PageServerLoad = async ({ params }) => {
-	const { slug } = params;
+	const { _id } = params;
 
 	try {
-		const post = await fetchSinglePost(slug);
+		const post = await fetchSinglePost(_id);
 
 		if (!post) {
 			throw error(404, 'Post not found');

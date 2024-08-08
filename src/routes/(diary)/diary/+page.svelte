@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/components/dairy/SimpleHeader.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import Calendar from 'svelte-material-icons/Calendar.svelte';
 
 	export let data;
 
@@ -13,12 +14,23 @@
 			weekday: 'long'
 		});
 	}
+
+	function truncateAndStripHtml(html: string, maxLength: number = 160): string {
+		// HTMLタグを除去
+		const text = html.replace(/<[^>]*>/g, '');
+		// 見出しタグ（h1-h6）とその内容を除去
+		const withoutHeadings = text.replace(/<h[1-6].*?<\/h[1-6]>/g, '');
+		// 最大文字数まで切り詰める
+		return withoutHeadings.length > maxLength
+			? withoutHeadings.slice(0, maxLength) + '...'
+			: withoutHeadings;
+	}
 </script>
 
 <svelte:head>
 	<title>Scriptone - Diary</title>
 	<meta name="description" content="ただのメモ書きです" />
-	<meta name="robots" content="noindex, nofollow">
+	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <Header />
@@ -27,12 +39,17 @@
 		{#if data.posts && data.posts.length > 0}
 			{#each data.posts as post}
 				<article class="mb-8">
-					<time class="text-sm text-gray-600 block mb-2" datetime={post.date}>
-						{formatDate(post.date)}
-					</time>
-					<h2 class="text-2xl font-semibold mb-4 text-gray-800">{@html post.title.rendered}</h2>
-					<div class="prose prose-sm text-gray-700 mb-4">{@html post.excerpt.rendered}</div>
-					<a href="/diary/{post.slug}" class="readmore">続きを読む</a>
+					<div class="flex items-center text-sm text-gray-600 mb-2">
+						<Calendar size="1.2em" />
+						<time class="ml-2" datetime={post._sys.createdAt}>
+							{formatDate(post._sys.createdAt)}
+						</time>
+					</div>
+					<h2 class="text-2xl font-semibold mb-4 text-gray-800">{post.title}</h2>
+					<div class="prose prose-sm text-gray-700 mb-4">
+						{truncateAndStripHtml(post.body)}
+					</div>
+					<a href="/diary/{post._id}" class="readmore">続きを読む</a>
 				</article>
 			{/each}
 		{:else}
