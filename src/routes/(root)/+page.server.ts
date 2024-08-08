@@ -1,5 +1,5 @@
 import { getList } from '$lib/microcms';
-import type { PageServerLoad } from './$types';
+import type { PageServerLoad } from '../$types';
 
 const ITEMS_PER_PAGE = 6;
 

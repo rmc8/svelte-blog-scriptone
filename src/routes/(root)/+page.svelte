@@ -2,7 +2,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Articles from '$lib/components/Articles.svelte';
-	import type { PageData } from './$types';
+	import type { PageData } from '../$types';
 	import { beforeUpdate } from 'svelte';
 
 	export let data: PageData;
