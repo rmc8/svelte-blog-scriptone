@@ -34,6 +34,7 @@
 </svelte:head>
 
 <Header />
+<div class="mb-16" />
 <main class="container mx-auto px-4 py-12 max-w-2xl">
 	<section id="articles" class="space-y-12">
 		{#if data.posts && data.posts.length > 0}

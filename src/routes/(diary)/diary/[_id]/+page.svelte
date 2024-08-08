@@ -23,7 +23,7 @@
 </svelte:head>
 
 <Header />
-
+<div class="mb-16" />
 <main class="w-full">
 	<article class="post flex flex-col justify-center items-center pb-12">
 		<div class="container max-w-3xl mx-auto px-4">
