@@ -74,7 +74,7 @@
 	:global(p, blockquote) {
 		margin-bottom: 32px;
 	}
-	:global(blockquote p:last-child) {
+	:global(blockquote p:last-child, footer p) {
 		margin-bottom: 0;
 	}
 </style>
