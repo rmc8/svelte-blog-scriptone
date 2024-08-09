@@ -27,7 +27,7 @@ export interface Post {
 	tags: {
 		_id: string;
 		name: string;
-	};
+	}[];
 }
 
 export async function fetchDiaryPosts(
