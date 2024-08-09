@@ -15,7 +15,7 @@
 			</a>
 		</div>
 		<div class="article_info p-4">
-			<div class="article_link"><a class="font-semibold" href="/{content.id}">{content.title}</a></div>
+			<div class="article_link"><a class="title" href="/{content.id}">{content.title}</a></div>
 			<div class="upper flex">
 				<div class="category">
 					<a class="category_link" href="/category/{content.category.id}/p/1" rel="external"
@@ -58,6 +58,10 @@
 </li>
 
 <style lang="postcss">
+	.title {
+		font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+			sans-serif;
+	}
 	.card {
 		@apply rounded-lg bg-[#fefcf4] overflow-hidden shadow-md;
 	}

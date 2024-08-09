@@ -56,11 +56,23 @@
 					<ul class="p-1">
 						<li class="mb-2">
 							<a href="https://www.buymeacoffee.com/rmc8">
-								<img class="bn" alt="buymeacoffee" src="/logo/buy_me_a_coffee_y.webp" />
+								<img
+									class="bn"
+									alt="buy_me_a_coffee"
+									width="192"
+									height="54"
+									src="/logo/buy_me_a_coffee_y.webp"
+								/>
 							</a>
 						</li>
 						<li>
-							<img class="qr" alt="buymeacoffee_qr" src="/logo/buy_me_a_coffee_qr.webp" />
+							<img
+								class="qr"
+								alt="buy_me_a_coffee_qr"
+								width="120"
+								height="120"
+								src="/logo/buy_me_a_coffee_qr.webp"
+							/>
 						</li>
 					</ul>
 				</div>
@@ -233,12 +245,5 @@
 		object-fit: contain;
 		display: inline-block;
 		vertical-align: middle;
-	}
-
-	#buyme img.bn {
-		width: 192px;
-	}
-	#buyme img.qr {
-		width: 128px;
 	}
 </style>
