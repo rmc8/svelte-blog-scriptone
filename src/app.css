@@ -54,12 +54,19 @@ body {
 	font-size: 16px;
 }
 
+header {
+	font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+		sans-serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+	font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+		sans-serif;
 	font-weight: bold;
 	width: 100%;
 	text-align: left;

@@ -5,15 +5,15 @@
 <section id="proseka_profile" class="flex flex-col items-center">
 	<div class="profile-icon">
 		<img
-			src="https://rmc8.github.io/ToC1Kwin/assets/icon/twi.jpg"
-			alt="TwitterIcon"
+			src="/img/an_icon.webp"
+			alt="xIcon"
 			class="twitter_icon w-30 h-30 rounded-full object-cover mb-2"
 		/>
 	</div>
 	<h2 class="user_name text-2xl font-medium text-center m-0">K</h2>
 	<p class="text-center m-0 text-lg">
 		<img
-			src="https://rmc8.github.io/ToC1Kwin/assets/icon/discord-mark-blue-icon.png"
+			src="/logo/discord_icon.webp"
 			alt="DiscordIcon"
 			class="discord_icon inline-block align-middle w-5 h-5 mr-1 mb-1 object-contain"
 		/>k8x

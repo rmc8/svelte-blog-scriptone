@@ -30,11 +30,7 @@
 					</div>
 					<h4 class="user_name text-2xl font-medium m-0 pb-1">K</h4>
 					<p class="flex items-center justify-center">
-						<img
-							src="https://rmc8.github.io/rmc_km/assets/icon/discord-mark-blue-icon.png"
-							alt="DiscordIcon"
-							class="discord_icon"
-						/>
+						<img src="/logo/discord_icon.webp" alt="DiscordIcon" class="discord_icon" />
 						k8x
 					</p>
 					<p class="text-center m-0 text-lg">
@@ -60,11 +56,11 @@
 					<ul class="p-1">
 						<li class="mb-2">
 							<a href="https://www.buymeacoffee.com/rmc8">
-								<img class="bn" alt="buymeacoffee" src="/logo/default-yellow.png" />
+								<img class="bn" alt="buymeacoffee" src="/logo/buy_me_a_coffee_y.webp" />
 							</a>
 						</li>
 						<li>
-							<img class="qr" alt="buymeacoffee_qr" src="/logo/bmc_qr.png" />
+							<img class="qr" alt="buymeacoffee_qr" src="/logo/buy_me_a_coffee_qr.webp" />
 						</li>
 					</ul>
 				</div>
