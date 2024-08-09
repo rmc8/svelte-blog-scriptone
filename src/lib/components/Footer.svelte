@@ -246,4 +246,12 @@
 		display: inline-block;
 		vertical-align: middle;
 	}
+
+	.bn {
+		width: 192px;
+	}
+
+	.qr {
+		width: 120px;
+	}
 </style>
