@@ -15,7 +15,7 @@
 			</a>
 		</div>
 		<div class="article_info p-4">
-			<div class="article_link"><a href="/{content.id}">{content.title}</a></div>
+			<div class="article_link"><a class="font-semibold" href="/{content.id}">{content.title}</a></div>
 			<div class="upper flex">
 				<div class="category">
 					<a class="category_link" href="/category/{content.category.id}/p/1" rel="external"
