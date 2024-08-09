@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'Sawarabi Gothic';
+	src: url('/font/SawarabiGothic-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
 	--accent-color_dark: #0c323c;
 	--accent-color-light: #00c0ce;
@@ -24,8 +32,8 @@ main {
 }
 
 body {
-	font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
-		sans-serif;
+	font-family: 'Sawarabi Gothic', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
+		'Hiragino Sans', Meiryo, sans-serif;
 	line-height: 1.6;
 	color: var(--text-color);
 	background-color: var(--bg-main-color); /* #ffffff */
@@ -162,7 +170,7 @@ p {
 	height: auto;
 }
 
-#article img{
+#article img {
 	margin-top: 32px;
 	margin-bottom: 32px;
 }

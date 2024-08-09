@@ -76,6 +76,9 @@
 <Footer />
 
 <style>
+	main {
+		line-height: 1.75;
+	}
 	.readmore {
 		color: var(--accent-color);
 		border: var(--accent-color) 1px solid;
@@ -86,9 +89,6 @@
 		color: var(--accent-color-light);
 		border-color: var(--accent-color-light);
 		transition: 0.33s;
-	}
-	main {
-		line-height: 1.75;
 	}
 
 	article {
