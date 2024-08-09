@@ -13,7 +13,7 @@
 <div class="mb-16" />
 <main class="container mx-auto px-4 py-12 max-w-2xl">
 	<div class="error-box m-6" role="alert">
-		<p class="text-gray-800">{$page.status}: {$page.error?.message}</p>
+		<p>{$page.status}: {$page.error?.message}</p>
 	</div>
 	<p class="m-6">
 		<a href="/diary/" class="hover:underline">トップに戻る</a>

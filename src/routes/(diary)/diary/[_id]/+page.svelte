@@ -27,7 +27,7 @@
 <main class="w-full">
 	<article class="post flex flex-col justify-center items-center pb-12">
 		<div class="container max-w-3xl mx-auto px-4">
-			<div class="meta flex items-center text-sm text-gray-600 mb-6">
+			<div class="meta flex items-center text-sm mb-6">
 				<div class="flex items-center mr-4">
 					<Calendar width={20} height={20} />
 					<time class="ml-1">

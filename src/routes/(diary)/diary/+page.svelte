@@ -40,13 +40,13 @@
 		{#if data.posts && data.posts.length > 0}
 			{#each data.posts as post}
 				<article class="mb-8">
-					<div class="flex items-center text-sm text-gray-600 mb-2">
+					<div class="flex items-center text-sm mb-2">
 						<Calendar size="1.2em" />
 						<time class="ml-2" datetime={post._sys.createdAt}>
 							{formatDate(post._sys.createdAt)}
 						</time>
 					</div>
-					<h2 class="text-2xl font-semibold mb-4 text-gray-800">{post.title}</h2>
+					<h2 class="text-2xl font-semibold mb-4">{post.title}</h2>
 					<div class="prose prose-sm text-gray-700 mb-4">
 						{truncateAndStripHtml(post.body)}
 					</div>
@@ -54,7 +54,7 @@
 				</article>
 			{/each}
 		{:else}
-			<p class="text-center text-gray-600 py-8">記事が見つかりませんでした。</p>
+			<p class="text-center py-8">記事が見つかりませんでした。</p>
 		{/if}
 	</section>
 	{#if data.posts && data.posts.length > 0}
@@ -64,7 +64,7 @@
 			{:else}
 				<span />
 			{/if}
-			<span class="text-gray-600">ページ {data.currentPage} / {data.totalPages}</span>
+			<span>ページ {data.currentPage} / {data.totalPages}</span>
 			{#if data.currentPage < data.totalPages}
 				<a href={`?page=${data.currentPage + 1}`} class="hover:underline">次のページ</a>
 			{:else}
