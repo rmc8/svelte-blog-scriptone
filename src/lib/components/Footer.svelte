@@ -29,7 +29,7 @@
 						/>
 					</div>
 					<h4 class="user_name text-2xl font-medium m-0 pb-1">K</h4>
-					<p class="flex items-center justify-center">
+					<p class="flex items-center justify-center m-0">
 						<img src="/logo/discord_icon.webp" alt="DiscordIcon" class="discord_icon" />
 						k8x
 					</p>
