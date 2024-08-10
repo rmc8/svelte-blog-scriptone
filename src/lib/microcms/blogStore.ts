@@ -1,20 +1,25 @@
+import { get } from 'svelte/store';
 import Database from 'better-sqlite3';
 import { writable } from 'svelte/store';
 import type { Database as Db } from 'better-sqlite3';
 import type { Blog } from '$lib/microcms/microcms';
 import { getList } from '$lib/microcms/microcms';
 
-let db: Db | undefined;
+export const dbStore = writable<Db | null>(null);
 export const allBlogs = writable<Blog[]>([]);
 export const categories = writable<{ id: string; name: string; count: number }[]>([]);
 export const tags = writable<{ id: string; name: string; count: number }[]>([]);
 export const monthlyPosts = writable<{ yearMonth: string; count: number }[]>([]);
 
 const initDB = () => {
-	if (!db) {
-		db = new Database('./blogs.sqlite');
-		db.exec('CREATE TABLE IF NOT EXISTS blogs (id TEXT PRIMARY KEY, data TEXT)');
-	}
+	dbStore.update((currentDb) => {
+		if (!currentDb) {
+			const newDb = new Database('./blogs.sqlite');
+			newDb.exec('CREATE TABLE IF NOT EXISTS blogs (id TEXT PRIMARY KEY, data TEXT)');
+			return newDb;
+		}
+		return currentDb;
+	});
 };
 
 export const fetchAllBlogs = async (): Promise<void> => {
@@ -58,6 +63,7 @@ export const getArticleList = async ({
 }): Promise<{ contents: Blog[]; totalCount: number }> => {
 	try {
 		initDB();
+		const db = get(dbStore);
 
 		let query = 'SELECT data FROM blogs';
 		let countQuery = 'SELECT COUNT(*) as count FROM blogs';
@@ -110,6 +116,7 @@ export const getAllBlogs = (): Blog[] => {
 export const getBlogsByCategory = (categoryId: string): Blog[] => {
 	try {
 		initDB();
+		const db = get(dbStore);
 		const rows = db!
 			.prepare("SELECT data FROM blogs WHERE json_extract(data, '$.category.id') = ?")
 			.all(categoryId);
@@ -123,6 +130,7 @@ export const getBlogsByCategory = (categoryId: string): Blog[] => {
 export const getBlogsByTag = (tagId: string): Blog[] => {
 	try {
 		initDB();
+		const db = get(dbStore);
 		const rows = db!
 			.prepare("SELECT data FROM blogs WHERE json_extract(data, '$.tags') LIKE ?")
 			.all(`%"id":"${tagId}"%`);
@@ -136,6 +144,7 @@ export const getBlogsByTag = (tagId: string): Blog[] => {
 export const getBlogsByDate = (year: number, month?: number): Blog[] => {
 	try {
 		initDB();
+		const db = get(dbStore);
 		const startDate = new Date(year, month ? month - 1 : 0, 1).toISOString();
 		const endDate = new Date(year, month ? month : 12, 0).toISOString();
 
@@ -152,6 +161,7 @@ export const getBlogsByDate = (year: number, month?: number): Blog[] => {
 export const getTagsWithCount = (): { tag: string; count: number }[] => {
 	try {
 		initDB();
+		const db = get(dbStore);
 		const rows = db!
 			.prepare(
 				`
@@ -175,6 +185,7 @@ export const getTagsWithCount = (): { tag: string; count: number }[] => {
 export const getMonthlyPostCounts = (): { yearMonth: string; count: number }[] => {
 	try {
 		initDB();
+		const db = get(dbStore);
 		const rows = db!
 			.prepare(
 				`
@@ -201,6 +212,7 @@ export const getMonthlyPostCounts = (): { yearMonth: string; count: number }[] =
 export const getCategories = (): { id: string; name: string; count: number }[] => {
 	try {
 		initDB();
+		const db = get(dbStore);
 		const rows = db!
 			.prepare(
 				`
@@ -236,6 +248,7 @@ export const getCategories = (): { id: string; name: string; count: number }[] =
 export const getTags = (): { id: string; name: string; count: number }[] => {
 	try {
 		initDB();
+		const db = get(dbStore);
 		const rows = db!
 			.prepare(
 				`
