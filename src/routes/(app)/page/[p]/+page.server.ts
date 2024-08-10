@@ -1,6 +1,5 @@
 import {
 	getArticleList,
-	getBlogsByCategory,
 	getCategories,
 	getMonthlyPostCounts,
 	getTags
@@ -18,13 +17,13 @@ export const load: PageServerLoad = async ({ params }) => {
 	const limit = ITEMS_PER_PAGE;
 
 	try {
-		const response = await getArticleList({ offset, limit });
+		const response = getArticleList({ offset, limit });
 		const blogs: Blog[] = response.contents;
 		const totalCount: number = response.totalCount;
 		const categories = getCategories();
 		const monthlyPostCounts = getMonthlyPostCounts();
 		const tags = getTags();
-
+		console.log(totalCount);
 		return {
 			contents: blogs,
 			totalCount,

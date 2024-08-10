@@ -7,6 +7,7 @@ import { getList } from '$lib/microcms/microcms';
 
 export const dbStore = writable<Db | null>(null);
 export const allBlogs = writable<Blog[]>([]);
+export const allBlogsCount = writable<number>(0);
 export const categories = writable<{ id: string; name: string; count: number }[]>([]);
 export const tags = writable<{ id: string; name: string; count: number }[]>([]);
 export const monthlyPosts = writable<{ yearMonth: string; count: number }[]>([]);
@@ -47,6 +48,10 @@ export const fetchAllBlogs = async (): Promise<void> => {
 		}
 	});
 
+	// 全ての記事の数をカウントする
+	const articlesCount = allPosts.length;
+	allBlogsCount.set(articlesCount);
+
 	// カテゴリーを取得してストアに格納
 	const categoryData = getCategories();
 	categories.set(categoryData);
@@ -60,50 +65,23 @@ export const fetchAllBlogs = async (): Promise<void> => {
 	monthlyPosts.set(monthlyPostsData);
 };
 
-export const getArticleList = async ({
+export const getArticleList = ({
 	offset = 0,
-	limit = 10,
-	tag = null,
-	category = null
+	limit = 10
 }: {
 	offset?: number;
 	limit?: number;
-	tag?: string | null;
-	category?: string | null;
-}): Promise<{ contents: Blog[]; totalCount: number }> => {
+}): { contents: Blog[]; totalCount: number } => {
 	try {
 		initDB();
 		const db = get(dbStore);
+		if (!db) throw new Error('Database not initialized');
 
-		let query = 'SELECT data FROM blogs';
-		let countQuery = 'SELECT COUNT(*) as count FROM blogs';
-		const whereConditions: string[] = [];
-		const params: any[] = [];
-
-		if (tag) {
-			whereConditions.push("json_extract(data, '$.tags') LIKE ?");
-			params.push(`%"id":"${tag}"%`);
-		}
-
-		if (category) {
-			whereConditions.push("json_extract(data, '$.category.id') = ?");
-			params.push(category);
-		}
-
-		if (whereConditions.length > 0) {
-			const whereClause = whereConditions.join(' AND ');
-			query += ` WHERE ${whereClause}`;
-			countQuery += ` WHERE ${whereClause}`;
-		}
-
-		query += " ORDER BY json_extract(data, '$.publishedAt') DESC LIMIT ? OFFSET ?";
-		params.push(limit, offset);
-
-		const rows = db!.prepare(query).all(...params);
-		const countResult = db!.prepare(countQuery).get(...params.slice(0, -2));
-
+		const query =
+			"SELECT data FROM blogs ORDER BY json_extract(data, '$.publishedAt') DESC LIMIT ? OFFSET ?";
+		const rows = db.prepare(query).all(limit, offset);
 		const contents = rows.map((row: any) => JSON.parse(row.data));
-		const totalCount = countResult.count;
+		const totalCount = get(allBlogsCount);
 
 		return { contents, totalCount };
 	} catch (error) {
