@@ -1,4 +1,4 @@
-blogs.sqlite
+# blogs.sqlite
 .vercel/output/
 .DS_Store
 node_modules
