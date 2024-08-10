@@ -7,8 +7,8 @@ import { getList } from '$lib/microcms/microcms';
 
 export const dbStore = writable<Db | null>(null);
 export const allBlogs = writable<Blog[]>([]);
-export const allBlogsCount = writable<number>(0);
-export const totalCount = writable<number>(0);
+export const allBlogsCount = writable<number>(1);
+export const totalCount = writable<number>(1);
 export const categories = writable<{ id: string; name: string; count: number }[]>([]);
 export const tags = writable<{ id: string; name: string; count: number }[]>([]);
 export const monthlyPosts = writable<{ yearMonth: string; count: number }[]>([]);
@@ -65,7 +65,18 @@ export const fetchAllBlogs = async (): Promise<void> => {
 	monthlyPosts.set(monthlyPostsData);
 };
 
-export const getArticleList = ({
+export const getAllBlogs = (): Blog[] => {
+	try {
+		initDB();
+		const rows = db!.prepare('SELECT data FROM blogs').all();
+		return rows.map((row: any) => JSON.parse(row.data));
+	} catch (error) {
+		console.error('Error in getAllBlogs:', error);
+		return [];
+	}
+};
+
+export const getArticles = ({
 	offset = 0,
 	limit = 10
 }: {
@@ -80,27 +91,16 @@ export const getArticleList = ({
 		const query =
 			"SELECT data FROM blogs ORDER BY json_extract(data, '$.publishedAt') DESC LIMIT ? OFFSET ?";
 		const rows = db.prepare(query).all(limit, offset);
+		const countQuery = 'SELECT count(*) as count FROM blogs';
+		const allRecCount = db.prepare(countQuery).all()[0].count;
 		const contents = rows.map((row: any) => JSON.parse(row.data));
-		const totalCount = get(allBlogsCount);
 
-		return { contents, totalCount };
+		return { contents, totalCount: allRecCount };
 	} catch (error) {
 		console.error('Error in getArticleList:', error);
 		return { contents: [], totalCount: 0 };
 	}
 };
-
-export const getAllBlogs = (): Blog[] => {
-	try {
-		initDB();
-		const rows = db!.prepare('SELECT data FROM blogs').all();
-		return rows.map((row: any) => JSON.parse(row.data));
-	} catch (error) {
-		console.error('Error in getAllBlogs:', error);
-		return [];
-	}
-};
-
 export const getBlogsByCategory = (categoryId: string): Blog[] => {
 	try {
 		initDB();
