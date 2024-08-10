@@ -1,14 +1,52 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	interface Category {
 		id: string;
 		name: string;
+		count: number;
 	}
-	let categories: Category[] = [
-		{ id: 'programming', name: 'プログラミング' },
-		{ id: 'consumer_electronics', name: '家電製品' },
-		{ id: 'audio', name: 'オーディオ' }
-	];
-	categories.sort((a, b) => a.name.localeCompare(b.name, 'ja'));
+	interface Tag {
+		id: string;
+		name: string;
+		count: number;
+	}
+	interface PostCount {
+		yearMonth: string;
+		count: number;
+	}
+	export let categories: Category[] = [];
+	export let tags: Tag[] = [];
+	export let postCounts: PostCount[] = [];
+
+	function handleDateSelect(event: Event) {
+		const select = event.target as HTMLSelectElement;
+		if (select.value) {
+			window.location.href = `/?d=${select.value}`;
+		}
+	}
+
+	function getTagColor(index: number) {
+		const colors = [
+			'#00c0ce', // 明るい青緑（元の色）
+			'#009cac', // 中間の青緑（元の色）
+			'#00747c', // 暗い青緑（元の色）
+			'#00a0b0', // 明るい青緑と中間の青緑の中間
+			'#008890', // 中間の青緑と暗い青緑の中間
+			'#609da2', // より明るい青緑
+			'#006068', // より暗い青緑
+			'#58b7bd', // 最も明るい青緑
+			'#004c54' // 最も暗い青緑
+		];
+		return colors[index % colors.length];
+	}
+
+	function getTagSize(count: number) {
+		const minSize = 12;
+		const maxSize = 18;
+		const maxCount = Math.max(...tags.map((t) => t.count));
+		return minSize + (count / maxCount) * (maxSize - minSize);
+	}
 </script>
 
 <footer class="mt-16 border-t border-[#eff3f3] text-center px-4 pt-16 pb-32">
@@ -49,47 +87,32 @@
 					本サイトや筆者の詳細は<a href="/about" class="about-link hover:underline">About</a
 					>をご覧ください。
 				</p>
-			</section>
-			<section class="w-full md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left">
-				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Buy me a coffee</h3>
-				<div id="buyme">
-					<ul class="p-1">
-						<li class="mb-2">
-							<a href="https://www.buymeacoffee.com/rmc8">
-								<img
-									class="bn"
-									alt="buy_me_a_coffee"
-									width="192"
-									height="54"
-									src="/logo/buy_me_a_coffee_y.webp"
-								/>
-							</a>
-						</li>
-						<li>
-							<img
-								class="qr"
-								alt="buy_me_a_coffee_qr"
-								width="120"
-								height="120"
-								src="/logo/buy_me_a_coffee_qr.webp"
-							/>
-						</li>
-					</ul>
-				</div>
+				<!-- アーカイブ -->
+				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Archive</h3>
+				<select
+					on:change={handleDateSelect}
+					class="mt-2 p-2 w-full bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+				>
+					<option value="">Select Month</option>
+					{#each postCounts as postCount}
+						<option value={postCount.yearMonth}>
+							{postCount.yearMonth} ({postCount.count})
+						</option>
+					{/each}
+				</select>
+				<!-- カテゴリー -->
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Category</h3>
-				<ul class="p-1">
+				<ul>
 					{#each categories as category}
-						<li
-							class="p-2.5 rounded-md transition-colors duration-500 ease-in-out hover:bg-[--accent-color-light] hover:text-white"
-						>
-							<a href="/category/{category.id}/p/1" rel="external" class="block w-full h-full"
-								>{category.name}</a
-							>
+						<li>
+							<a href="/?c={category.id}">{category.name} ({category.count})</a>
 						</li>
 					{/each}
 				</ul>
 			</section>
+
 			<section class="w-full md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left">
+				<!-- 内部リンク -->
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Link(Internal)</h3>
 				<ul class="p-1">
 					<li
@@ -113,6 +136,7 @@
 						<a href="/privacy_policy" class="block w-full h-full">プライバシーポリシー・免責事項</a>
 					</li>
 				</ul>
+				<!-- 外部リンク -->
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Link(External)</h3>
 				<div class="external_links">
 					<ul class="p-1">
@@ -150,11 +174,52 @@
 						</li>
 					</ul>
 				</div>
+				<!-- Buy me a coffee -->
+				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Buy me a coffee</h3>
+				<div id="buyme">
+					<ul class="p-1">
+						<li class="mb-2">
+							<a href="https://www.buymeacoffee.com/rmc8">
+								<img
+									class="bn"
+									alt="buy_me_a_coffee"
+									width="192"
+									height="54"
+									src="/logo/buy_me_a_coffee_y.webp"
+								/>
+							</a>
+						</li>
+						<li>
+							<img
+								class="qr"
+								alt="buy_me_a_coffee_qr"
+								width="120"
+								height="120"
+								src="/logo/buy_me_a_coffee_qr.webp"
+							/>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="w-full md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left">
+				<!-- タグ -->
+				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full mt-4">Tags</h3>
+				<div class="tag-cloud">
+					{#each tags as tag, index}
+						<a
+							href="/?t={tag.id}"
+							class="tag-link"
+							style="background-color: {getTagColor(index)}; font-size: {getTagSize(tag.count)}px;"
+						>
+							{tag.name} ({tag.count})
+						</a>
+					{/each}
+				</div>
 			</section>
 		</div>
 	</div>
 	<div class="container">
-		<p class="text-center">&copy;2023 - Scriptone</p>
+		<p class="text-center">&copy;{new Date().getFullYear()} - Scriptone</p>
 	</div>
 </footer>
 
@@ -253,5 +318,52 @@
 
 	.qr {
 		width: 120px;
+	}
+
+	select {
+		font-size: 14px;
+		cursor: pointer;
+	}
+
+	select:hover {
+		background-color: var(--accent-color-light);
+		color: white;
+	}
+
+	.category-link {
+		font-size: 14px;
+		padding: 4px 8px;
+		background-color: var(--accent-color-light);
+		color: white;
+		border-radius: 4px;
+		text-decoration: none;
+		transition: background-color 0.3s ease;
+	}
+
+	.category-link:hover {
+		background-color: var(--accent-color-dark);
+	}
+
+	.tag-cloud {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		max-height: 888px;
+		overflow-y: auto;
+		padding: 10px;
+		border-radius: 8px;
+	}
+
+	.tag-link {
+		padding: 4px 8px;
+		color: white;
+		border-radius: 12px;
+		text-decoration: none;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+	}
+
+	.tag-link:hover {
+		transform: scale(1.05);
+		opacity: 0.9;
 	}
 </style>

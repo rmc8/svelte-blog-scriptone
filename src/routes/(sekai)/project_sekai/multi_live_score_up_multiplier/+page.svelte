@@ -11,6 +11,7 @@
 
 	let activeTab = 'table_contents'; // 初期表示タブを設定
 	$: currentUrl = $page.url.href;
+	export let data;
 </script>
 
 <svelte:head>
@@ -72,4 +73,4 @@
 		</div>
 	</article>
 </main>
-<Footer />
+<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />

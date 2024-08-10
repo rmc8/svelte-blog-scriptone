@@ -13,7 +13,7 @@
 	$: currentUrl = $page.url.href;
 
 	let columns = {};
-	let data = [];
+	let dataList = [];
 	let loading = true;
 
 	onMount(async () => {
@@ -23,7 +23,7 @@
 			);
 			const dataResponse = response.data;
 			columns = dataResponse.columns;
-			data = dataResponse.data;
+			dataList = dataResponse.data;
 		} catch (error) {
 			console.error(error);
 		} finally {
@@ -34,6 +34,8 @@
 	function formatDate(dateStr) {
 		return moment(dateStr).format('YYYY-MM-DD HH:mm');
 	}
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -94,7 +96,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							{#each data as row}
+							{#each dataList as row}
 								<tr>
 									<td style="text-align: center">{row.event_id}</td>
 									<td>{row.event_name}</td>
@@ -123,4 +125,4 @@
 	</article>
 </main>
 
-<Footer />
+<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />

@@ -5,7 +5,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import TopicList from '$lib/components/BreadcrumbsListArticle.svelte';
-	import type { Blog } from '$lib/microcms';
+	import type { Blog } from '$lib/microcms/microcms';
 	import { load } from 'cheerio';
 	import { marked } from 'marked';
 	import hljs from 'highlight.js';
@@ -75,9 +75,7 @@
 		<dl>
 			<div class="upper flex items-start mt-2">
 				<div class="category">
-					<a class="category_link" href="/category/{data.blog.category.id}/p/1"
-						>{data.blog.category.name}</a
-					>
+					<a class="category_link" href="/?c={data.blog.category.id}">{data.blog.category.name}</a>
 				</div>
 				<div class="tags mb-1">
 					{#each data.blog.tags as tag}
@@ -86,7 +84,7 @@
 								<Tag color="#009cac" width={20} height={20} />
 							</div>
 							<div class="tag_link">
-								<a href="/tag/{tag.id}/p/1" class="block pt-1.5">
+								<a href="/?t={tag.id}" class="block pt-1.5">
 									{tag.name}
 								</a>
 							</div>
@@ -116,7 +114,7 @@
 		<OtherPosts headerLabel="最新の記事を見る" relatedPosts={data.recentPosts} />
 	</div>
 </main>
-<Footer />
+<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />
 
 <style>
 	table {

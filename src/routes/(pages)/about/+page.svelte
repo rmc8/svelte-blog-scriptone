@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -62,4 +64,4 @@
 		</div>
 	</article>
 </main>
-<Footer />
+<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />

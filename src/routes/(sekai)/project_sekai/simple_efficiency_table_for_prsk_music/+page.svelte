@@ -8,6 +8,7 @@
 	import Table from './Table.svelte';
 
 	$: currentUrl = $page.url.href;
+	export let data;
 </script>
 
 <svelte:head>
@@ -46,4 +47,4 @@
 	</article>
 </main>
 
-<Footer />
+<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />

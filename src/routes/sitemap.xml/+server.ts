@@ -1,4 +1,4 @@
-import { getList } from '$lib/microcms';
+import { getList } from '$lib/microcms/microcms';
 
 // APIレスポンスの型定義
 interface Item {

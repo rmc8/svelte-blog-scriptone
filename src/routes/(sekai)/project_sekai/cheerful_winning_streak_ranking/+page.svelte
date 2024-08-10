@@ -28,6 +28,7 @@
 	});
 
 	const filteredRankings = () => rankings.filter((ranking) => ranking.team_name !== '');
+	export let data;
 </script>
 
 <svelte:head>
@@ -131,7 +132,7 @@
 			<Profile />
 		</div>
 	</article>
-	<Footer />
+	<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />
 </main>
 
 <style>

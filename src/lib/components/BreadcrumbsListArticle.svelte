@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Blog } from '$lib/microcms';
+	import type { Blog } from '$lib/microcms/microcms/microcms';
 	import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
 	import Home from 'svelte-material-icons/Home.svelte';
 	import FolderOutline from 'svelte-material-icons/FolderOutline.svelte';
@@ -24,7 +24,7 @@
 		</li>
 		<li class="flex-shrink-0 flex items-center">
 			<a
-				href="/category/{blog.category.id}/p/1"
+				href="/?c={blog.category.id}"
 				class="text-[--accent-color] hover:text-[--accent-color-dark] transition duration-300 ease-in-out flex items-center"
 			>
 				<FolderOutline size="1.2em" />

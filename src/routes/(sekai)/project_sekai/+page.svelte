@@ -7,6 +7,7 @@
 	import Tools from './PrskTools.svelte';
 
 	$: currentUrl = $page.url.href;
+	export let data;
 </script>
 
 <svelte:head>
@@ -159,7 +160,8 @@
 		</div>
 	</article>
 </main>
-<Footer />
+<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />
+
 
 <style>
 	ul,

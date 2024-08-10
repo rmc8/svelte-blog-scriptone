@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
 	import { formatDate } from '$lib/utils';
-	import type { Blog } from '$lib/microcms';
+	import type { Blog } from '$lib/microcms/microcms/microcms';
 
 	export let headerLabel: string;
 	export let relatedPosts: Blog[];

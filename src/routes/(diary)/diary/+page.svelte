@@ -73,7 +73,7 @@
 		</nav>
 	{/if}
 </main>
-<Footer />
+<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />
 
 <style>
 	main {

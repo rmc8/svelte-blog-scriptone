@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Tag from 'svelte-material-icons/Tag.svelte';
 	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
-	import type { Blog } from '$lib/microcms';
+	import type { Blog } from '$lib/microcms/microcms/microcms';
 	export let content: Blog;
 </script>
 
@@ -18,7 +18,7 @@
 			<div class="article_link"><a class="title" href="/{content.id}">{content.title}</a></div>
 			<div class="upper flex">
 				<div class="category">
-					<a class="category_link" href="/category/{content.category.id}/p/1" rel="external"
+					<a class="category_link" href="/?c={content.category.id}" rel="external"
 						>{content.category.name}</a
 					>
 				</div>
@@ -29,7 +29,7 @@
 								<Tag color="#009cac" />
 							</div>
 							<div class="tag_link">
-								<a href="/tag/{tag.id}/p/1">
+								<a href="/?t={tag.id}">
 									{tag.name}
 								</a>
 							</div>

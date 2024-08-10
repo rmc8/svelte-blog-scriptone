@@ -62,6 +62,7 @@
 			totalCount: raw.length
 		};
 	}
+	export let data;
 </script>
 
 <svelte:head>
@@ -160,7 +161,7 @@
 		</div>
 	</article>
 </main>
-<Footer />
+<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />
 
 <style>
 	.event_point_input {

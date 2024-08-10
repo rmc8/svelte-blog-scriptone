@@ -17,7 +17,7 @@
 
 	$: currentUrl = $page.url.href;
 
-	let data: ApiResponse | null = null;
+	let api_data: ApiResponse | null = null;
 
 	onMount(async () => {
 		const url =
@@ -26,7 +26,7 @@
 			const response = await fetch(url);
 			if (response.ok) {
 				const jsonData = await response.json();
-				data = jsonData as ApiResponse;
+				api_data = jsonData as ApiResponse;
 			} else {
 				console.error('Error fetching data');
 			}
@@ -34,6 +34,7 @@
 			console.error('Error:', error);
 		}
 	});
+	export let data;
 </script>
 
 <svelte:head>
@@ -66,24 +67,24 @@
 				>にご連絡ください。
 			</div>
 			<h2>Project Sekai Dashboard (PSD)</h2>
-			{#if data == null}
+			{#if api_data == null}
 				<p>Now loading...</p>
 			{/if}
-			{#if data?.card != undefined}
+			{#if api_data?.card != undefined}
 				<div id="card">
 					<h3>カード枚数</h3>
-					<ByRarity rarityCounter={data.card.byRarity} />
-					<ByRarityVs rarityCounter={data.card.byRarityForVs} />
-					<ByType typeCounter={data.card.byType} />
-					<ByTypeVs typeCounter={data.card.byTypeForVs} />
-					<BySkill skillCounter={data.card.bySkill} />
-					<BySkillVs skillCounter={data.card.bySkillForVs} />
+					<ByRarity rarityCounter={api_data.card.byRarity} />
+					<ByRarityVs rarityCounter={api_data.card.byRarityForVs} />
+					<ByType typeCounter={api_data.card.byType} />
+					<ByTypeVs typeCounter={api_data.card.byTypeForVs} />
+					<BySkill skillCounter={api_data.card.bySkill} />
+					<BySkillVs skillCounter={api_data.card.bySkillForVs} />
 				</div>
 			{/if}
-			{#if data?.diff != undefined}
+			{#if api_data?.diff != undefined}
 				<div id="music">
 					<h3>楽曲</h3>
-					<Diff diffObj={data.diff} />
+					<Diff diffObj={api_data.diff} />
 				</div>
 			{/if}
 		</div>
@@ -98,7 +99,7 @@
 	</article>
 </main>
 
-<Footer />
+<Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />
 
 <style>
 	.alert a {

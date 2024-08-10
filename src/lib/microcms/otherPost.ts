@@ -1,6 +1,6 @@
 import { get } from 'svelte/store';
 import { allBlogs } from '$lib/microcms/blogStore';
-import type { Blog, Tag } from '$lib/microcms';
+import type { Blog, Tag } from '$lib/microcms/microcms';
 
 export function getRelatedPosts(currentPost: Blog, count = 6): Blog[] {
 	const blogs = get(allBlogs);
