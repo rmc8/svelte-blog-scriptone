@@ -64,5 +64,3 @@ export const load: PageServerLoad = async ({ url }) => {
 		date: date_str
 	};
 };
-
-export const prerender = true;
