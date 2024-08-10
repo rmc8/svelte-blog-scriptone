@@ -8,6 +8,7 @@ import { getList } from '$lib/microcms/microcms';
 export const dbStore = writable<Db | null>(null);
 export const allBlogs = writable<Blog[]>([]);
 export const allBlogsCount = writable<number>(0);
+export const totalCount = writable<number>(0);
 export const categories = writable<{ id: string; name: string; count: number }[]>([]);
 export const tags = writable<{ id: string; name: string; count: number }[]>([]);
 export const monthlyPosts = writable<{ yearMonth: string; count: number }[]>([]);
@@ -27,14 +28,13 @@ export const fetchAllBlogs = async (): Promise<void> => {
 	let offset = 0;
 	const limit = 100;
 	let allPosts: Blog[] = [];
-	let totalCount = 0;
 
 	do {
 		const response = await getList({ limit, offset });
 		allPosts = [...allPosts, ...response.contents];
-		totalCount = response.totalCount;
+		totalCount.set(response.totalCount);
 		offset += limit;
-	} while (offset < totalCount);
+	} while (offset < get(totalCount));
 
 	allBlogs.set(allPosts);
 
