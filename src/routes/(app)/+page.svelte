@@ -53,6 +53,7 @@
 		params.set('p', page.toString());
 		if (data.tag) params.set('t', data.tag);
 		if (data.category) params.set('c', data.category);
+		if (data.date) params.set('d', data.date);
 		return `/?${params.toString()}`;
 	}
 </script>
@@ -158,6 +159,4 @@
 		background-color: transparent;
 		color: var(--text-color);
 	}
-
-	
 </style>
