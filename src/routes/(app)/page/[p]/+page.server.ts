@@ -1,30 +1,27 @@
-import {
-	fetchAllBlogs,
-	getArticleList,
-	getBlogsByCategory,
-	getBlogsByCategoryAndTag,
-	getBlogsByDate
-} from '$lib/microcms/blogStore';
+import { fetchAllBlogs, getArticleList } from '$lib/microcms/blogStore';
 import type { PageServerLoad } from './$types';
 import type { Blog } from '$lib/microcms/microcms';
 
 const ITEMS_PER_PAGE = 6;
 
-export const load: PageServerLoad = async ({ url }) => {
+export const load: PageServerLoad = async ({ params }) => {
 	await fetchAllBlogs();
-	const page = 1;
+
+	// URLパラメータからページ番号を取得し、数値に変換
+	const page = parseInt(params.p, 10) || 1;
+
 	const offset = (page - 1) * ITEMS_PER_PAGE;
 	const limit = ITEMS_PER_PAGE;
-	let blogs: Blog[] = [];
-	let totalCount = 0;
+
 	try {
 		const response = await getArticleList({ offset, limit });
-		blogs = response.contents;
-		totalCount = response.totalCount;
+		const blogs: Blog[] = response.contents;
+		const totalCount: number = response.totalCount;
+
 		return {
 			contents: blogs,
 			totalCount,
-			currentPage: 1,
+			currentPage: page,
 			itemsPerPage: ITEMS_PER_PAGE
 		};
 	} catch (error) {

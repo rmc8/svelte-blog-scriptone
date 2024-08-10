@@ -50,16 +50,19 @@
 
 	function getPageUrl(page: number): string {
 		const baseUrl = '/page';
-		return `${baseUrl}/${page}`;
+		const queryParams = new URLSearchParams();
+		const queryString = queryParams.toString();
+		return `${baseUrl}/${page}${queryString ? '?' + queryString : ''}`;
 	}
 </script>
 
 <svelte:head>
-	<title>Scriptone - Home</title>
+	<title>Scriptone - ページ{data.currentPage}</title>
 	<meta
 		name="description"
 		content="Programmingや書写、オーディオなど多様な趣味を掲載したブログです。"
 	/>
+	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <Header />

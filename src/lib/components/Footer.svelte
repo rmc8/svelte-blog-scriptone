@@ -22,7 +22,7 @@
 	function handleDateSelect(event: Event) {
 		const select = event.target as HTMLSelectElement;
 		if (select.value) {
-			window.location.href = `/?d=${select.value}`;
+			window.location.href = `/date/${select.value}/1`;
 		}
 	}
 
@@ -105,7 +105,7 @@
 				<ul>
 					{#each categories as category}
 						<li>
-							<a href="/?c={category.id}">{category.name} ({category.count})</a>
+							<a href="/category/{category.id}/1">{category.name} ({category.count})</a>
 						</li>
 					{/each}
 				</ul>
@@ -207,7 +207,7 @@
 				<div class="tag-cloud">
 					{#each tags as tag, index}
 						<a
-							href="/?t={tag.id}"
+							href="/tag/{tag.id}/1"
 							class="tag-link"
 							style="background-color: {getTagColor(index)}; font-size: {getTagSize(tag.count)}px;"
 						>

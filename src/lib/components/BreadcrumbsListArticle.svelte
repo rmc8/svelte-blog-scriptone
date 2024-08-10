@@ -24,7 +24,7 @@
 		</li>
 		<li class="flex-shrink-0 flex items-center">
 			<a
-				href="/?c={blog.category.id}"
+				href="/category/{blog.category.id}/1"
 				class="text-[--accent-color] hover:text-[--accent-color-dark] transition duration-300 ease-in-out flex items-center"
 			>
 				<FolderOutline size="1.2em" />

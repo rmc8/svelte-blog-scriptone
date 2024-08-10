@@ -18,7 +18,7 @@
 			<div class="article_link"><a class="title" href="/{content.id}">{content.title}</a></div>
 			<div class="upper flex">
 				<div class="category">
-					<a class="category_link" href="/?c={content.category.id}" rel="external"
+					<a class="category_link" href="/category/{content.category.id}/1" rel="external"
 						>{content.category.name}</a
 					>
 				</div>
@@ -29,7 +29,7 @@
 								<Tag color="#009cac" />
 							</div>
 							<div class="tag_link">
-								<a href="/?t={tag.id}">
+								<a href="/tag/{tag.id}/1">
 									{tag.name}
 								</a>
 							</div>

@@ -49,17 +49,18 @@
 	}
 
 	function getPageUrl(page: number): string {
-		const baseUrl = '/page';
-		return `${baseUrl}/${page}`;
+		const baseUrl = '/category';
+		return `${baseUrl}/${data.category}/${page}`;
 	}
 </script>
 
 <svelte:head>
-	<title>Scriptone - Home</title>
+	<title>Scriptone - {data.category} ページ{data.currentPage}</title>
 	<meta
 		name="description"
 		content="Programmingや書写、オーディオなど多様な趣味を掲載したブログです。"
 	/>
+	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <Header />

@@ -75,7 +75,9 @@
 		<dl>
 			<div class="upper flex items-start mt-2">
 				<div class="category">
-					<a class="category_link" href="/?c={data.blog.category.id}">{data.blog.category.name}</a>
+					<a class="category_link" href="/category/{data.blog.category.id}/1"
+						>{data.blog.category.name}</a
+					>
 				</div>
 				<div class="tags mb-1">
 					{#each data.blog.tags as tag}
@@ -84,7 +86,7 @@
 								<Tag color="#009cac" width={20} height={20} />
 							</div>
 							<div class="tag_link">
-								<a href="/?t={tag.id}" class="block pt-1.5">
+								<a href="/tag/{tag.id}/1" class="block pt-1.5">
 									{tag.name}
 								</a>
 							</div>

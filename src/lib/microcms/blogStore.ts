@@ -116,25 +116,6 @@ export const getAllBlogs = (): Blog[] => {
 	}
 };
 
-export const getBlogsByCategoryAndTag = (categoryId: string, tagId: string): Blog[] => {
-	try {
-		initDB();
-		const rows = db!
-			.prepare(
-				`
-                SELECT data FROM blogs 
-                WHERE json_extract(data, '$.category.id') = ? 
-                AND json_extract(data, '$.tags') LIKE ?
-            `
-			)
-			.all(categoryId, `%"id":"${tagId}"%`);
-		return rows.map((row: any) => JSON.parse(row.data));
-	} catch (error) {
-		console.error('Error in getBlogsByCategoryAndTag:', error);
-		return [];
-	}
-};
-
 export const getBlogsByCategory = (categoryId: string): Blog[] => {
 	try {
 		initDB();

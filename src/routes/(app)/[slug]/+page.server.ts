@@ -65,4 +65,4 @@ export const load: PageServerLoad = async ({ params }) => {
 	return res;
 };
 
-export const prerender = 'auto';
+export const prerender = true;

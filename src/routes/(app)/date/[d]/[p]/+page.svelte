@@ -49,13 +49,13 @@
 	}
 
 	function getPageUrl(page: number): string {
-		const baseUrl = '/page';
-		return `${baseUrl}/${page}`;
+		const baseUrl = '/date';
+		return `${baseUrl}/${data.dt}/${page}`;
 	}
 </script>
 
 <svelte:head>
-	<title>Scriptone - Home</title>
+	<title>Scriptone - {data.dt} ページ{data.currentPage}</title>
 	<meta
 		name="description"
 		content="Programmingや書写、オーディオなど多様な趣味を掲載したブログです。"
