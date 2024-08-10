@@ -1,4 +1,10 @@
-import { getArticleList } from '$lib/microcms/blogStore';
+import {
+	getArticleList,
+	getBlogsByCategory,
+	getCategories,
+	getMonthlyPostCounts,
+	getTags
+} from '$lib/microcms/blogStore';
 import type { PageServerLoad } from './$types';
 import type { Blog } from '$lib/microcms/microcms';
 
@@ -15,12 +21,18 @@ export const load: PageServerLoad = async ({ params }) => {
 		const response = await getArticleList({ offset, limit });
 		const blogs: Blog[] = response.contents;
 		const totalCount: number = response.totalCount;
+		const categories = getCategories();
+		const monthlyPostCounts = getMonthlyPostCounts();
+		const tags = getTags();
 
 		return {
 			contents: blogs,
 			totalCount,
 			currentPage: page,
-			itemsPerPage: ITEMS_PER_PAGE
+			itemsPerPage: ITEMS_PER_PAGE,
+			categories,
+			monthly_post_counts: monthlyPostCounts,
+			tags
 		};
 	} catch (error) {
 		console.error('データ取得エラー:', error);

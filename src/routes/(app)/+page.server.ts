@@ -1,4 +1,4 @@
-import { getArticleList } from '$lib/microcms/blogStore';
+import {  getArticleList } from '$lib/microcms/blogStore';
 import type { PageServerLoad } from './$types';
 import type { Blog } from '$lib/microcms/microcms';
 

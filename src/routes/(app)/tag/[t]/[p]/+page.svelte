@@ -49,7 +49,7 @@
 	}
 
 	function getPageUrl(page: number): string {
-		const baseUrl = '/date';
+		const baseUrl = '/tag';
 		return `${baseUrl}/${data.tag}/${page}`;
 	}
 </script>

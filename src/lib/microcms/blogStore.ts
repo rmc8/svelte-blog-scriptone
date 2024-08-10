@@ -163,7 +163,7 @@ export const getBlogsByDate = (year: number, month?: number): Blog[] => {
 			.all(startDate, endDate);
 		return rows.map((row: any) => JSON.parse(row.data));
 	} catch (error) {
-		console.error('Error in getBlogsByDate:', error);
+		console.error('Error in getBlogsByDate:', `${error}, ${year}, ${month}`);
 		return [];
 	}
 };

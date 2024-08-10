@@ -49,7 +49,7 @@
 	}
 
 	function getPageUrl(page: number): string {
-		const baseUrl = '/date';
+		const baseUrl = '/archive';
 		return `${baseUrl}/${data.dt}/${page}`;
 	}
 </script>
@@ -60,6 +60,7 @@
 		name="description"
 		content="Programmingや書写、オーディオなど多様な趣味を掲載したブログです。"
 	/>
+	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <Header />

@@ -1,6 +1,5 @@
 import {
 	getBlogsByDate,
-	fetchAllBlogs,
 	getCategories,
 	getMonthlyPostCounts,
 	getTags
@@ -29,7 +28,7 @@ export const load: PageServerLoad = async ({ params }) => {
 			totalCount,
 			currentPage: page,
 			itemsPerPage: ITEMS_PER_PAGE,
-			dt,
+			dt: dt,
 			categories,
 			monthly_post_counts: monthlyPostCounts,
 			tags
