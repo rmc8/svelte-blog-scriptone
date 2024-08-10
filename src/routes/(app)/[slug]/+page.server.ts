@@ -2,7 +2,13 @@ import { getDetail } from '$lib/microcms/microcms';
 import type { PageServerLoad } from './$types';
 
 import { get } from 'svelte/store';
-import { allBlogs, fetchAllBlogs } from '$lib/microcms/blogStore';
+import {
+	allBlogs,
+	fetchAllBlogs,
+	getCategories,
+	getMonthlyPostCounts,
+	getTags
+} from '$lib/microcms/blogStore';
 import type { Blog, Tag } from '$lib/microcms/microcms';
 
 function shuffleArray(array: Blog[]): void {
@@ -57,10 +63,16 @@ function getRecentPosts(currentPost: Blog, count = 6): Blog[] {
 export const load: PageServerLoad = async ({ params }) => {
 	await fetchAllBlogs();
 	const blogData = await getDetail(params.slug);
+	const categories = getCategories();
+	const monthlyPostCounts = getMonthlyPostCounts();
+	const tags = getTags();
 	const res = {
 		blog: blogData,
 		recentPosts: getRecentPosts(blogData),
-		relatedPosts: getRelatedPosts(blogData)
+		relatedPosts: getRelatedPosts(blogData),
+		categories,
+		monthly_post_counts: monthlyPostCounts,
+		tags
 	};
 	return res;
 };

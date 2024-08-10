@@ -37,6 +37,16 @@ export const fetchAllBlogs = async (): Promise<void> => {
 
 	allBlogs.set(allPosts);
 
+	initDB();
+	const db = get(dbStore);
+
+	// 全ての投稿をdbにinsertする
+	allPosts.forEach((post) => {
+		if (db !== null) {
+			db.prepare('INSERT OR REPLACE INTO blogs VALUES (?, ?)').run(post.id, JSON.stringify(post));
+		}
+	});
+
 	// カテゴリーを取得してストアに格納
 	const categoryData = getCategories();
 	categories.set(categoryData);
@@ -284,6 +294,7 @@ export const getTags = (): { id: string; name: string; count: number }[] => {
 export const getMonthlyPosts = (): { yearMonth: string; posts: Blog[]; count: number }[] => {
 	try {
 		initDB();
+		const db = get(dbStore);
 		const rows = db!
 			.prepare(
 				`

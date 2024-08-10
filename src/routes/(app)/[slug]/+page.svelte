@@ -117,16 +117,3 @@
 	</div>
 </main>
 <Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />
-
-<style>
-	table {
-		border-collapse: collapse;
-		width: auto;
-		background-color: #fff;
-		margin-top: 16px;
-		margin-bottom: 16px;
-		border-spacing: 0;
-		border-radius: 4px;
-		overflow: hidden;
-	}
-</style>
