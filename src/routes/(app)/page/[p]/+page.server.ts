@@ -1,12 +1,10 @@
-import { fetchAllBlogs, getArticleList } from '$lib/microcms/blogStore';
+import { getArticleList } from '$lib/microcms/blogStore';
 import type { PageServerLoad } from './$types';
 import type { Blog } from '$lib/microcms/microcms';
 
 const ITEMS_PER_PAGE = 6;
 
 export const load: PageServerLoad = async ({ params }) => {
-	await fetchAllBlogs();
-
 	// URLパラメータからページ番号を取得し、数値に変換
 	const page = parseInt(params.p, 10) || 1;
 

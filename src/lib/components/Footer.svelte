@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
+	import AchieveMenu from './footer/AchieveMenu.svelte';
 	interface Category {
 		id: string;
 		name: string;
@@ -19,24 +18,17 @@
 	export let tags: Tag[] = [];
 	export let postCounts: PostCount[] = [];
 
-	function handleDateSelect(event: Event) {
-		const select = event.target as HTMLSelectElement;
-		if (select.value) {
-			window.location.href = `/date/${select.value}/1`;
-		}
-	}
-
 	function getTagColor(index: number) {
 		const colors = [
-			'#00c0ce', // 明るい青緑（元の色）
-			'#009cac', // 中間の青緑（元の色）
-			'#00747c', // 暗い青緑（元の色）
-			'#00a0b0', // 明るい青緑と中間の青緑の中間
-			'#008890', // 中間の青緑と暗い青緑の中間
-			'#609da2', // より明るい青緑
-			'#006068', // より暗い青緑
-			'#58b7bd', // 最も明るい青緑
-			'#004c54' // 最も暗い青緑
+			'#00c0ce',
+			'#009cac',
+			'#00747c',
+			'#00a0b0',
+			'#008890',
+			'#609da2',
+			'#006068',
+			'#58b7bd',
+			'#004c54'
 		];
 		return colors[index % colors.length];
 	}
@@ -55,7 +47,7 @@
 		<div id="sitemap" class="flex flex-wrap justify-start items-start">
 			<section
 				id="profile"
-				class="w-full md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left flex flex-col items-center"
+				class="w-full md:w-[46%] p-2 lg:w-[31%] ml-0 md:ml-5 mb-8 text-left flex flex-col items-center"
 			>
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full text-left">Profile</h3>
 				<div id="profile_header" class="text-center">
@@ -89,29 +81,25 @@
 				</p>
 				<!-- アーカイブ -->
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Archive</h3>
-				<select
-					on:change={handleDateSelect}
-					class="mt-2 p-2 w-full bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-				>
-					<option value="">Select Month</option>
+				<ul>
 					{#each postCounts as postCount}
-						<option value={postCount.yearMonth}>
-							{postCount.yearMonth} ({postCount.count})
-						</option>
+						<li class="transition-colors duration-500 hover:bg-[--accent-color-light]">
+							<a href="/date/{postCount.yearMonth}/1">{postCount.yearMonth} ({postCount.count})</a>
+						</li>
 					{/each}
-				</select>
+				</ul>
 				<!-- カテゴリー -->
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Category</h3>
 				<ul>
 					{#each categories as category}
-						<li>
+						<li class="hover:bg-[--accent-color-light]">
 							<a href="/category/{category.id}/1">{category.name} ({category.count})</a>
 						</li>
 					{/each}
 				</ul>
 			</section>
 
-			<section class="w-full md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left">
+			<section class="w-full p-2 md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left">
 				<!-- 内部リンク -->
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Link(Internal)</h3>
 				<ul class="p-1">
@@ -201,7 +189,7 @@
 					</ul>
 				</div>
 			</section>
-			<section class="w-full md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left">
+			<section class="w-full p-4 md:w-[46%] lg:w-[31%] ml-0 md:ml-5 mb-8 text-left">
 				<!-- タグ -->
 				<h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full mt-4">Tags</h3>
 				<div class="tag-cloud">

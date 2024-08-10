@@ -1,11 +1,10 @@
-import { fetchAllBlogs, getArticleList } from '$lib/microcms/blogStore';
+import { getArticleList } from '$lib/microcms/blogStore';
 import type { PageServerLoad } from './$types';
 import type { Blog } from '$lib/microcms/microcms';
 
 const ITEMS_PER_PAGE = 6;
 
 export const load: PageServerLoad = async () => {
-	await fetchAllBlogs();
 	const page = 1;
 	const offset = (page - 1) * ITEMS_PER_PAGE;
 	const limit = ITEMS_PER_PAGE;

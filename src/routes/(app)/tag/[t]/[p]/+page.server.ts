@@ -4,8 +4,6 @@ import type { PageServerLoad } from './$types';
 const ITEMS_PER_PAGE = 6;
 
 export const load: PageServerLoad = async ({ params }) => {
-	await fetchAllBlogs();
-
 	const tag = params.t;
 	const page = parseInt(params.p, 10) || 1;
 
@@ -13,7 +11,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	const limit = ITEMS_PER_PAGE;
 
 	try {
-		const allTaggedBlogs = await getBlogsByTag(tag);
+		const allTaggedBlogs = getBlogsByTag(tag);
 		const totalCount = allTaggedBlogs.length;
 		const blogs = allTaggedBlogs.slice(offset, offset + limit);
 

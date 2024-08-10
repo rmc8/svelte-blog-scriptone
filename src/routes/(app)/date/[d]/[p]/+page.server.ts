@@ -1,11 +1,9 @@
-import { fetchAllBlogs, getBlogsByDate } from '$lib/microcms/blogStore';
+import { getBlogsByDate } from '$lib/microcms/blogStore';
 import type { PageServerLoad } from './$types';
 
 const ITEMS_PER_PAGE = 6;
 
 export const load: PageServerLoad = async ({ params }) => {
-	await fetchAllBlogs();
-
 	const dt = params.d;
 	const page = parseInt(params.p, 10) || 1;
 
@@ -13,7 +11,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	const limit = ITEMS_PER_PAGE;
 	const [year, month] = dt.split('-').map(Number);
 	try {
-		const allTaggedBlogs = await getBlogsByDate(year, month);
+		const allTaggedBlogs = getBlogsByDate(year, month);
 		const totalCount = allTaggedBlogs.length;
 		const blogs = allTaggedBlogs.slice(offset, offset + limit);
 
