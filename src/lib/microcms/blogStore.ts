@@ -9,6 +9,7 @@ export const allBlogs = writable<Blog[]>([]);
 export const categories = writable<{ id: string; name: string; count: number }[]>([]);
 export const tags = writable<{ id: string; name: string; count: number }[]>([]);
 export const monthlyPosts = writable<{ yearMonth: string; count: number }[]>([]);
+
 const initDB = () => {
 	if (!db) {
 		db = new Database('./blogs.sqlite');
@@ -28,12 +29,6 @@ export const fetchAllBlogs = async (): Promise<void> => {
 		totalCount = response.totalCount;
 		offset += limit;
 	} while (offset < totalCount);
-
-	initDB();
-	const stmt = db!.prepare('INSERT OR REPLACE INTO blogs (id, data) VALUES (?, ?)');
-	allPosts.forEach((post) => {
-		stmt.run(post.id, JSON.stringify(post));
-	});
 
 	allBlogs.set(allPosts);
 
@@ -298,15 +293,5 @@ export const getMonthlyPosts = (): { yearMonth: string; posts: Blog[]; count: nu
 	} catch (error) {
 		console.error('Error in getMonthlyPosts:', error);
 		return [];
-	}
-};
-
-export const debugPrintAllBlogs = () => {
-	try {
-		initDB();
-		const rows = db!.prepare('SELECT * FROM blogs').all();
-		console.log('All blogs in database:', rows);
-	} catch (error) {
-		console.error('Error in debugPrintAllBlogs:', error);
 	}
 };
