@@ -1,16 +1,10 @@
-import {
-	fetchAllBlogs,
-	getArticleList,
-	getBlogsByCategory,
-	getBlogsByCategoryAndTag,
-	getBlogsByDate
-} from '$lib/microcms/blogStore';
+import { fetchAllBlogs, getArticleList } from '$lib/microcms/blogStore';
 import type { PageServerLoad } from './$types';
 import type { Blog } from '$lib/microcms/microcms';
 
 const ITEMS_PER_PAGE = 6;
 
-export const load: PageServerLoad = async ({ url }) => {
+export const load: PageServerLoad = async () => {
 	await fetchAllBlogs();
 	const page = 1;
 	const offset = (page - 1) * ITEMS_PER_PAGE;

@@ -17,41 +17,37 @@ const initDB = () => {
 };
 
 export const fetchAllBlogs = async (): Promise<void> => {
-	try {
-		let offset = 0;
-		const limit = 100;
-		let allPosts: Blog[] = [];
-		let totalCount = 0;
+	let offset = 0;
+	const limit = 100;
+	let allPosts: Blog[] = [];
+	let totalCount = 0;
 
-		do {
-			const response = await getList({ limit, offset });
-			allPosts = [...allPosts, ...response.contents];
-			totalCount = response.totalCount;
-			offset += limit;
-		} while (offset < totalCount);
+	do {
+		const response = await getList({ limit, offset });
+		allPosts = [...allPosts, ...response.contents];
+		totalCount = response.totalCount;
+		offset += limit;
+	} while (offset < totalCount);
 
-		initDB();
-		const stmt = db!.prepare('INSERT OR REPLACE INTO blogs (id, data) VALUES (?, ?)');
-		allPosts.forEach((post) => {
-			stmt.run(post.id, JSON.stringify(post));
-		});
+	initDB();
+	const stmt = db!.prepare('INSERT OR REPLACE INTO blogs (id, data) VALUES (?, ?)');
+	allPosts.forEach((post) => {
+		stmt.run(post.id, JSON.stringify(post));
+	});
 
-		allBlogs.set(allPosts);
+	allBlogs.set(allPosts);
 
-		// カテゴリーを取得してストアに格納
-		const categoryData = getCategories();
-		categories.set(categoryData);
+	// カテゴリーを取得してストアに格納
+	const categoryData = getCategories();
+	categories.set(categoryData);
 
-		// タグを取得してストアに格納
-		const tagData = getTags();
-		tags.set(tagData);
+	// タグを取得してストアに格納
+	const tagData = getTags();
+	tags.set(tagData);
 
-		// 月別投稿を取得してストアに格納
-		const monthlyPostsData = getMonthlyPostCounts();
-		monthlyPosts.set(monthlyPostsData);
-	} catch (error) {
-		console.error('Error in fetchAllBlogs:', error);
-	}
+	// 月別投稿を取得してストアに格納
+	const monthlyPostsData = getMonthlyPostCounts();
+	monthlyPosts.set(monthlyPostsData);
 };
 
 export const getArticleList = async ({
