@@ -33,7 +33,7 @@
 				<p>
 					ランダム書写Botの投稿に返信するか、@shosha.rmc-8.comをPostに含めて投稿するとランダム書写Botから書写用のお題をランダムでお返事します。お返事のお題に沿ってお気に入りの紙・ペンなどで書写をして、書写した画像をタグ(#ランダム書写)とともに投稿してください。みんなで書写したり文房具を使ったりする楽しみをシェアしましょう！
 				</p>
-				<div><img src="/random_shosha/random_shosha.jpeg" /></div>
+				<div><img alt="random_shosha_description" src="/random_shosha/random_shosha.jpeg" /></div>
 			</section>
 			<section id="spec">
 				<h2>仕様</h2>
@@ -56,6 +56,9 @@
 </main>
 <Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />
 
-
 <style>
+	img {
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
 </style>

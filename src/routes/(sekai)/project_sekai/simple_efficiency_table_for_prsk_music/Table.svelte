@@ -3,14 +3,14 @@
 	import axios from 'axios';
 
 	let columns = {};
-	let data = [];
+	let resData = [];
 	let loading = true;
 
 	onMount(async () => {
 		const response = await axios.get(
 			'https://script.google.com/macros/s/AKfycbyRqBREk3ZYTOzvkuw_ZdnG28U__c-64VeXweDP-5PnMjpzuhrf1QIgBbByCTl1xPqO/exec'
 		);
-		data = response.data.data;
+		resData = response.data.data;
 		columns = response.data.columns;
 		loading = false;
 	});
@@ -43,7 +43,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					{#each data as music}
+					{#each resData as music}
 						<tr>
 							<td>{music.NAME}</td>
 							<td class={music.Easy} style="text-align:center;">{music.Easy}</td>
@@ -59,16 +59,8 @@
 </section>
 
 <style>
-	div.table-container {
-		overflow-x: auto;
-	}
-
 	th {
 		text-align: center;
-	}
-
-	tbody tr {
-		/* border-bottom: 1px dotted #ddd; */
 	}
 
 	td.N,

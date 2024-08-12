@@ -85,7 +85,8 @@
 					{#each postCounts as postCount}
 						{#if /^\d{4}-\d{2}$/.test(postCount.yearMonth)}
 							<li class="transition-colors duration-500 hover:bg-[--accent-color-light]">
-								<a href="/archive/{postCount.yearMonth}/1">{postCount.yearMonth} ({postCount.count})</a
+								<a href="/archive/{postCount.yearMonth}/1"
+									>{postCount.yearMonth} ({postCount.count})</a
 								>
 							</li>
 						{/if}
@@ -309,30 +310,6 @@
 
 	.qr {
 		width: 120px;
-	}
-
-	select {
-		font-size: 14px;
-		cursor: pointer;
-	}
-
-	select:hover {
-		background-color: var(--accent-color-light);
-		color: white;
-	}
-
-	.category-link {
-		font-size: 14px;
-		padding: 4px 8px;
-		background-color: var(--accent-color-light);
-		color: white;
-		border-radius: 4px;
-		text-decoration: none;
-		transition: background-color 0.3s ease;
-	}
-
-	.category-link:hover {
-		background-color: var(--accent-color-dark);
 	}
 
 	.tag-cloud {

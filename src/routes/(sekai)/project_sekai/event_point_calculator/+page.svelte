@@ -103,29 +103,26 @@
 			</p>
 			<div class="calculator" style="padding-top:32px;">
 				<div class="form">
-					<p>
-						<label>獲得したいイベントポイントを数値で入力してください。</label><br />
-						<input
-							class="event_point_input border border-gray-300 rounded-md"
-							type="number"
-							bind:value={inputNumber}
-							placeholder="Input number"
-						/>
-						{#if errorMessage === ''}
-							<span class="pagination" style="padding-left: 16px;">
-								{#each Array(Math.ceil(filteredData.totalCount / pageSize)) as _, i (i)}
-									<button on:click={() => changePage(i + 1)}>{i + 1}</button>
-								{/each}
-							</span>
-						{/if}
-					</p>
+					<p>獲得したいイベントポイントを数値で入力してください。</p>
+					<input
+						class="event_point_input border border-gray-300 rounded-md"
+						type="number"
+						bind:value={inputNumber}
+						placeholder="Input number"
+					/>
+					{#if errorMessage === ''}
+						<span class="pagination" style="padding-left: 16px;">
+							{#each Array(Math.ceil(filteredData.totalCount / pageSize)) as _, i (i)}
+								<button on:click={() => changePage(i + 1)}>{i + 1}</button>
+							{/each}
+						</span>
+					{/if}
 				</div>
 				<div class="result">
 					{#if errorMessage !== ''}
 						<p class="error">{errorMessage}</p>
 					{/if}
 
-					<!-- Filtered data -->
 					{#if errorMessage === ''}
 						<table class="shj">
 							<thead>
@@ -217,10 +214,11 @@
 		background-color: var(--accent-color-dark);
 	}
 
+	/*
 	.pagination button.active {
 		background-color: var(--accent-color-dark);
 		color: white;
-	}
+	} */
 
 	.pagination {
 		padding-bottom: 24px;

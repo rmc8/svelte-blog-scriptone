@@ -25,7 +25,7 @@
 </script>
 
 <div class="dropdown">
-	<a href="#" on:click|preventDefault|stopPropagation={toggleDropdown}>アーカイブ</a>
+	<a href="/#" on:click|preventDefault|stopPropagation={toggleDropdown}>アーカイブ</a>
 	{#if isOpen}
 		<ul class="dropdown-content">
 			{#each postCounts as { date, count }}

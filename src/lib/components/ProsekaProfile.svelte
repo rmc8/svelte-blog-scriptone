@@ -62,7 +62,6 @@
 	}
 
 	.discord_icon,
-	.x_icon,
 	.bsky_icon {
 		width: 20px;
 		height: 20px;
@@ -72,8 +71,5 @@
 		display: inline-block;
 		vertical-align: middle;
 		border-radius: 0;
-	}
-	.x_icon {
-		margin-right: 2px;
 	}
 </style>
