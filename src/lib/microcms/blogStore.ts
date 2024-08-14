@@ -1,4 +1,3 @@
-import fs from 'fs';
 import Database from 'better-sqlite3';
 import { get, writable } from 'svelte/store';
 import type { Database as Db } from 'better-sqlite3';
@@ -13,12 +12,10 @@ export const categories = writable<{ id: string; name: string; count: number }[]
 export const tags = writable<{ id: string; name: string; count: number }[]>([]);
 export const monthlyPosts = writable<{ yearMonth: string; count: number }[]>([]);
 
-const DB_PATH = './blogs.sqlite';
-
 const initDB = () => {
 	dbStore.update((currentDb) => {
 		if (!currentDb) {
-			const newDb = new Database(DB_PATH);
+			const newDb = new Database('./blogs.sqlite');
 			newDb.exec('CREATE TABLE IF NOT EXISTS blogs (id TEXT PRIMARY KEY, data TEXT)');
 			return newDb;
 		}
@@ -27,32 +24,29 @@ const initDB = () => {
 };
 
 export const fetchAllBlogs = async (): Promise<void> => {
+	let offset = 0;
+	const limit = 100;
 	let allPosts: Blog[] = [];
+
+	do {
+		const response = await getList({ limit, offset });
+		allPosts = [...allPosts, ...response.contents];
+		totalCount.set(response.totalCount);
+		offset += limit;
+	} while (offset < get(totalCount));
+
+	allBlogs.set(allPosts);
+
 	initDB();
 	const db = get(dbStore);
 
-	if (fs.existsSync(DB_PATH)) {
-		const rows = db.prepare('SELECT * FROM blogs').all();
-		allPosts = rows.map((row) => JSON.parse(row.data));
-		console.log("Exists 'blogs.sqlite'");
-	} else {
-		let offset = 0;
-		const limit = 100;
-		do {
-			const response = await getList({ limit, offset });
-			allPosts = [...allPosts, ...response.contents];
-			totalCount.set(response.totalCount);
-			offset += limit;
-		} while (offset < get(totalCount));
+	// 全ての投稿をdbにinsertする
+	allPosts.forEach((post) => {
+		if (db !== null) {
+			db.prepare('INSERT OR REPLACE INTO blogs VALUES (?, ?)').run(post.id, JSON.stringify(post));
+		}
+	});
 
-		allBlogs.set(allPosts);
-
-		allPosts.forEach((post) => {
-			if (db !== null) {
-				db.prepare('INSERT OR REPLACE INTO blogs VALUES (?, ?)').run(post.id, JSON.stringify(post));
-			}
-		});
-	}
 	// 全ての記事の数をカウントする
 	const articlesCount = allPosts.length;
 	allBlogsCount.set(articlesCount);
