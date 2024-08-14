@@ -25,11 +25,11 @@
 <Header />
 <div class="mb-16" />
 <main class="w-full">
-	<article class="post flex flex-col justify-center items-center pb-12">
+	<article class="post flex flex-col justify-center items-center pb-4">
 		<div class="container max-w-3xl mx-auto px-4">
-			<div class="meta flex items-center text-sm mb-6">
+			<div class="meta flex items-center text-sm mb-4">
 				<div class="flex items-center mr-4">
-					<Calendar width={20} height={20} />
+					<Calendar width={22} height={22} />
 					<time class="ml-1">
 						{new Date(post._sys.createdAt).toLocaleString('ja-JP', {
 							year: 'numeric',
@@ -40,19 +40,13 @@
 						})}
 					</time>
 				</div>
-				{#if post.tags && post.tags.length > 0}
-					<div class="flex items-center">
-						<Tag width={20} height={20} />
-						<span class="ml-1">{post.tags.map((tag) => tag.name).join(', ')}</span>
-					</div>
-				{/if}
 			</div>
 			<h1 class="text-3xl font-bold mb-4">{post.title}</h1>
 			<div class="content prose prose-lg max-w-none">
 				{@html post.body}
 			</div>
 		</div>
-		<div class="container max-w-3xl mx-auto px-4 mt-8 pt-8 border-t border-gray-200">
+		<div class="container max-w-3xl mx-auto px-4">
 			<Share share_title={post.title} share_url={currentUrl} />
 		</div>
 	</article>

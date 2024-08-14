@@ -270,10 +270,6 @@ blockquote {
 	margin: 0px;
 	padding: 20px;
 	border-radius: 12px;
-	font-family: 'SourceHanCodeJP';
-}
-.shj {
-	font-family: 'SourceHanCodeJP';
 }
 
 table {
@@ -281,7 +277,7 @@ table {
 	width: auto;
 	background-color: #fff;
 	margin-top: 16px;
-	margin-bottom: 16px;
+	margin-bottom: 2em;
 	border-spacing: 0;
 	border-radius: 4px;
 	overflow: hidden;
@@ -290,6 +286,12 @@ table {
 table th,
 table td {
 	padding: 8px;
+}
+
+table th {
+	font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+		sans-serif;
+	font-weight: bold;
 }
 
 table tr:last-child td:first-child {

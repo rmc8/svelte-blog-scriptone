@@ -47,14 +47,14 @@
 						<div>
 							<h4>マラソンイベ</h4>
 							<blockquote>
-								おまかせ(選曲○)【[room_number]】＠４<br />主[leader_skill]% 募☆4<br />#プロセカ募集
+								おまかせ(選曲○)【room_number】＠４<br />主[leader_skill]% 募☆4<br />#プロセカ募集
 								#プロセカ協力<br />
 							</blockquote>
 						</div>
 						<div>
 							<h4>チアフルイベ</h4>
 							<blockquote>
-								[team_name]【[room_number]】＠４<br />主[leader_skill]% 募☆4<br />#プロセカ募集
+								[team_name]【room_number】＠４<br />主[leader_skill]% 募☆4<br />#プロセカ募集
 								#プロセカ協力<br />
 							</blockquote>
 						</div>

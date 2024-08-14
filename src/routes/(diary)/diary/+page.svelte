@@ -41,7 +41,7 @@
 			{#each data.posts as post}
 				<article class="mb-8">
 					<div class="flex items-center text-sm mb-2">
-						<Calendar size="1.2em" />
+						<Calendar size="22" />
 						<time class="ml-2" datetime={post._sys.createdAt}>
 							{formatDate(post._sys.createdAt)}
 						</time>
