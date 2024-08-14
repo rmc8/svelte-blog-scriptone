@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Tag from 'svelte-material-icons/Tag.svelte';
-	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
-	import type { Blog } from '$lib/microcms/microcms/microcms';
+	import TimeStamp from './common/TimeStamp.svelte';
+	import ClockOutline from 'svelte-material-icons/ClockTimeThree.svelte';
+	import type { Blog } from '$lib/microcms/microcms';
 	export let content: Blog;
 </script>
 
@@ -38,20 +39,7 @@
 				</div>
 			</div>
 			<div class="flex items-center pb-2">
-				<div class="clock pt-1">
-					<ClockOutline width={20} height={20} />
-				</div>
-				<time class="text-gray-600 ml-1">
-					{new Date(content.createdAt)
-						.toLocaleString('ja-JP', {
-							year: 'numeric',
-							month: '2-digit',
-							day: '2-digit',
-							hour: '2-digit',
-							minute: '2-digit'
-						})
-						.replace(/\//g, '-')}
-				</time>
+				<TimeStamp dtStr={content.createdAt} />
 			</div>
 		</div>
 	</div>

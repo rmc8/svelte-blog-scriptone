@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Tag from 'svelte-material-icons/Tag.svelte';
-	import ClockOutline from 'svelte-material-icons/ClockOutline.svelte';
+	import TimeStamp from '$lib/components/common/TimeStamp.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import TopicList from '$lib/components/BreadcrumbsListArticle.svelte';
@@ -93,22 +93,7 @@
 						</div>
 					{/each}
 				</div>
-				<div class="flex items-center">
-					<div class="clock pt-1">
-						<ClockOutline width={20} height={20} />
-					</div>
-					<time class="text-gray-600 ml-1">
-						{new Date(data.blog.createdAt)
-							.toLocaleString('ja-JP', {
-								year: 'numeric',
-								month: '2-digit',
-								day: '2-digit',
-								hour: '2-digit',
-								minute: '2-digit'
-							})
-							.replace(/\//g, '-')}
-					</time>
-				</div>
+				<TimeStamp dtStr={data.blog.createdAt} />
 			</div>
 		</dl>
 		<Share share_title={data.blog.title} share_url={currentUrl} />
