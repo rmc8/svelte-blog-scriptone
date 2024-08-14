@@ -32,4 +32,8 @@
 	.qr {
 		width: 120px;
 	}
+
+	ul li:hover{
+		background-color: transparent;
+	}
 </style>
