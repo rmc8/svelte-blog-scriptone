@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Tag from 'svelte-material-icons/Tag.svelte';
 	import Calendar from 'svelte-material-icons/Calendar.svelte';
 	import Header from '$lib/components/dairy/SimpleHeader.svelte';
 	import Footer from '$lib/components/Footer.svelte';
@@ -9,17 +8,31 @@
 	export let data;
 	const post = data.post;
 	$: currentUrl = $page.url.href;
+
+	function truncateAndStripHtml(html: string, maxLength: number = 160): string {
+		// HTMLタグを除去
+		const text = html.replace(/<[^>]*>/g, '');
+		// 見出しタグ（h1-h6）とその内容を除去
+		const withoutHeadings = text.replace(/<h[1-6].*?<\/h[1-6]>/g, '');
+		// 最大文字数まで切り詰める
+		return withoutHeadings.length > maxLength
+			? withoutHeadings.slice(0, maxLength) + '...'
+			: withoutHeadings;
+	}
 </script>
 
 <svelte:head>
 	<title>Scriptone - {post.title}</title>
 	<meta property="og:title" content="Scriptone - {post.title}" />
 	<meta property="og:type" content="article" />
-	{#if post.meta.description}
-		<meta name="description" content={post.meta.description} />
-		<meta property="og:description" content={post.meta.description} />
+	<meta name="description" content={truncateAndStripHtml(post.body, 160)} />
+	{#if post.noindex === true && post.nofollow === true}
+		<meta name="robots" content="noindex, nofollow" />
+	{:else if post.noindex === true}
+		<meta name="robots" content="noindex" />
+	{:else if post.nofollow === true}
+		<meta name="robots" content="nofollow" />
 	{/if}
-	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <Header />

@@ -30,7 +30,6 @@
 <svelte:head>
 	<title>Scriptone - Diary</title>
 	<meta name="description" content="ただのメモ書きです" />
-	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <Header />

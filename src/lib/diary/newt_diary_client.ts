@@ -28,6 +28,8 @@ export interface Post {
 		_id: string;
 		name: string;
 	}[];
+	noindex: boolean;
+	nofollow: boolean;
 }
 
 export async function fetchDiaryPosts(
