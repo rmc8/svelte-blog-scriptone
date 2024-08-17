@@ -62,11 +62,11 @@ const domain = 'rmc-8.com';
 const hardcodedUrls = [
 	`https://${domain}/`,
 	`https://${domain}/about`,
-	`https://${domain}/moyouSky`,
+	`https://${domain}/diary`,
 	`https://${domain}/project_sekai`,
 	`https://${domain}/project_sekai/event_point_calculator`,
 	`https://${domain}/project_sekai/simple_efficiency_table_for_prsk_music`,
-	`https://${domain}/project_sekai/multi_live_score_up_multiplier`
+	`https://${domain}/project_sekai/multi_live_score_up_multiplier` 
 ];
 
 export async function GET(): Promise<Response> {

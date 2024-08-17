@@ -18,3 +18,5 @@ export const load: PageServerLoad = async ({ params }) => {
 		throw error(500, 'Failed to load post');
 	}
 };
+
+export const prerender = true;
