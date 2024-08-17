@@ -2,12 +2,10 @@ import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { fetchDiaryPosts } from '$lib/diary/newt_diary_client';
 
-export const load: PageServerLoad = async ({ url }) => {
-	const page = url.searchParams.get('page') || '1';
-	const tag: string | null = url.searchParams.get('tag') || null;
-	const search: string | null = url.searchParams.get('s') || null;
+export const load: PageServerLoad = async () => {
+	const page = 1;
 
-	const pageNumber = parseInt(page, 10);
+	const pageNumber = parseInt(page.toString(), 10);
 	if (isNaN(pageNumber) || pageNumber < 1) {
 		throw error(400, 'Invalid page number');
 	}
@@ -15,13 +13,11 @@ export const load: PageServerLoad = async ({ url }) => {
 	const per_page = 30;
 
 	try {
-		const { posts, totalPages } = await fetchDiaryPosts(pageNumber, per_page, tag, search);
+		const { posts, totalPages } = await fetchDiaryPosts(pageNumber, per_page);
 		return {
 			posts,
 			currentPage: pageNumber,
-			totalPages,
-			tag,
-			search
+			totalPages
 		};
 	} catch (err) {
 		console.error('Error fetching posts:', err);

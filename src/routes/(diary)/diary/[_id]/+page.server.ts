@@ -2,7 +2,7 @@ import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { fetchSinglePost } from '$lib/diary/newt_diary_client';
 export const load: PageServerLoad = async ({ params }) => {
-	const { _id } = params;
+	const _id = params._id;
 
 	try {
 		const post = await fetchSinglePost(_id);
