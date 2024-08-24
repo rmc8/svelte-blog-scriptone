@@ -5,6 +5,7 @@
 	let columns = {};
 	let resData = [];
 	let loading = true;
+	const exclude = ['アサガオの散る頃に', 'どんな結末がお望みだい？'];
 
 	onMount(async () => {
 		const response = await axios.get(
@@ -45,14 +46,16 @@
 				</thead>
 				<tbody>
 					{#each resData as music}
-						<tr>
-							<td>{music.NAME}</td>
-							<td class={music.Easy} style="text-align:center;">{music.Easy}</td>
-							<td class={music.Normal} style="text-align:center;">{music.Normal}</td>
-							<td class={music.Hard} style="text-align:center;">{music.Hard}</td>
-							<td class={music.Master} style="text-align:center;">{music.Master}</td>
-							<td class={music.Append} style="text-align:center;">{music.Append}</td>
-						</tr>
+						{#if music.NAME && !exclude.includes(music.NAME)}
+							<tr>
+								<td>{music.NAME}</td>
+								<td class={music.Easy} style="text-align:center;">{music.Easy}</td>
+								<td class={music.Normal} style="text-align:center;">{music.Normal}</td>
+								<td class={music.Hard} style="text-align:center;">{music.Hard}</td>
+								<td class={music.Master} style="text-align:center;">{music.Master}</td>
+								<td class={music.Append} style="text-align:center;">{music.Append}</td>
+							</tr>
+						{/if}
 					{/each}
 				</tbody>
 			</table>
