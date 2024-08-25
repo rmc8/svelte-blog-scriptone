@@ -26,8 +26,7 @@ export async function paginateData<T>(
 	skip: number,
 	limit: number
 ): Promise<PaginatedResponse<T>> {
-	const fetchCount = Math.abs(limit - skip);
-	const limitedLimit = Math.min(Math.max(1, fetchCount), MAX_LIMIT);
+	const limitedLimit = Math.min(Math.max(1, limit), MAX_LIMIT);
 
 	const response = await fetch(fetchUrl);
 	if (!response.ok) {
@@ -40,7 +39,7 @@ export async function paginateData<T>(
 		throw new Error('無効なデータ形式です');
 	}
 
-	const paginatedData = allData.slice(skip, limitedLimit);
+	const paginatedData = allData.slice(skip, skip + limitedLimit);
 
 	return {
 		totalCount: allData.length,
@@ -50,7 +49,6 @@ export async function paginateData<T>(
 		data: paginatedData
 	};
 }
-
 export async function handleApiRequest<T>(param: string, url: URL): Promise<Response> {
 	const apiUrl = getUrl(param);
 	const skip = parseInt(url.searchParams.get('skip') ?? '0', 10);
