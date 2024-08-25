@@ -39,16 +39,14 @@ export async function paginateData<T>(
 		throw new Error('無効なデータ形式です');
 	}
 
-	const dataRange = Math.abs(skip - limit);
-	const startIndex = skip;
-	const endIndex = Math.min(limitedLimit, skip + Math.min(dataRange, MAX_LIMIT));
-	console.log({ startIndex, endIndex, limitedLimit });
+	const startIndex = Math.min(skip, allData.length);
+	const endIndex = Math.min(startIndex + limitedLimit, allData.length);
 	const paginatedData = allData.slice(startIndex, endIndex);
 
 	return {
 		totalCount: allData.length,
 		fetchCount: paginatedData.length,
-		skip,
+		skip: startIndex,
 		limit: limitedLimit,
 		data: paginatedData
 	};
