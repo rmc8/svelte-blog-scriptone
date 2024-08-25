@@ -12,7 +12,7 @@
 	$: if (rarityCounter) {
 		onMount(async () => {
 			ApexCharts = (await import('apexcharts')).default;
-            const excludeNames = ['fes', 'rarity_1', 'rarity_birthday'];
+            const excludeNames = ['bloom', 'fes', 'rarity_1', 'rarity_birthday'];
             let series = Object.keys(rarityCounter[Object.keys(rarityCounter)[0]])
             .filter(rarity => !excludeNames.includes(rarity))
             .map(rarity => ({

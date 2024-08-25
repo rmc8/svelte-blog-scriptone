@@ -21,7 +21,7 @@
 
 	onMount(async () => {
 		const url =
-			'https://script.google.com/macros/s/AKfycbwJS0vNcUFGzV0C4lGVZevGdeCC_8-APg5goLZ_drO2wE4wFW0_8vXUbbQfizNQaNh3/exec';
+			'https://script.google.com/macros/s/AKfycbygdjvZvLOce6y6sUdVxGfi6n0myByoOuPZl1TrvRaUzgt-D0hipMaZOH57dMb9XTA1/exec';
 		try {
 			const response = await fetch(url);
 			if (response.ok) {
@@ -40,8 +40,8 @@
 <svelte:head>
 	<title>Scriptone - プロセカダッシュボード (PSD)</title>
 	<meta name="description" content="プロセカダッシュボード" />
-	<meta name="twitter:site" content="@mskydev" />
-	<meta name="twitter:creator" content="@mskydev" />
+	<meta name="twitter:site" content="@rmc８_ret" />
+	<meta name="twitter:creator" content="@rmc8_ret" />
 	<meta property="og:title" content="プロセカダッシュボード" />
 	<meta name="twitter:title" content="プロセカダッシュボード" />
 	<meta property="og:description" content="プロセカ関連のデータを図表化したページです。" />
@@ -63,7 +63,7 @@
 		<div class="container">
 			<div class="alert alert-warning" role="alert">
 				現在、本ダッシュボードは開発中です。カード枚数のまとめなど実装予定ですが何かまとめて欲しい情報などありましたら<a
-					href="https://x.com/mskydev">@mskydev</a
+					href="https://x.com/rmc8_ret">@rmc8_ret</a
 				>にご連絡ください。
 			</div>
 			<h2>Project Sekai Dashboard (PSD)</h2>
