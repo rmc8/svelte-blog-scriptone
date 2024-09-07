@@ -5,10 +5,15 @@
 			<a href="/project_sekai/event_point_calculator">独りんぼエンヴィーポイント計算</a>
 		</li>
 		<li>
-			<a href="/project_sekai/multi_live_score_up_multiplier/">みんなでライブ用スコアアップ倍率確認</a>
+			<a href="/project_sekai/multi_live_score_up_multiplier/"
+				>みんなでライブ用スコアアップ倍率確認</a
+			>
 		</li>
 		<li>
 			<a href="/project_sekai/simple_efficiency_table_for_prsk_music/">プロセカ楽曲効率表</a>
+		</li>
+		<li>
+			<a href="/project_sekai/prsk_dashboard">プロセカダッシュボード</a>
 		</li>
 		<li>
 			<a href="/project_sekai/cheerful_bingo/">Cheerful Bingo Card</a>
@@ -17,9 +22,6 @@
 			<a href="/project_sekai/cheerful_winning_streak_ranking/">チアフル連勝ランキング</a>
 		</li>
 		<!-- <li><a href="/project_sekai/prsk_event_border_central/">プロセカイベントボーダー</a></li> -->
-		<li>
-			<a href="/project_sekai/prsk_dashboard">プロセカダッシュボード（開発中）</a>
-		</li>
 		<li>
 			<a href="/project_sekai/prsk_active_user_count/">プロセカアクティブユーザー数推移</a>
 		</li>

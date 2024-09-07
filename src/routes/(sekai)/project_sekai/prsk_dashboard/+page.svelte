@@ -61,12 +61,7 @@
 <main>
 	<article>
 		<div class="container">
-			<div class="alert alert-warning" role="alert">
-				現在、本ダッシュボードは開発中です。カード枚数のまとめなど実装予定ですが何かまとめて欲しい情報などありましたら<a
-					href="https://x.com/rmc8_ret">@rmc8_ret</a
-				>にご連絡ください。
-			</div>
-			<h2>Project Sekai Dashboard (PSD)</h2>
+			<h2>Project Sekai Dashboard</h2>
 			{#if api_data == null}
 				<p>Now loading...</p>
 			{/if}
