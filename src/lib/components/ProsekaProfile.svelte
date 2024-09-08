@@ -38,7 +38,7 @@
 	</p>
 </section>
 <section id="about" class="mt-8">
-	<p class="text-center text-lg">
+	<p class="text-center">
 		Kと申します。プロセカでおまかせしたり連勝したりすることが好きです。イベランは４位・５位・その他TOP1000↑が40個ほどあり、チアフル連勝は1120連勝しています。普段はとてもゆるい周回をしているので、スタンプ押しながらまったりMV鑑賞や特攻などなんでもご一緒できましたらうれしいです！{#if profile_link_enable}プロセカの詳細なプロフィールはURLからご覧ください。URL:
 			<a href="https://rmc-8.com/project_sekai" class="hover:underline"
 				>https://rmc-8.com/project_sekai</a

@@ -5,6 +5,9 @@
 			<a href="/project_sekai/event_point_calculator">独りんぼエンヴィーポイント計算</a>
 		</li>
 		<li>
+			<a href="/project_sekai/event_point_calculator_ex">プロセカイベントポイント計算</a>
+		</li>
+		<li>
 			<a href="/project_sekai/multi_live_score_up_multiplier/"
 				>みんなでライブ用スコアアップ倍率確認</a
 			>
