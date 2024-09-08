@@ -182,7 +182,7 @@
 					{#if isLoading}
 						<p class="">楽曲データを読み込んでいます...</p>
 					{:else}
-						<h3 class="text-2xl font-semibold mb-4">楽曲選択</h3>
+						<h3>楽曲選択</h3>
 						<div class="mb-4">
 							<label for="song-search" class="block text-sm font-medium mb-1"
 								>楽曲名または基礎点で検索：</label
@@ -245,9 +245,9 @@
 						</div>
 						{#if selectedSong}
 							<div class="mt-8 p-4 calc-form rounded-lg">
-								<h3 class="text-xl font-semibold mb-2">イベントポイント計算</h3>
+								<h3>イベントポイント計算</h3>
 								<p class="">
-									選択された楽曲: <span class="font-medium">{selectedSong.name}</span>
+									選択した楽曲: <span class="font-medium">{selectedSong.name}</span>
 								</p>
 								<p class=" mb-4">
 									基礎点: <span class="font-medium">{basicPoint}</span>
