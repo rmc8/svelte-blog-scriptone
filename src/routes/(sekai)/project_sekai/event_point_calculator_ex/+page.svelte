@@ -116,7 +116,7 @@
 			}
 
 			errorMessage = '';
-			const url = `http://localhost:5173/api/project_sekai/event_point_calc_ex?b=${basicPoint}&p=${inputNumber}`;
+			const url = `https://rmc-8.com/api/project_sekai/event_point_calc_ex?b=${basicPoint}&p=${inputNumber}`;
 
 			try {
 				const response = await fetch(url);
