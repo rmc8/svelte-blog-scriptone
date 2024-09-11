@@ -171,11 +171,11 @@
 		<div class="container p-6">
 			<h2 class="text-3xl font-bold mb-4">【試験運用】Event Point Calculator (EX)</h2>
 			<p class="mb-6">
-				(2024-09-09)<br />
-				お試しで公開をはじめました。本日時点で347曲分の対応となっています。対応されていない楽曲の追加や各基礎点ごとの点数の検証などを進めている段階ですので、最終的なポイント調整には独りんぼエンヴィーの0炊きでお願いいたします。また、不具合がありましたら、X/Discord/Blueskyなどにご連絡ください。
+				(2024-09-11)<br />
+				お試しで公開をはじめました。本日時点で全460曲分の対応となっています。各基礎点ごとの点数の検証などを進めている段階ですので、最終的なポイント調整には独りんぼエンヴィーの0炊きでお願いいたします。また、不具合がありましたら、X/Discord/Blueskyなどにご連絡ください。
 			</p>
 			<p class=" mb-6">
-				任意の楽曲でのイベントポイントの調整のための計算をします。炊きありの場合には小数点の切り捨ての関係で誤差が出る場合がありますため、最終的な調整は0炊きでお願いいたします。
+				任意の楽曲でのイベントポイントの調整のための計算をします。調整に使う楽曲を選択したあと、獲得したいポイントを入力して計算ボタンを押してください。炊きありの場合には小数点の切り捨ての関係で誤差が出る場合がありますため、最終的な調整は0炊きでお願いいたします。
 			</p>
 			<div class="calculator">
 				<div class="form">
@@ -232,7 +232,7 @@
 									{#each paginatedSongs as song}
 										<tr>
 											<td>{song.name}</td>
-											<td>{song.basic_point}</td>
+											<td style="text-align:right">{song.basic_point}</td>
 											<td>
 												<button on:click={() => handleSongSelection(song)} class="select"
 													>選択</button
