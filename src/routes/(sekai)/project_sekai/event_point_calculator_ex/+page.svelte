@@ -6,6 +6,8 @@
 	import Profile from '$lib/components/ProsekaProfile.svelte';
 	import Tools from '../PrskTools.svelte';
 	import Share from '$lib/components/share_component/Share.svelte';
+	import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte';
+	import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
 
 	// 楽曲選択のロジック
 	$: currentUrl = $page.url.href;
@@ -200,7 +202,7 @@
 							<div class="pagination flex pace-x-2">
 								{#if currentPage > 1}
 									<button on:click={() => changePage(currentPage - 1)} class="pagination-btn"
-										>◀️</button
+										>＜</button
 									>
 								{/if}
 								{#each visiblePages as page}
@@ -214,7 +216,7 @@
 								{/each}
 								{#if currentPage < totalPages}
 									<button on:click={() => changePage(currentPage + 1)} class="pagination-btn"
-										>▶️</button
+										>＞</button
 									>
 								{/if}
 							</div>
@@ -283,7 +285,8 @@
 									{#if calcTotalPages > 1}
 										<div class="pagination">
 											{#if calcCurrentPage > 1}
-												<button on:click={() => calcCurrentPage--} class="pagination-btn">◀️</button
+												<button on:click={() => calcCurrentPage--} class="pagination-btn"
+													>＜</button
 												>
 											{/if}
 											{#each Array(calcTotalPages) as _, i}
@@ -296,7 +299,8 @@
 												</button>
 											{/each}
 											{#if calcCurrentPage < calcTotalPages}
-												<button on:click={() => calcCurrentPage++} class="pagination-btn">▶️</button
+												<button on:click={() => calcCurrentPage++} class="pagination-btn"
+													>＞</button
 												>
 											{/if}
 										</div>
