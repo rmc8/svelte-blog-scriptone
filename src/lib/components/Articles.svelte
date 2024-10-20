@@ -3,7 +3,11 @@
 	import TimeStamp from './common/TimeStamp.svelte';
 	import ClockOutline from 'svelte-material-icons/ClockTimeThree.svelte';
 	import type { Blog } from '$lib/microcms/microcms';
-	export let content: Blog;
+	interface Props {
+		content: Blog;
+	}
+
+	let { content }: Props = $props();
 </script>
 
 <li class="card transition-all duration-300 ease-in-out hover:shadow-hover">

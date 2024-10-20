@@ -1,5 +1,11 @@
 <script lang="ts">
-	export let activeTab: string;
+	interface Props {
+		activeTab: string;
+		table_contents?: import('svelte').Snippet;
+		calc_contents?: import('svelte').Snippet;
+	}
+
+	let { activeTab = $bindable(), table_contents, calc_contents }: Props = $props();
 
 	const tabs = [
 		{ name: 'スコアアップ表', id: 'table_contents' },
@@ -14,7 +20,7 @@
                    {activeTab === tab.id
 				? 'bg-[--accent-color-light] text-white'
 				: 'bg-white text-gray-500 border-gray-300 hover:bg-gray-100'}"
-			on:click={() => (activeTab = tab.id)}
+			onclick={() => (activeTab = tab.id)}
 		>
 			{tab.name}
 		</button>
@@ -23,8 +29,8 @@
 
 <div class="border-gray-300 border-t-0 rounded-b-lg p-4">
 	{#if activeTab === 'table_contents'}
-		<slot name="table_contents" />
+		{@render table_contents?.()}
 	{:else if activeTab === 'calc_contents'}
-		<slot name="calc_contents" />
+		{@render calc_contents?.()}
 	{/if}
 </div>

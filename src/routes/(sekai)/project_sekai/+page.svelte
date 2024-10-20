@@ -6,8 +6,12 @@
 	import Profile from '../../../lib/components/ProsekaProfile.svelte';
 	import Tools from './PrskTools.svelte';
 
-	$: currentUrl = $page.url.href;
-	export let data;
+	let currentUrl = $derived($page.url.href);
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <svelte:head>
@@ -71,7 +75,7 @@
 							<li>100/700/19.6</li>
 							<li>150/710/16.7</li>
 						</ul>
-						<p />
+						<p></p>
 					</li>
 					<li>
 						<h3>連勝</h3>
@@ -92,7 +96,7 @@
 							<li>お化け屋敷グループ「歌うよ！」302連勝</li>
 							<li>ミルクグループ「ミルタンクが倒せない」301連勝</li>
 						</ul>
-						<p />
+						<p></p>
 					</li>
 					<li>
 						<h3>イベラン</h3>
@@ -111,7 +115,7 @@
 							<li>Take the Best Shot！ 78位</li>
 							<li>TOP200~TOP1000 46回(2024-07-08時点)</li>
 						</ul>
-						<p />
+						<p></p>
 					</li>
 				</ul>
 			</section>

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Header from '$lib/components/HeaderForPrsk.svelte';
@@ -9,8 +11,6 @@
 	import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte';
 	import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
 
-	// 楽曲選択のロジック
-	$: currentUrl = $page.url.href;
 	const BasicPointListUrl =
 		'https://script.googleusercontent.com/macros/echo?user_content_key=r2RHRdb_zKobsdItfpCL0oiBtM1Rh9sHBH_yMvHp0bGiRXxvnJ6kW6hWODGE1Wmeqrl1ytkBIladkawW9x03RC0ZgRovhmJSm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnB-wvnq4W2geyVj9oP_ArqZXVkcbLOyUGVArs1Q5E13KZX1Cgu4LSIXpbND39xTly20l9nxmWxJ0jzePsjXwPGxnU4rPc6hCWtz9Jw9Md8uu&lib=MDcqUnbhmNfuNY01FFcw_nRyop-5UCkVO';
 	type bpData = {
@@ -22,25 +22,16 @@
 		data: bpData[];
 	};
 
-	let selectedSong: bpData | null = null;
-	let basicPoint: Number = 100;
-	let basicPointList: bpRes;
-	let isLoading = true;
-	let searchTerm = '';
-	let filteredSongs: bpData[] = [];
-	let currentPage = 1;
+	let selectedSong: bpData | null = $state(null);
+	let basicPoint: Number = $state(100);
+	let basicPointList: bpRes = $state();
+	let isLoading = $state(true);
+	let searchTerm = $state('');
+	let filteredSongs: bpData[] = $state([]);
+	let currentPage = $state(1);
 	let itemsPerPage = 10;
 	let maxPageButtons = 7;
 
-	$: {
-		if (basicPointList && basicPointList.data) {
-			filteredSongs = basicPointList.data.filter(
-				(song) =>
-					String(song.name).toLowerCase().includes(searchTerm.toLowerCase()) ||
-					song.basic_point.toString().includes(searchTerm)
-			);
-		}
-	}
 
 	function handleSearch(event: Event) {
 		currentPage = 1;
@@ -52,12 +43,6 @@
 		basicPoint = song.basic_point;
 	}
 
-	$: totalPages = Math.ceil(filteredSongs.length / itemsPerPage);
-	$: paginatedSongs = filteredSongs.slice(
-		(currentPage - 1) * itemsPerPage,
-		currentPage * itemsPerPage
-	);
-	$: visiblePages = getVisiblePages(currentPage, totalPages, maxPageButtons);
 
 	function getVisiblePages(current: number, total: number, max: number) {
 		if (total <= max) return Array.from({ length: total }, (_, i) => i + 1);
@@ -91,24 +76,13 @@
 		}
 	});
 	// イベントポイントの取得ロジック
-	let inputNumber: number | null = null;
-	let calculationResult: any = null;
-	let errorMessage = '';
-	let calc = false;
-	let calcCurrentPage = 1;
+	let inputNumber: number | null = $state(null);
+	let calculationResult: any = $state(null);
+	let errorMessage = $state('');
+	let calc = $state(false);
+	let calcCurrentPage = $state(1);
 	let calcItemsPerPage = 8;
-	$: calcPaginatedResults =
-		calculationResult && calculationResult.data
-			? calculationResult.data.slice(
-					(calcCurrentPage - 1) * calcItemsPerPage,
-					calcCurrentPage * calcItemsPerPage
-			  )
-			: [];
 
-	$: calcTotalPages =
-		calculationResult && calculationResult.data
-			? Math.ceil(calculationResult.data.length / calcItemsPerPage)
-			: 0;
 	async function calculateEventPoints() {
 		try {
 			calc = true;
@@ -136,8 +110,41 @@
 		}
 	}
 
-	// フッター用データ
-	export let data;
+	
+	interface Props {
+		フッター用データ
+		data: any;
+	}
+
+	let { data }: Props = $props();
+	// 楽曲選択のロジック
+	let currentUrl = $derived($page.url.href);
+	run(() => {
+		if (basicPointList && basicPointList.data) {
+			filteredSongs = basicPointList.data.filter(
+				(song) =>
+					String(song.name).toLowerCase().includes(searchTerm.toLowerCase()) ||
+					song.basic_point.toString().includes(searchTerm)
+			);
+		}
+	});
+	let totalPages = $derived(Math.ceil(filteredSongs.length / itemsPerPage));
+	let paginatedSongs = $derived(filteredSongs.slice(
+		(currentPage - 1) * itemsPerPage,
+		currentPage * itemsPerPage
+	));
+	let visiblePages = $derived(getVisiblePages(currentPage, totalPages, maxPageButtons));
+	let calcPaginatedResults =
+		$derived(calculationResult && calculationResult.data
+			? calculationResult.data.slice(
+					(calcCurrentPage - 1) * calcItemsPerPage,
+					calcCurrentPage * calcItemsPerPage
+			  )
+			: []);
+	let calcTotalPages =
+		$derived(calculationResult && calculationResult.data
+			? Math.ceil(calculationResult.data.length / calcItemsPerPage)
+			: 0);
 </script>
 
 <svelte:head>
@@ -193,7 +200,7 @@
 								type="text"
 								id="song-search"
 								bind:value={searchTerm}
-								on:input={handleSearch}
+								oninput={handleSearch}
 								placeholder="楽曲名または基礎点"
 								class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 							/>
@@ -201,13 +208,13 @@
 						{#if totalPages > 1}
 							<div class="pagination flex pace-x-2">
 								{#if currentPage > 1}
-									<button on:click={() => changePage(currentPage - 1)} class="pagination-btn"
+									<button onclick={() => changePage(currentPage - 1)} class="pagination-btn"
 										>＜</button
 									>
 								{/if}
 								{#each visiblePages as page}
 									<button
-										on:click={() => changePage(page)}
+										onclick={() => changePage(page)}
 										class="pagination-btn"
 										class:active={currentPage === page}
 									>
@@ -215,7 +222,7 @@
 									</button>
 								{/each}
 								{#if currentPage < totalPages}
-									<button on:click={() => changePage(currentPage + 1)} class="pagination-btn"
+									<button onclick={() => changePage(currentPage + 1)} class="pagination-btn"
 										>＞</button
 									>
 								{/if}
@@ -236,7 +243,7 @@
 											<td>{song.name}</td>
 											<td style="text-align:right">{song.basic_point}</td>
 											<td>
-												<button on:click={() => handleSongSelection(song)} class="select"
+												<button onclick={() => handleSongSelection(song)} class="select"
 													>選択</button
 												>
 											</td>
@@ -264,7 +271,7 @@
 											placeholder="Input number"
 										/>
 										<button
-											on:click={calculateEventPoints}
+											onclick={calculateEventPoints}
 											class="calculate px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
 											>計算</button
 										>
@@ -285,13 +292,13 @@
 									{#if calcTotalPages > 1}
 										<div class="pagination">
 											{#if calcCurrentPage > 1}
-												<button on:click={() => calcCurrentPage--} class="pagination-btn"
+												<button onclick={() => calcCurrentPage--} class="pagination-btn"
 													>＜</button
 												>
 											{/if}
 											{#each Array(calcTotalPages) as _, i}
 												<button
-													on:click={() => (calcCurrentPage = i + 1)}
+													onclick={() => (calcCurrentPage = i + 1)}
 													class="pagination-btn"
 													class:active={calcCurrentPage === i + 1}
 												>
@@ -299,7 +306,7 @@
 												</button>
 											{/each}
 											{#if calcCurrentPage < calcTotalPages}
-												<button on:click={() => calcCurrentPage++} class="pagination-btn"
+												<button onclick={() => calcCurrentPage++} class="pagination-btn"
 													>＞</button
 												>
 											{/if}

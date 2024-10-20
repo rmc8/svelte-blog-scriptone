@@ -9,9 +9,13 @@
 	import Table from './component/score_table.svelte';
 	import Tabs from './component/tabs.svelte'; // タブコンポーネントをインポート
 
-	let activeTab = 'table_contents'; // 初期表示タブを設定
-	$: currentUrl = $page.url.href;
-	export let data;
+	let activeTab = $state('table_contents'); // 初期表示タブを設定
+	let currentUrl = $derived($page.url.href);
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <svelte:head>
@@ -53,12 +57,16 @@
 
 			<div class="py-4">
 				<Tabs bind:activeTab>
-					<div slot="table_contents">
-						<Table />
-					</div>
-					<div slot="calc_contents">
-						<Calc />
-					</div>
+					{#snippet table_contents()}
+										<div >
+							<Table />
+						</div>
+									{/snippet}
+					{#snippet calc_contents()}
+										<div >
+							<Calc />
+						</div>
+									{/snippet}
 				</Tabs>
 			</div>
 		</div>

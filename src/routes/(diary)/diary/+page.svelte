@@ -3,7 +3,11 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Calendar from 'svelte-material-icons/Calendar.svelte';
 
-	export let data;
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 
 	function formatDate(dateString: string) {
 		const date = new Date(dateString);
@@ -33,7 +37,7 @@
 </svelte:head>
 
 <Header />
-<div class="mb-16" />
+<div class="mb-16"></div>
 <main class="container mx-auto px-4 py-12 max-w-2xl">
 	<section id="articles" class="space-y-12">
 		{#if data.posts && data.posts.length > 0}
@@ -61,13 +65,13 @@
 			{#if data.currentPage > 1}
 				<a href={`?page=${data.currentPage - 1}`} class="hover:underline">前のページ</a>
 			{:else}
-				<span />
+				<span></span>
 			{/if}
 			<span>ページ {data.currentPage} / {data.totalPages}</span>
 			{#if data.currentPage < data.totalPages}
 				<a href={`?page=${data.currentPage + 1}`} class="hover:underline">次のページ</a>
 			{:else}
-				<span />
+				<span></span>
 			{/if}
 		</nav>
 	{/if}

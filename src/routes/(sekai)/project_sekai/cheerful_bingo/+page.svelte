@@ -6,8 +6,12 @@
 	import Profile from '../../../../lib/components/ProsekaProfile.svelte';
 	import Gallery from './Gallery.svelte';
 	import Tools from '../PrskTools.svelte';
-	$: currentUrl = $page.url.href;
-	export let data;
+	let currentUrl = $derived($page.url.href);
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <svelte:head>

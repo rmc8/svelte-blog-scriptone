@@ -5,9 +5,13 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Share from '$lib/components/share_component/Share.svelte';
 
-	export let data;
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 	const post = data.post;
-	$: currentUrl = $page.url.href;
+	let currentUrl = $derived($page.url.href);
 
 	function truncateAndStripHtml(html: string, maxLength: number = 160): string {
 		// HTMLタグを除去
@@ -36,7 +40,7 @@
 </svelte:head>
 
 <Header />
-<div class="mb-16" />
+<div class="mb-16"></div>
 <main class="w-full">
 	<article class="post flex flex-col justify-center items-center pb-4">
 		<div class="container max-w-3xl mx-auto px-4">

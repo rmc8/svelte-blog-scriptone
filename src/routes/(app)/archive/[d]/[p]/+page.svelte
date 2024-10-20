@@ -1,15 +1,21 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Articles from '$lib/components/Articles.svelte';
 	import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte';
 	import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
 
-	export let data;
+	interface Props {
+		data: any;
+	}
 
-	let visiblePages: (number | string)[] = [];
+	let { data }: Props = $props();
 
-	$: {
+	let visiblePages: (number | string)[] = $state([]);
+
+	run(() => {
 		const pages = Math.ceil(data.totalCount / 6);
 		const currentPage = +data.currentPage;
 
@@ -46,7 +52,7 @@
 				];
 			}
 		}
-	}
+	});
 
 	function getPageUrl(page: number): string {
 		const baseUrl = '/archive';
@@ -64,7 +70,7 @@
 </svelte:head>
 
 <Header />
-<div class="mb-16" />
+<div class="mb-16"></div>
 <main>
 	<section id="articles">
 		<ul>

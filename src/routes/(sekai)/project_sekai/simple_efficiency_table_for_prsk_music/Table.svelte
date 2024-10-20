@@ -2,9 +2,9 @@
 	import { onMount } from 'svelte';
 	import axios from 'axios';
 
-	let columns = {};
-	let resData = [];
-	let loading = true;
+	let columns = $state({});
+	let resData = $state([]);
+	let loading = $state(true);
 	const exclude = ['アサガオの散る頃に', 'どんな結末がお望みだい？'];
 
 	onMount(async () => {

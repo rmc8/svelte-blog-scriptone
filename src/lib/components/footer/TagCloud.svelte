@@ -1,6 +1,10 @@
 <script lang="ts">
 	import type { Tag } from '$lib/types/footer';
-	export let tags: Tag[] = [];
+	interface Props {
+		tags?: Tag[];
+	}
+
+	let { tags = [] }: Props = $props();
 
 	function getTagColor(index: number) {
 		const colors = [

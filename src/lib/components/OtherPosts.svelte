@@ -3,8 +3,12 @@
 	import { formatDate } from '$lib/utils';
 	import type { Blog } from '$lib/microcms/microcms/microcms';
 
-	export let headerLabel: string;
-	export let relatedPosts: Blog[];
+	interface Props {
+		headerLabel: string;
+		relatedPosts: Blog[];
+	}
+
+	let { headerLabel, relatedPosts }: Props = $props();
 </script>
 
 <section class="mt-12">

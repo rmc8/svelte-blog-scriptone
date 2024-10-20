@@ -1,5 +1,11 @@
 <script>
-	export let profile_link_enable = true;
+	/**
+	 * @typedef {Object} Props
+	 * @property {boolean} [profile_link_enable]
+	 */
+
+	/** @type {Props} */
+	let { profile_link_enable = true } = $props();
 </script>
 
 <section id="proseka_profile" class="flex flex-col items-center">

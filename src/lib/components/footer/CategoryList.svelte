@@ -1,6 +1,10 @@
 <script lang="ts">
 	import type { Category } from '$lib/types/footer';
-	export let categories: Category[] = [];
+	interface Props {
+		categories?: Category[];
+	}
+
+	let { categories = [] }: Props = $props();
 </script>
 
 <h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Category</h3>

@@ -7,8 +7,12 @@
 	import mastodonIcon from './img/mastodon_share.webp';
 	import pocketIcon from './img/pocket_share.webp';
 
-	export let share_title: string;
-	export let share_url: string;
+	interface Props {
+		share_title: string;
+		share_url: string;
+	}
+
+	let { share_title, share_url }: Props = $props();
 
 	const newline: string = encodeURIComponent('\r\n');
 	const encodedTitle: string = encodeURIComponent(share_title);

@@ -1,6 +1,10 @@
 <script lang="ts">
 	import ClockOutline from 'svelte-material-icons/ClockTimeThree.svelte';
-	export let dtStr: string;
+	interface Props {
+		dtStr: string;
+	}
+
+	let { dtStr }: Props = $props();
 </script>
 
 <div class="flex items-center">

@@ -8,11 +8,11 @@
 	import { onMount } from 'svelte';
 	import axios from 'axios';
 
-	$: currentUrl = $page.url.href;
+	let currentUrl = $derived($page.url.href);
 	let contents = {};
-	let columns = {};
+	let columns = $state({});
 	let rankings = [];
-	let loading = true;
+	let loading = $state(true);
 
 	onMount(async () => {
 		try {
@@ -28,7 +28,11 @@
 	});
 
 	const filteredRankings = () => rankings.filter((ranking) => ranking.team_name !== '');
-	export let data;
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <svelte:head>

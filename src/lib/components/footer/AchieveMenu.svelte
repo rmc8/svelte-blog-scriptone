@@ -1,6 +1,10 @@
 <script lang="ts">
 	import type { PostCount } from '$lib/types/footer';
-	export let postCounts: PostCount[] = [];
+	interface Props {
+		postCounts?: PostCount[];
+	}
+
+	let { postCounts = [] }: Props = $props();
 </script>
 
 <h3 class="text-2xl border-b border-[#ececec] text-gray-700 w-full">Archive</h3>

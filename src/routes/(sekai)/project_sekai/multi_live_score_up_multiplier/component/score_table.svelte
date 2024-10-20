@@ -2,9 +2,9 @@
 	import scoreData from './data/scoreup.json';
 	import { onMount } from 'svelte';
 
-	let filteredData = [];
-	let scoreUpFilter = '';
-	let internalValueFilter = '';
+	let filteredData = $state([]);
+	let scoreUpFilter = $state('');
+	let internalValueFilter = $state('');
 
 	onMount(() => {
 		filteredData = scoreData.data.slice(0, 30);
@@ -37,7 +37,7 @@
 								type="text"
 								bind:value={scoreUpFilter}
 								placeholder="フィルター"
-								on:input={handleFilter}
+								oninput={handleFilter}
 								class="p-1 text-black border border-gray-300 rounded w-32"
 							/>
 						</div>
@@ -49,7 +49,7 @@
 								type="text"
 								bind:value={internalValueFilter}
 								placeholder="フィルター"
-								on:input={handleFilter}
+								oninput={handleFilter}
 								class="p-1 text-black border border-gray-300 rounded w-24"
 							/>
 						</div>

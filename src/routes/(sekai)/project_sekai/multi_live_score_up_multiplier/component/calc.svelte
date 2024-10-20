@@ -1,8 +1,10 @@
 <script lang="ts">
-	let leaderMultiplier: number = 110;
-	let otherMultipliers: number[] = [110, 110, 110, 110];
-	let scoreUpResult: number = 198;
-	let internalValue: string = '110/550';
+	import { preventDefault } from 'svelte/legacy';
+
+	let leaderMultiplier: number = $state(110);
+	let otherMultipliers: number[] = $state([110, 110, 110, 110]);
+	let scoreUpResult: number = $state(198);
+	let internalValue: string = $state('110/550');
 
 	function calculateScoreUp(): void {
 		const sumOfOthers: number = otherMultipliers.reduce((acc, val) => acc + val, 0);
@@ -29,7 +31,7 @@
 	</p>
 	<div class="text-left w-full">
 		<form
-			on:submit|preventDefault={calculateScoreUp}
+			onsubmit={preventDefault(calculateScoreUp)}
 			class="flex flex-col gap-6 max-w-md"
 			style="margin-left: 0;"
 		>
@@ -40,7 +42,7 @@
 						id="leader"
 						type="text"
 						value={leaderMultiplier}
-						on:input={handleInput}
+						oninput={handleInput}
 						maxlength="3"
 						class="w-full py-2 px-3 border-b-2 border-gray-300 focus:border-[#0aadb9] outline-none transition-colors"
 					/>
@@ -57,7 +59,7 @@
 							id={`other-${index}`}
 							type="text"
 							value={multiplier}
-							on:input={(event) => handleInput(event, index)}
+							oninput={(event) => handleInput(event, index)}
 							maxlength="3"
 							class="w-full py-2 px-3 border-b-2 border-gray-300 focus:border-[#0aadb9] outline-none transition-colors"
 						/>

@@ -4,8 +4,8 @@
 	import 'lightgallery/css/lightgallery.css';
 
 	let images = [];
-	let isLoading = true;
-	let galleryElement;
+	let isLoading = $state(true);
+	let galleryElement = $state();
 	let galleryInstance;
 
 	onMount(async () => {

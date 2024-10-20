@@ -15,9 +15,9 @@
 	import BySkill from './components/card/BySkill.svelte';
 	import BySkillVs from './components/card/BySkillVs.svelte';
 
-	$: currentUrl = $page.url.href;
+	let currentUrl = $derived($page.url.href);
 
-	let api_data: ApiResponse | null = null;
+	let api_data: ApiResponse | null = $state(null);
 
 	onMount(async () => {
 		const url =
@@ -34,7 +34,11 @@
 			console.error('Error:', error);
 		}
 	});
-	export let data;
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <svelte:head>

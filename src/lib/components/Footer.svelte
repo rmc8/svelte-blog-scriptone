@@ -8,14 +8,18 @@
 	import BuyMeACoffee from './footer/BuyMeACoffee.svelte';
 	import type { Category, Tag, PostCount } from '$lib/types/footer';
 
-	export let categories: Category[] = [];
-	export let tags: Tag[] = [];
-	export let postCounts: PostCount[] = [];
+	interface Props {
+		categories?: Category[];
+		tags?: Tag[];
+		postCounts?: PostCount[];
+	}
 
-	let windowWidth: number;
+	let { categories = [], tags = [], postCounts = [] }: Props = $props();
 
-	$: columnClass =
-		windowWidth >= 1328 ? 'lg:w-[31%]' : windowWidth >= 904 ? 'md:w-[46%]' : 'w-full';
+	let windowWidth: number = $state();
+
+	let columnClass =
+		$derived(windowWidth >= 1328 ? 'lg:w-[31%]' : windowWidth >= 904 ? 'md:w-[46%]' : 'w-full');
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />

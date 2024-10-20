@@ -10,11 +10,11 @@
 	import Tools from '../PrskTools.svelte';
 	import Chart from './Chart.svelte';
 
-	$: currentUrl = $page.url.href;
+	let currentUrl = $derived($page.url.href);
 
-	let columns = {};
-	let dataList = [];
-	let loading = true;
+	let columns = $state({});
+	let dataList = $state([]);
+	let loading = $state(true);
 
 	onMount(async () => {
 		try {
@@ -35,7 +35,11 @@
 		return moment(dateStr).format('YYYY-MM-DD HH:mm');
 	}
 
-	export let data;
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <svelte:head>
@@ -72,7 +76,7 @@
 			<p>
 				プロセカのアクティブユーザー数と推移をまとめております。数値は正確でない箇所もあるため参考程度にお願いいたします。
 			</p>
-			<p />
+			<p></p>
 
 			{#if loading}
 				<p>Loading...</p>

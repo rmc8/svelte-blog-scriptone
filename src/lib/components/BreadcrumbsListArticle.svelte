@@ -5,7 +5,11 @@
 	import FolderOutline from 'svelte-material-icons/FolderOutline.svelte';
 	import FileDocumentOutline from 'svelte-material-icons/FileDocumentOutline.svelte';
 
-	export let blog: Blog;
+	interface Props {
+		blog: Blog;
+	}
+
+	let { blog }: Props = $props();
 </script>
 
 <nav aria-label="パンくずリスト" class="text-sm breadcrumbs mb-2 w-full overflow-x-auto scrollbar-hide">

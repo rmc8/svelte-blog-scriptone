@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { page } from '$app/stores';
 	import Header from '$lib/components/HeaderForPrsk.svelte';
 	import Footer from '$lib/components/Footer.svelte';
@@ -9,14 +11,13 @@
 	import axios from 'axios';
 	import Share from '$lib/components/share_component/Share.svelte';
 
-	$: currentUrl = $page.url.href;
-	let inputNumber: number | null = null;
+	let inputNumber: number | null = $state(null);
 	let jsonData = {};
 	let contents = {};
-	let errorMessage = '';
-	let currentPage = 1;
+	let errorMessage = $state('');
+	let currentPage = $state(1);
 	const pageSize = 8;
-	let filteredData = { records: [], totalCount: 0 };
+	let filteredData = $state({ records: [], totalCount: 0 });
 
 	onMount(async () => {
 		try {
@@ -30,12 +31,6 @@
 		}
 	});
 
-	$: {
-		if (inputNumber !== null) {
-			currentPage = 1;
-		}
-		updateFilteredData();
-	}
 
 	function changePage(page: any) {
 		currentPage = page;
@@ -62,7 +57,18 @@
 			totalCount: raw.length
 		};
 	}
-	export let data;
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
+	let currentUrl = $derived($page.url.href);
+	run(() => {
+		if (inputNumber !== null) {
+			currentPage = 1;
+		}
+		updateFilteredData();
+	});
 </script>
 
 <svelte:head>
@@ -113,7 +119,7 @@
 					{#if errorMessage === ''}
 						<span class="pagination" style="padding-left: 16px;">
 							{#each Array(Math.ceil(filteredData.totalCount / pageSize)) as _, i (i)}
-								<button on:click={() => changePage(i + 1)}>{i + 1}</button>
+								<button onclick={() => changePage(i + 1)}>{i + 1}</button>
 							{/each}
 						</span>
 					{/if}

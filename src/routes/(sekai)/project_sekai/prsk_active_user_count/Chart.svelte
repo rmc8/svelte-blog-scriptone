@@ -3,7 +3,7 @@
 	import axios from 'axios';
 
 	let chart = null;
-	let chartDiv;
+	let chartDiv = $state();
 	let ApexCharts;
 
 	onMount(async () => {
@@ -89,7 +89,7 @@
 	});
 </script>
 
-<div id="chart" bind:this={chartDiv} />
+<div id="chart" bind:this={chartDiv}></div>
 
 <style>
 	#chart {

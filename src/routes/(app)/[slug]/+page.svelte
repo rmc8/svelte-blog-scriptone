@@ -14,13 +14,17 @@
 	import OtherPosts from '$lib/components/OtherPosts.svelte';
 	import { onMount } from 'svelte';
 
-	export let data: {
+	interface Props {
+		data: {
 		blog: Blog;
 		recentPosts: Blog[];
 		relatedPosts: Blog[];
 	};
+	}
 
-	let htmlContent = '';
+	let { data }: Props = $props();
+
+	let htmlContent = $state('');
 
 	onMount(async () => {
 		const html_text: string = await marked(data.blog.body_markdown);
@@ -35,7 +39,7 @@
 		htmlContent = cheerio$.html();
 	});
 
-	$: currentUrl = $page.url.href;
+	let currentUrl = $derived($page.url.href);
 </script>
 
 <svelte:head>

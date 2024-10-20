@@ -7,8 +7,12 @@
 	import Tools from '../PrskTools.svelte';
 	import Table from './Table.svelte';
 
-	$: currentUrl = $page.url.href;
-	export let data;
+	let currentUrl = $derived($page.url.href);
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <svelte:head>
