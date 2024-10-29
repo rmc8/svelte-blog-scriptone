@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { page } from '$app/stores';
 	import Header from '$lib/components/HeaderForPrsk.svelte';
 	import Footer from '$lib/components/Footer.svelte';
@@ -13,7 +11,6 @@
 
 	let inputNumber: number | null = $state(null);
 	let jsonData = {};
-	let contents = {};
 	let errorMessage = $state('');
 	let currentPage = $state(1);
 	const pageSize = 8;
@@ -31,8 +28,7 @@
 		}
 	});
 
-
-	function changePage(page: any) {
+	function changePage(page: number) {
 		currentPage = page;
 		updateFilteredData();
 	}
@@ -49,13 +45,13 @@
 			filteredData = { records: [], totalCount: 0 };
 			return;
 		}
+
+		console.log(currentPage);
 		errorMessage = '';
 		const start = (currentPage - 1) * pageSize;
 		const end = start + pageSize;
-		filteredData = {
-			records: raw.slice(start, end),
-			totalCount: raw.length
-		};
+		filteredData.records = raw.slice(start, end);
+		filteredData.totalCount = raw.length;
 	}
 	interface Props {
 		data: any;
@@ -63,10 +59,7 @@
 
 	let { data }: Props = $props();
 	let currentUrl = $derived($page.url.href);
-	run(() => {
-		if (inputNumber !== null) {
-			currentPage = 1;
-		}
+	$effect(() => {
 		updateFilteredData();
 	});
 </script>
