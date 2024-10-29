@@ -112,7 +112,11 @@
 					{#if errorMessage === ''}
 						<span class="pagination" style="padding-left: 16px;">
 							{#each Array(Math.ceil(filteredData.totalCount / pageSize)) as _, i (i)}
-								<button onclick={() => changePage(i + 1)}>{i + 1}</button>
+								<button
+									onclick={() => changePage(i + 1)}
+									class={i + 1 === currentPage ? 'pagination-btn active' : 'pagination-btn'}
+									>{i + 1}</button
+								>
 							{/each}
 						</span>
 					{/if}
@@ -207,9 +211,7 @@
 		margin-right: 8px;
 		border-radius: 50%;
 	}
-
-	.pagination button:hover,
-	.pagination button:active {
+	.pagination button.active {
 		background-color: var(--accent-color-dark);
 	}
 
