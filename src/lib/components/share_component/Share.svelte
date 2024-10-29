@@ -77,6 +77,9 @@
 		@apply w-6 h-6 object-contain transition-transform duration-300 ease-in-out;
 		filter: brightness(0) invert(1) brightness(1.2);
 	}
+	.share-icon-wrapper {
+		margin-right: 8px;
+	}
 	.share-icon-link:hover .share-icon {
 		@apply transform scale-110;
 	}
