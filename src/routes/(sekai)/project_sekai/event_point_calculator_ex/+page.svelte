@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import Header from '$lib/components/HeaderForPrsk.svelte';
@@ -21,10 +19,10 @@
 	type bpRes = {
 		data: bpData[];
 	};
-
+	// 楽曲選択
 	let selectedSong: bpData | null = $state(null);
 	let basicPoint: Number = $state(100);
-	let basicPointList: bpRes = $state();
+	let basicPointList: bpRes = $state({ data: [] });
 	let isLoading = $state(true);
 	let searchTerm = $state('');
 	let filteredSongs: bpData[] = $state([]);
@@ -32,17 +30,25 @@
 	let itemsPerPage = 10;
 	let maxPageButtons = 7;
 
+	// 計算
+	let inputNumber: number | null = $state(null);
+	let calculationResult: any = $state(null);
+	let errorMessage = $state('');
+	let calc = $state(false);
+	let calcCurrentPage = $state(1);
+	let calcItemsPerPage = 8;
 
+	// 楽曲選択ロジック
 	function handleSearch(event: Event) {
 		currentPage = 1;
 		searchTerm = (event.target as HTMLInputElement).value;
 	}
 
 	function handleSongSelection(song: bpData) {
+		calculationResult = null;
 		selectedSong = song;
 		basicPoint = song.basic_point;
 	}
-
 
 	function getVisiblePages(current: number, total: number, max: number) {
 		if (total <= max) return Array.from({ length: total }, (_, i) => i + 1);
@@ -76,12 +82,6 @@
 		}
 	});
 	// イベントポイントの取得ロジック
-	let inputNumber: number | null = $state(null);
-	let calculationResult: any = $state(null);
-	let errorMessage = $state('');
-	let calc = $state(false);
-	let calcCurrentPage = $state(1);
-	let calcItemsPerPage = 8;
 
 	async function calculateEventPoints() {
 		try {
@@ -110,16 +110,14 @@
 		}
 	}
 
-	
 	interface Props {
-		フッター用データ
 		data: any;
 	}
 
 	let { data }: Props = $props();
 	// 楽曲選択のロジック
 	let currentUrl = $derived($page.url.href);
-	run(() => {
+	$effect(() => {
 		if (basicPointList && basicPointList.data) {
 			filteredSongs = basicPointList.data.filter(
 				(song) =>
@@ -129,22 +127,23 @@
 		}
 	});
 	let totalPages = $derived(Math.ceil(filteredSongs.length / itemsPerPage));
-	let paginatedSongs = $derived(filteredSongs.slice(
-		(currentPage - 1) * itemsPerPage,
-		currentPage * itemsPerPage
-	));
+	let paginatedSongs = $derived(
+		filteredSongs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+	);
 	let visiblePages = $derived(getVisiblePages(currentPage, totalPages, maxPageButtons));
-	let calcPaginatedResults =
-		$derived(calculationResult && calculationResult.data
+	let calcPaginatedResults = $derived(
+		calculationResult && calculationResult.data
 			? calculationResult.data.slice(
 					(calcCurrentPage - 1) * calcItemsPerPage,
 					calcCurrentPage * calcItemsPerPage
-			  )
-			: []);
-	let calcTotalPages =
-		$derived(calculationResult && calculationResult.data
+				)
+			: []
+	);
+	let calcTotalPages = $derived(
+		calculationResult && calculationResult.data
 			? Math.ceil(calculationResult.data.length / calcItemsPerPage)
-			: 0);
+			: 0
+	);
 </script>
 
 <svelte:head>
@@ -292,9 +291,7 @@
 									{#if calcTotalPages > 1}
 										<div class="pagination">
 											{#if calcCurrentPage > 1}
-												<button onclick={() => calcCurrentPage--} class="pagination-btn"
-													>＜</button
-												>
+												<button onclick={() => calcCurrentPage--} class="pagination-btn">＜</button>
 											{/if}
 											{#each Array(calcTotalPages) as _, i}
 												<button
@@ -306,9 +303,7 @@
 												</button>
 											{/each}
 											{#if calcCurrentPage < calcTotalPages}
-												<button onclick={() => calcCurrentPage++} class="pagination-btn"
-													>＞</button
-												>
+												<button onclick={() => calcCurrentPage++} class="pagination-btn">＞</button>
 											{/if}
 										</div>
 									{/if}
