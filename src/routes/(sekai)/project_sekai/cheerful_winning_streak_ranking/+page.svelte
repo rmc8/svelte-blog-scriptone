@@ -8,10 +8,51 @@
 	import { onMount } from 'svelte';
 	import axios from 'axios';
 
+	type RankingData = {
+		rank: number;
+		team_name: string;
+		team_rank: number;
+		team_score: number;
+		winning_streak: number;
+		member1: string;
+		member2: string;
+		member3: string;
+		member4: string;
+		member5: string;
+		event_name: string;
+		group_name: string;
+		approver: string;
+	};
+
+	type RankingColumns = {
+		rank: string;
+		team_name: string;
+		winning_streak: string;
+		member1: string;
+		member2: string;
+		member3: string;
+		member4: string;
+		member5: string;
+		event_name: string;
+		group_name: string;
+		approver: string;
+	};
+
 	let currentUrl = $derived($page.url.href);
-	let contents = {};
-	let columns = $state({});
-	let rankings = [];
+	let columns: RankingColumns = $state({
+		rank: '',
+		team_name: '',
+		winning_streak: '',
+		member1: '',
+		member2: '',
+		member3: '',
+		member4: '',
+		member5: '',
+		event_name: '',
+		group_name: '',
+		approver: ''
+	});
+	let rankings: RankingData[] = [];
 	let loading = $state(true);
 
 	onMount(async () => {
@@ -153,12 +194,6 @@
 
 	th {
 		text-align: center;
-	}
-
-	tr:nth-of-type(1),
-	tr:nth-of-type(2),
-	tr:nth-of-type(3) {
-		/* font-weight: bold; */
 	}
 
 	tr:nth-of-type(1):hover,

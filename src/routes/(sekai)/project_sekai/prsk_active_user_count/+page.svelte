@@ -12,16 +12,53 @@
 
 	let currentUrl = $derived($page.url.href);
 
-	let columns = $state({});
-	let dataList = $state([]);
+	let columns: Columns = $state({
+		event_id: '',
+		event_name: '',
+		event_type: '',
+		start_datetime: '',
+		end_datetime: '',
+		duration: '',
+		active_user_count: '',
+		moving_average: ''
+	});
+	let dataList: EventData[] = $state([]);
 	let loading = $state(true);
+
+	type Columns = {
+		event_id: string;
+		event_name: string;
+		event_type: string;
+		start_datetime: string;
+		end_datetime: string;
+		duration: string;
+		active_user_count: string;
+		moving_average: string;
+	};
+	type EventData = {
+		event_id: string;
+		event_name: string;
+		event_type: string;
+		start_datetime: string;
+		end_datetime: string;
+		duration: string;
+		active_user_count: string;
+		moving_average: string;
+		source: string;
+		note: string;
+	};
+
+	type ResData = {
+		columns: Columns;
+		data: EventData[];
+	};
 
 	onMount(async () => {
 		try {
 			const response = await axios.get(
 				'https://script.google.com/macros/s/AKfycbxJ9EzwcUE8kIxcNovzZRIGkN9wBSNy3hpptRzuGJHKMFCf9LzMZ8783hfMddr3Wn1Q/exec'
 			);
-			const dataResponse = response.data;
+			const dataResponse: ResData = response.data;
 			columns = dataResponse.columns;
 			dataList = dataResponse.data;
 		} catch (error) {
@@ -31,7 +68,7 @@
 		}
 	});
 
-	function formatDate(dateStr) {
+	function formatDate(dateStr: string) {
 		return moment(dateStr).format('YYYY-MM-DD HH:mm');
 	}
 
@@ -45,8 +82,8 @@
 <svelte:head>
 	<title>Scriptone - [プロセカ] アクティブユーザー数推移</title>
 	<meta name="description" content="チアフルイベントの連勝のランキングを掲載しております。" />
-	<meta name="twitter:site" content="@mskydev" />
-	<meta name="twitter:creator" content="@mskydev" />
+	<meta name="twitter:site" content="@rmc8Bok" />
+	<meta name="twitter:creator" content="@rmc8Bok" />
 	<meta property="og:title" content="[プロセカ]アクティブユーザー数推移" />
 	<meta name="twitter:title" content="[プロセカ]アクティブユーザー数推移" />
 	<meta
