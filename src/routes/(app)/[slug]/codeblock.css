@@ -30,6 +30,7 @@
 pre {
 	overflow-x: auto !important;
 	background: #fffae8;
+	border: 0.5px solid var(--border-color-hr);
 	color: #272822;
 	border-radius: 5px;
 	margin-bottom: 20px;
@@ -86,7 +87,6 @@ code {
 	font-weight: bold;
 }
 
-
 .hljs-comment,
 .hljs-quote,
 .hljs-variable {
@@ -101,7 +101,7 @@ code {
 }
 
 .language-css.hljs .hljs-selector-class,
-.language-css.hljs .hljs-selector-tag{
+.language-css.hljs .hljs-selector-tag {
 	font-weight: bold;
 }
 

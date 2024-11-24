@@ -1,10 +1,11 @@
+[--bg-main-color]
 <header>
-	<nav class="py-3 fixed top-0 left-0 right-0 bg-[--accent-color-light] shadow-md z-50">
+	<nav class="py-3 fixed top-0 left-0 right-0 bg-[--bg-main-color] shadow-md z-50">
 		<ul class="flex justify-start items-center h-6 pl-2">
 			<li class="w-22 mx-1 list-none">
 				<a
 					href="/project_sekai"
-					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black"
+					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-black hover:bg-[--accent-color-light] hover:text-white"
 				>
 					Profile
 				</a>
@@ -12,7 +13,7 @@
 			<li class="w-22 mx-1 list-none">
 				<a
 					href="/project_sekai#tools"
-					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black"
+					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-black hover:bg-[--accent-color-light] hover:text-white"
 				>
 					Tools
 				</a>
@@ -20,7 +21,7 @@
 			<li class="w-22 mx-1 list-none">
 				<a
 					href="/"
-					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black"
+					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-black hover:bg-[--accent-color-light] hover:text-white"
 				>
 					Home
 				</a>

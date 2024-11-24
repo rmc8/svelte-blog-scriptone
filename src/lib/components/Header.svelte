@@ -1,24 +1,24 @@
 <header>
-	<nav class="py-3 fixed top-0 left-0 right-0 bg-[--accent-color-light] shadow-md z-50">
+	<nav class="py-3 fixed top-0 left-0 right-0 bg-[--bg-main-color] shadow-md z-50">
 		<ul class="flex justify-start items-center h-6 pl-2">
 			<li class="w-22 mx-1 list-none">
 				<a
 					href="/"
-					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black"
+					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-black hover:bg-[--accent-color-light] hover:text-white"
 					>Home</a
 				>
 			</li>
 			<li class="w-22 mx-1 list-none">
 				<a
 					href="/about"
-					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black"
+					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-black hover:bg-[--accent-color-light] hover:text-white"
 					>About</a
 				>
 			</li>
 			<li class="w-22 mx-1 list-none">
 				<a
 					href="/diary"
-					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-white hover:bg-white hover:text-black"
+					class="text-lg px-4 py-2 rounded-md transition duration-500 ease-in-out text-black hover:bg-[--accent-color-light] hover:text-white"
 					>Diary</a
 				>
 			</li>
