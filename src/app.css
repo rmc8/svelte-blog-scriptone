@@ -48,10 +48,10 @@ main {
 body {
 	font-family: 'Sawarabi Gothic', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
 		'Hiragino Sans', Meiryo, sans-serif;
-	line-height: 1.7;
+	line-height: 1.65;
 	color: var(--text-color);
 	background-color: var(--bg-main-color); /* #ffffff */
-	font-size: 17.5px;
+	font-size: 16.5px;
 }
 
 header {
