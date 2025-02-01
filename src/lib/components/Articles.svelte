@@ -28,17 +28,13 @@
 					>
 				</div>
 				<div class="tags">
-					{#each content.tags as tag}
-						<div class="tag inline-flex">
-							<div class="tag_icon">
-								<Tag color="#009cac" />
+					{#each content.tags as tag, i}
+						<a href="/tag/{tag.id}/1" class="tag-link" class:mr-2={i !== content.tags.length - 1}>
+							<div class="tag inline-flex items-center">
+								<Tag class="tag-icon" size="16" />
+								<span class="ml-1">{tag.name}</span>
 							</div>
-							<div class="tag_link">
-								<a href="/tag/{tag.id}/1">
-									{tag.name}
-								</a>
-							</div>
-						</div>
+						</a>
 					{/each}
 				</div>
 			</div>
@@ -50,6 +46,25 @@
 </li>
 
 <style lang="postcss">
+	.tag-link {
+		@apply inline-block;
+		@apply no-underline;
+		color: var(--accent-color); /* 通常時のテキストカラー */
+	}
+
+	.tag-link:hover {
+		color: var(--accent-color-dark); /* ホバー時のテキストカラー */
+	}
+
+	/* アイコンのスタイルを直接指定 */
+	.tag-icon :global(svg) {
+		fill: var(--accent-color); /* 通常時のアイコンカラー */
+	}
+
+	.tag-link:hover .tag-icon :global(svg) {
+		fill: var(--accent-color-dark); /* ホバー時のアイコンカラー */
+	}
+
 	.title {
 		font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
 			sans-serif;
@@ -80,7 +95,9 @@
 			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 		}
 		100% {
-			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			box-shadow:
+				0 10px 15px -3px rgba(0, 0, 0, 0.1),
+				0 4px 6px -2px rgba(0, 0, 0, 0.05);
 		}
 	}
 

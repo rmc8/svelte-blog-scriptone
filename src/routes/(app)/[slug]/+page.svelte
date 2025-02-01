@@ -16,10 +16,10 @@
 
 	interface Props {
 		data: {
-		blog: Blog;
-		recentPosts: Blog[];
-		relatedPosts: Blog[];
-	};
+			blog: Blog;
+			recentPosts: Blog[];
+			relatedPosts: Blog[];
+		};
 	}
 
 	let { data }: Props = $props();
@@ -84,17 +84,13 @@
 					>
 				</div>
 				<div class="tags mb-1">
-					{#each data.blog.tags as tag}
-						<div class="tag mr-1 inline-flex">
-							<div class="tag_icon mt-1">
-								<Tag color="#009cac" width={20} height={20} />
+					{#each data.blog.tags as tag, i}
+						<a href="/tag/{tag.id}/1" class="tag-link" class:mr-2={i !== data.blog.tags.length - 1}>
+							<div class="tag inline-flex items-center">
+								<Tag class="tag-icon" size="16" />
+								<span class="ml-1">{tag.name}</span>
 							</div>
-							<div class="tag_link">
-								<a href="/tag/{tag.id}/1" class="block pt-1.5">
-									{tag.name}
-								</a>
-							</div>
-						</div>
+						</a>
 					{/each}
 				</div>
 				<TimeStamp dtStr={data.blog.createdAt} />
@@ -106,3 +102,25 @@
 	</div>
 </main>
 <Footer categories={data.categories} tags={data.tags} postCounts={data.monthly_post_counts} />
+
+<style lang="postcss">
+	/* ... 既存のスタイル ... */
+
+	.tag-link {
+		@apply inline-block;
+		@apply no-underline;
+		color: var(--accent-color);
+	}
+
+	.tag-link:hover {
+		color: var(--accent-color-dark);
+	}
+
+	.tag-icon :global(svg) {
+		fill: var(--accent-color);
+	}
+
+	.tag-link:hover .tag-icon :global(svg) {
+		fill: var(--accent-color-dark);
+	}
+</style>
