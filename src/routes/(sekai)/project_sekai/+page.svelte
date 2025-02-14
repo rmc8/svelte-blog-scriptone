@@ -15,14 +15,14 @@
 </script>
 
 <svelte:head>
-	<title>Scriptone - @mskydev's Profile & Tools</title>
-	<meta name="description" content="mskydev@twitter.comのプロセカのプロフィールです。" />
-	<meta name="twitter:site" content="@mskydev" />
-	<meta name="twitter:creator" content="@mskydev" />
-	<meta property="og:title" content="mskydev@twitter.com Project Sekai Profile & Tools" />
-	<meta name="twitter:title" content="mskydev@twitter.com Project Sekai Profile & Tools" />
-	<meta property="og:description" content="mskydev@twitter.comのプロセカのプロフィールです。" />
-	<meta name="twitter:description" content="mskydev@twitter.comのプロセカのプロフィールです。" />
+	<title>Scriptone - @rmc8Bok's Profile & Tools</title>
+	<meta name="description" content="rmc8Bok@x.comのプロセカのプロフィールです。" />
+	<meta name="twitter:site" content="@rmc8Bok" />
+	<meta name="twitter:creator" content="@rmc8Bok" />
+	<meta property="og:title" content="rmc8Bok@x.com Project Sekai Profile & Tools" />
+	<meta name="twitter:title" content="rmc8Bok@x.com Project Sekai Profile & Tools" />
+	<meta property="og:description" content="rmc8Bok@x.comのプロセカのプロフィールです。" />
+	<meta name="twitter:description" content="rmc8Bok@x.comのプロセカのプロフィールです。" />
 	<meta
 		name="twitter:image"
 		content="https://raw.githubusercontent.com/rmc8/ToC1Kwin/main/docs/assets/icon/eyecatch.jpg"
@@ -69,8 +69,8 @@
 							ツイ募支援が多めですがお声がけくださいましたらDiscordの周回にもお邪魔します。連勝用であればいろいろな総合力の調整に対応できます。
 						</p>
 						<ul class="decoration">
-							<li>150/700/36.3(P1)</li>
-							<li>150/740/33.6(P1)</li>
+							<li>160/690/38.4</li>
+							<li>160/760/35.4</li>
 							<li>150/750/21.4</li>
 							<li>100/700/19.6</li>
 							<li>150/710/16.7</li>
@@ -159,7 +159,7 @@
 			</section>
 			<Tools />
 			<div class="container">
-				<Share share_title="@mskydevのプロフィール" share_url={currentUrl} />
+				<Share share_title="@k.rmc-8.comのプロフィール" share_url={currentUrl} />
 			</div>
 		</div>
 	</article>
